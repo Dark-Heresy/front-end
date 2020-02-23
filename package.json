@@ -6,6 +6,7 @@
     "start": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve -c development",
     "\n# BUILD SCRIPTS:": "",
     "build": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build",
+    "build:stats": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod --configuration stats",
     "build:browser:production": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod --configuration production",
     "\n# TEST SCRIPTS:": "",
     "test": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng test dark-heresy",
@@ -65,7 +66,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "~8.4.1",
+    "@angular-builders/custom-webpack": "~9.0.0",
     "@angular-builders/dev-server": "~7.3.1",
     "@angular-devkit/build-angular": "~0.900.3",
     "@angular/cli": "~9.0.3",
