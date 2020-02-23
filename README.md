@@ -11,6 +11,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/db32cd18a29bb54553e4/maintainability?style=flat-square)](https://codeclimate.com/github/Dark-Heresy/front-end/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/db32cd18a29bb54553e4/test_coverage?style=flat-square)](https://codeclimate.com/github/Dark-Heresy/front-end/test_coverage)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9078790d-583d-4a64-95d5-d4d8bb0f5702/deploy-status)](https://app.netlify.com/sites/dark-heresy/deploys)
+[![Coverage Status](https://coveralls.io/repos/github/Dark-Heresy/front-end/badge.svg?branch=develop)](https://coveralls.io/github/Dark-Heresy/front-end?branch=develop)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
