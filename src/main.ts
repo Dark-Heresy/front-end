@@ -9,7 +9,7 @@ import 'hammerjs';
 import { AppModule } from './app/app.module';
 import { HMR_BOOTSTRAP } from './hmr';
 
-if (ENVIRONMENT.production) {
+if (ENVIRONMENT.isProduction) {
   enableProdMode();
 }
 
