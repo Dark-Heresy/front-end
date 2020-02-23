@@ -53,7 +53,7 @@ Run `openssl` and then write the content of the `npm run generate-certificate` s
 
 ## Stats
 
-You can analyze the webpack production bundle size by running the command `npm run build:stats`.
+You can analyze the webpack production bundle size by running the command `npm run analyze:stats`.
 
 ## Debug
 
