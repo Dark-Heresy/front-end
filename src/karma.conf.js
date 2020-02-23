@@ -1,3 +1,5 @@
+// Karma configuration file, see link for more information
+// https://karma-runner.github.io/1.0/config/configuration-file.html
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -19,7 +21,7 @@ module.exports = function (config) {
       }
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../coverage'),
+      dir: require('path').join(__dirname, '../coverage/dark-heresy'),
       reports: [
         'text-summary',
         'html'
@@ -31,7 +33,7 @@ module.exports = function (config) {
       'kjhtml',
       'coverage-istanbul'
     ],
-    port: 9876,
+    port: 6777,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
@@ -45,6 +47,7 @@ module.exports = function (config) {
     browsers: [
       'Chrome'
     ],
-    singleRun: false
+    singleRun: false,
+    restartOnFileChange: true
   });
 };

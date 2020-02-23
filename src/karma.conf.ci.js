@@ -1,3 +1,5 @@
+// Karma configuration file, see link for more information
+// https://karma-runner.github.io/1.0/config/configuration-file.html
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -20,7 +22,7 @@ module.exports = function (config) {
       }
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../coverage'),
+      dir: require('path').join(__dirname, '../coverage/dark-heresy'),
       reports: [
         'text-summary'
       ],
@@ -58,6 +60,7 @@ module.exports = function (config) {
     parallelOptions: {
       executors: (Math.ceil(require('os').cpus().length / 2)),
       shardStrategy: 'round-robin'
-    }
+    },
+    restartOnFileChange: false
   });
 };
