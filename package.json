@@ -42,6 +42,7 @@
     "@angular/platform-browser": "~9.0.2",
     "@angular/platform-browser-dynamic": "~9.0.2",
     "@angular/router": "~9.0.2",
+    "lodash": "~4.17.15",
     "rxjs": "~6.5.4",
     "tslib": "~1.10.0",
     "zone.js": "~0.10.2"
@@ -55,8 +56,10 @@
     "@angular/language-service": "~9.0.2",
     "@semantic-release/changelog": "~5.0.0",
     "@semantic-release/git": "~9.0.0",
+    "@types/core-js": "~2.5.3",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/lodash": "~4.14.149",
     "@types/node": "~12.11.1",
     "codelyzer": "~5.1.2",
     "commitizen": "~4.0.3",
