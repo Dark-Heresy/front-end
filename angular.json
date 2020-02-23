@@ -69,7 +69,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "dark-heresy:build"
+            "browserTarget": "dark-heresy:build",
+            "port": 6666,
+            "ssl": true,
+            "sslKey": "ssl/dark-heresy.key",
+            "sslCert": "ssl/dark-heresy.crt",
+            "host": "dark-heresy"
           },
           "configurations": {
             "production": {
