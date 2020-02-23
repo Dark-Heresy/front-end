@@ -2,17 +2,35 @@
   "name": "dark-heresy",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "\n# LOCAL DEV SCRIPTS:": "",
+    "start": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve -c development",
+    "\n# BUILD SCRIPTS:": "",
+    "build": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build",
+    "build:browser:production": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod --configuration production",
+    "\n# TEST SCRIPTS:": "",
+    "test": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng test dark-heresy",
+    "test:ci": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng test dark-heresy --karmaConfig=./src/karma.conf.ci.js",
+    "e2e": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng e2e",
     "\n# LINT SCRIPTS:": "",
     "lint": "concurrently \"npm run stylelint\" \"npm run tslint\"",
     "stylelint": "stylelint \"**/*.scss\"",
-    "tslint": "ng lint",
-    "e2e": "ng e2e",
+    "tslint": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng lint",
     "\n# UTILS SCRIPTS:": "",
+    "ng": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng",
+    "cz": "git add . && git-cz && git push-upstream",
+    "semver": "npx semantic-release",
+    "analyze:local-prod": "webpack-bundle-analyzer dist/browser/stats.json",
+    "clean": "rimraf coverage dist",
+    "circular-dependencies-check": "npx madge ./src/ --circular --extensions ts,js --image ./dist/dependencies-graph.svg --warning",
     "generate-certificate": "openssl req -new -x509 -newkey rsa:2048 -sha256 -nodes -keyout ssl/dark-heresy.key -days 3560 -out ssl/dark-heresy.crt -config ssl/certificate.cnf"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./scripts/commitizen.js"
+    }
   },
   "private": true,
   "dependencies": {
@@ -33,12 +51,16 @@
     "@angular/cli": "~9.0.3",
     "@angular/compiler-cli": "~9.0.2",
     "@angular/language-service": "~9.0.2",
+    "@semantic-release/changelog": "~5.0.0",
+    "@semantic-release/git": "~9.0.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~12.11.1",
     "codelyzer": "~5.1.2",
+    "commitizen": "~4.0.3",
     "compression-webpack-plugin": "~3.1.0",
     "concurrently": "~5.1.0",
+    "cz-customizable": "~6.2.0",
     "imagemin-webpack-plugin": "~2.4.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -47,14 +69,18 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "~1.4.2",
+    "madge": "~3.7.0",
     "protractor": "~5.4.3",
+    "rimraf": "~3.0.2",
     "rxjs-tslint-rules": "~4.29.0",
+    "semantic-release": "~17.0.4",
     "stylelint": "~13.2.0",
     "stylelint-config-standard": "~20.0.0",
     "stylelint-scss": "~3.14.2",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "tslint-etc": "~1.10.0",
-    "typescript": "~3.7.5"
+    "typescript": "~3.7.5",
+    "webpack-bundle-analyzer": "~3.6.0"
   }
 }
