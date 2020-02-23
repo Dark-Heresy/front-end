@@ -106,15 +106,9 @@
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+            "karmaConfig": "src/karma.conf.js",
+            "codeCoverage": true,
+            "watch": true
           }
         },
         "lint": {
