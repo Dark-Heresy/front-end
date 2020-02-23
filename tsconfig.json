@@ -33,8 +33,7 @@
     "types": [
       "jasmine",
       "jasminewd2",
-      "node",
-      "googlemaps"
+      "node"
     ],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
