@@ -5,7 +5,7 @@
   "background_color": "#FFFFFF",
   "display": "standalone",
   "scope": "/",
-  "start_url": "https://dark-heresy:6666",
+  "start_url": "https://dark-heresy:3100",
   "lang": "fr",
   "orientation": "portrait",
   "related_applications": [],

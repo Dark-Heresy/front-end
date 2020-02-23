@@ -26,7 +26,7 @@
     "cz": "git add . && git-cz && git push-upstream",
     "akita": "akita",
     "semver": "npx semantic-release",
-    "analyze:stats": "npm run build:stats && webpack-bundle-analyzer dist/browser/stats.json",
+    "analyze:stats": "npm run build:stats && webpack-bundle-analyzer dist/browser/stats-es2015.json",
     "clean": "rimraf coverage dist",
     "circular-dependencies-check": "npx madge ./src/ --circular --extensions ts,js --image ./dist/dependencies-graph.svg --warning",
     "transloco:optimize": "transloco-optimize dist/browser/assets/i18n",

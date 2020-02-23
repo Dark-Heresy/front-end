@@ -152,7 +152,7 @@
               "replaceDuplicatePlugins": false
             },
             "browserTarget": "dark-heresy:build",
-            "port": 6666,
+            "port": 3100,
             "ssl": true,
             "sslKey": "ssl/dark-heresy.key",
             "sslCert": "ssl/dark-heresy.crt",

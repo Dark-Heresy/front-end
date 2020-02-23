@@ -9,13 +9,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 
 Run `npm run start` to start a local development server.  
-Navigate to `https://dark-heresy:6666/` to check it out.
+Navigate to `https://dark-heresy:3100/` to check it out.
 
 You need to setup a custom host:
 
 ```
 # Dark Heresy Front-End
-# Use url => https://dark-heresy:6666
+# Use url => https://dark-heresy:3100
 127.0.0.1 dark-heresy
 ```
 

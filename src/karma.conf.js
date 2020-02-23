@@ -33,7 +33,7 @@ module.exports = function (config) {
       'kjhtml',
       'coverage-istanbul'
     ],
-    port: 6777,
+    port: 3101,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
