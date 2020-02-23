@@ -5,6 +5,8 @@ import {
 } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { ENVIRONMENT } from '@app/environments/environment';
+import { createScript } from '@app/functions/scripts/create-script';
+import { loadScript } from '@app/functions/scripts/load-script';
 import { AppModule } from '@app/module';
 import {
   akitaConfig,
@@ -20,6 +22,10 @@ import { HMR_BOOTSTRAP } from './hmr';
 if (ENVIRONMENT.isProduction) {
   enableProdMode();
   enableAkitaProdMode();
+} else {
+  const script: HTMLScriptElement = createScript('lazy-styles.js');
+
+  loadScript(script);
 }
 
 const akitaLocalForage: LocalForage = localForage.createInstance({

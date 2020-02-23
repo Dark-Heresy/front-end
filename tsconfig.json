@@ -52,6 +52,9 @@
       "@app/routing-module": [
         "src/app/app-routing.module.ts"
       ],
+      "@app/functions/*": [
+        "src/app/functions/*"
+      ],
       "@app/environments/*": [
         "src/environments/*"
       ]

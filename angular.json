@@ -208,6 +208,42 @@
               "devServerTarget": "dark-heresy:serve:development"
             }
           }
+        },
+        "server": {
+          "builder": "@angular-builders/custom-webpack:server",
+          "options": {
+            "customWebpackConfig": {
+              "path": "./scripts/webpack/custom-webpack-server.config.js",
+              "replaceDuplicatePlugins": false
+            },
+            "outputPath": "dist/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "src/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/server/environment-server.production.ts"
+                },
+                {
+                  "replace": "src/manifest.json",
+                  "with": "src/manifests/manifest.production.json"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/seo/robots/robots.production.txt"
+                }
+              ],
+              "bundleDependencies": "all",
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
+            }
+          }
         }
       }
     }
