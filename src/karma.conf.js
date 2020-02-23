@@ -1,6 +1,3 @@
-// Karma configuration file, see link for more information
-// https://karma-runner.github.io/1.0/config/configuration-file.html
-
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -16,27 +13,38 @@ module.exports = function (config) {
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
+      clearContext: false,
+      jasmine: {
+        random: false
+      }
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, './coverage/dark-heresy'),
+      dir: require('path').join(__dirname, '../coverage'),
       reports: [
-        'html',
-        'lcovonly',
-        'text-summary'
+        'text-summary',
+        'html'
       ],
       fixWebpackSourcePaths: true
     },
     reporters: [
       'progress',
-      'kjhtml'
+      'kjhtml',
+      'coverage-istanbul'
     ],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: [ 'Chrome' ],
-    singleRun: false,
-    restartOnFileChange: true
+    browserDisconnectTimeout: 60 * 1000,
+    processKillTimeout: 60 * 1000,
+    browserDisconnectTolerance: 5,
+    browserNoActivityTimeout: 60 * 2 * 1000,
+    captureTimeout: 60 * 2 * 1000,
+    browserSocketTimeout: 60 * 2 * 1000,
+    retryLimit: 5,
+    browsers: [
+      'Chrome'
+    ],
+    singleRun: false
   });
 };
