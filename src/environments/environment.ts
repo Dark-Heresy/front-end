@@ -1,4 +1,4 @@
-import { IEnvironment } from '@environment/models/environment';
+import { IEnvironment } from '@environment/environment';
 
 export const ENVIRONMENT: IEnvironment = {
   hmr: {

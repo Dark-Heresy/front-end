@@ -51,6 +51,14 @@ Then, extract the content and add it anywhere on the computer
 Add the bin path to the Windows environment variable `PATH`  
 Run `openssl` and then write the content of the `npm run generate-certificate` script
 
+## Stats
+
+You can analyze the webpack production bundle size by running the command `npm run build:stats`.
+
+## Debug
+
+You can checkout if there is any circular dependency by running the command `npm run circular-dependencies-check`.
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

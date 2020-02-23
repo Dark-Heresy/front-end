@@ -1,4 +1,4 @@
-import { IEnvironmentHmr } from '@environment/models/environment-hmr';
+import { IEnvironmentHmr } from '@environment/environment-hmr';
 
 export interface IEnvironment {
   isProduction: boolean;
