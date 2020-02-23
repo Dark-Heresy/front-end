@@ -58,7 +58,7 @@
               "verbose": false,
               "optimization": false
             },
-            "production": {
+            "stats": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -82,6 +82,48 @@
               "buildOptimizer": true,
               "vendorChunk": true,
               "statsJson": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "progress": true,
+              "extractLicenses": true,
+              "verbose": false,
+              "index": "src/index-pages/production/index.html"
+            },
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/browser/environment-browser.production.ts"
+                },
+                {
+                  "replace": "src/manifest.json",
+                  "with": "src/manifests/manifest.production.json"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/seo/robots/robots.production.txt"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "buildOptimizer": true,
+              "vendorChunk": true,
+              "statsJson": false,
               "budgets": [
                 {
                   "type": "initial",
