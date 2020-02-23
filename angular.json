@@ -40,6 +40,11 @@
             "scripts": []
           },
           "configurations": {
+            "development": {
+              "progress": false,
+              "verbose": false,
+              "optimization": false
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -55,6 +60,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "statsJson": true,
               "budgets": [
                 {
                   "type": "initial",
