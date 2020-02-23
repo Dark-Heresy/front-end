@@ -1,12 +1,28 @@
-# FrontEnd
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Maintainability](https://api.codeclimate.com/v1/badges/db32cd18a29bb54553e4/maintainability)](https://codeclimate.com/github/Dark-Heresy/front-end/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/db32cd18a29bb54553e4/test_coverage)](https://codeclimate.com/github/Dark-Heresy/front-end/test_coverage)
+
+# Dark Heresy Front-End
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
 ## Development server
 
-Run `ng serve` for a dev server.  
-Navigate to `http://localhost:4200/`.  
-The app will automatically reload if you change any of the source files.
+Run `npm run start` to start a local development server.  
+Navigate to `https://dark-heresy:6666/` to check it out.
+
+You need to setup a custom host:
+
+```
+# Dark Heresy Front-End
+# Use url => https://dark-heresy:6666
+127.0.0.1 dark-heresy
+```
+
+### HMR
+
+The Hot Module Replacement is configured so you do not have to reload your browser once your code change.  
+There is no need to clean out the cache to see the new files.
 
 ## Code scaffolding
 
@@ -23,6 +39,12 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Generate the localhost certificate for HTTPS
+
+Run `npm run generate-certificate` to create the certificate and the key.  
+Add the certificate to Windows or iOS to make it trusted by your OS.  
+You can read this article https://medium.com/@richardr39/using-angular-cli-to-serve-over-https-locally-70dab07417c8 if you want to learn more about it.
 
 ## Further help
 
