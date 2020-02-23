@@ -59,7 +59,7 @@
     "build:browser:production": "npm run transloco:optimize && npm run i18n:cache-busting && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod --configuration production",
     "build:server:production": "ng run dark-heresy:server:production",
     "build:client-and-server-bundles:production": "concurrently \"npm run build:browser:production\" \"npm run build:server:production\"",
-    "build:ssr:production": "concurrently \"npm run build:client-and-server-bundles:production\" \"npm run compile:server\"",
+    "build:ssr:production": "npm run build:client-and-server-bundles:production && npm run compile:server",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "\n# TEST SCRIPTS:": "",
     "test": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng test dark-heresy",
