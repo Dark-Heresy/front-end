@@ -24,20 +24,32 @@
               "path": "./scripts/webpack/custom-webpack-build.config.js",
               "replaceDuplicatePlugins": false
             },
-            "outputPath": "dist/dark-heresy",
+            "outputPath": "dist/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "aot": true,
             "assets": [
+              "src/assets",
+              "src/manifest.json",
+              "src/robots.txt",
               "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**/*",
+                "input": "./sitemaps/",
+                "output": "./"
+              }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/styles/styles.scss",
+              {
+                "input": "node_modules/animate.css/animate.min.css",
+                "lazy": true,
+                "bundleName": "lazy-styles"
+              }
             ],
-            "scripts": []
+            "es5BrowserSupport": true
           },
           "configurations": {
             "development": {
@@ -49,7 +61,15 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "with": "src/environments/browser/environment-browser.production.ts"
+                },
+                {
+                  "replace": "src/manifest.json",
+                  "with": "src/manifests/manifest.production.json"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/seo/robots/robots.production.txt"
                 }
               ],
               "optimization": true,
@@ -57,9 +77,9 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
+              "aot": true,
               "buildOptimizer": true,
+              "vendorChunk": true,
               "statsJson": true,
               "budgets": [
                 {
@@ -72,7 +92,12 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "progress": true,
+              "extractLicenses": true,
+              "verbose": false,
+              "index": "src/index-pages/production/index.html"
             }
           }
         },
@@ -91,8 +116,10 @@
             "host": "dark-heresy"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "dark-heresy:build:production"
+            "development": {
+              "hmr": true,
+              "browserTarget": "dark-heresy:build:development",
+              "hmrWarning": false
             }
           }
         },
@@ -121,7 +148,10 @@
             ],
             "exclude": [
               "**/node_modules/**"
-            ]
+            ],
+            "typeCheck": true,
+            "force": true,
+            "format": "codeFrame"
           }
         },
         "e2e": {
@@ -131,8 +161,8 @@
             "devServerTarget": "dark-heresy:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "dark-heresy:serve:production"
+            "development": {
+              "devServerTarget": "dark-heresy:serve:development"
             }
           }
         }
