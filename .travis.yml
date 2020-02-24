@@ -53,3 +53,11 @@ jobs:
     - stage: "Server"
       name: "Compile server"
       script: npm run compile:server
+    - stage: "Release"
+      name: "Semantic versioning"
+      script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: npm run semver
+      if: branch = develop
