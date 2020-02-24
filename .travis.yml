@@ -40,7 +40,7 @@ jobs:
       script: npm run tslint
     - stage: "Test"
       name: "App test"
-      script: npm run test:ci
+      script: npm run test:ci -- --watch=false
     - stage: "Build"
       name: "Browser build"
       script: npm run build:browser:production
