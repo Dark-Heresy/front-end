@@ -43,9 +43,7 @@ jobs:
         - chmod +x ./cc-test-reporter
         - ./cc-test-reporter before-build
       after_script:
-        - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.app.json coverage/frontend/lcov.info
-        - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2
-        - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi
+        - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
     - stage: "Build"
       name: "Browser build"
       script: npm run build:browser:production
