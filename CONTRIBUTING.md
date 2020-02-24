@@ -81,3 +81,10 @@ The footer should contain any information about **Breaking Changes**.
 
 **Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines.  
 The rest of the commit message is then used for this.
+
+## Git
+
+### LFS
+
+If you add some assets, [checkout the list of extensions](.gitattributes) and add the new ones into Git LFS if necessary.  
+You can read the [documentation](https://github.com/git-lfs/git-lfs/wiki/Tutorial) of Git LFS if you do not understand this.
