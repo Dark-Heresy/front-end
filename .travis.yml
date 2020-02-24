@@ -1,0 +1,57 @@
+dist: trusty
+sudo: required
+
+language: node_js
+node_js:
+  - '12'
+
+env:
+  global:
+    - CC_TEST_REPORTER_ID=f7f19f40c8917368645d7fd0455145def3299b425d7977939a85a5139c1e6c04
+
+addons:
+  chrome: stable
+
+git:
+  depth: 30
+  quiet: false
+
+cache:
+  npm: true
+  directories:
+    - ./node_modules
+
+install:
+  - npm install
+
+before_script:
+  - git lfs pull
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+jobs:
+  include:
+    - stage: "Lint"
+      name: "Style lint"
+      script: npm run stylelint
+    - stage: "Lint"
+      name: "TypeScript lint"
+      script: npm run tslint
+    - stage: "Test"
+      name: "App test"
+      script: npm run test:ci
+    - stage: "Build"
+      name: "Browser build"
+      script: npm run build:browser:production
+    - stage: "Build"
+      name: "Server build"
+      script: npm run build:server:production
+    - stage: "Server"
+      name: "Compile server"
+      script: npm run compile:server
+
+after_script:
+  - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.app.json coverage/frontend/lcov.info
+  - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2
+  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi
