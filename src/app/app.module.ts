@@ -14,6 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppComponent } from '@app/component';
 import { ENVIRONMENT } from '@app/environments/environment';
+import { TranslocoHttpLoader } from '@app/features/translation/loaders/transloco-http-loader';
+import { TRANSLATION_SERVICE_PROVIDER } from '@app/features/translation/providers/translation-service.provider';
+import { TRANSLOCO_CONFIG_PROVIDER } from '@app/features/translation/providers/transloco-config.provider';
 import { AppRoutingModule } from '@app/routing-module';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { TranslocoModule } from '@ngneat/transloco';
@@ -28,7 +31,6 @@ import {
 } from '@ngneat/transloco-persist-translations';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import localForage from 'localforage';
-import { TranslocoHttpLoader } from './features/translation/loaders/transloco-http-loader';
 
 // Angular i18n
 registerLocaleData(localeFr, 'fr', localeFrExtra);
@@ -100,7 +102,10 @@ const langLocalForage: LocalForage = localForage.createInstance({
     HammerModule,
     AppRoutingModule
   ],
-  providers: []
+  providers: [
+    TRANSLATION_SERVICE_PROVIDER,
+    TRANSLOCO_CONFIG_PROVIDER
+  ]
 })
 export class AppModule {
 }
