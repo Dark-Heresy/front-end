@@ -26,9 +26,6 @@ install:
 
 before_script:
   - git lfs pull
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
 
 jobs:
   include:
@@ -41,6 +38,14 @@ jobs:
     - stage: "Test"
       name: "App test"
       script: npm run test:ci -- --watch=false
+      before_script:
+        - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+        - chmod +x ./cc-test-reporter
+        - ./cc-test-reporter before-build
+      after_script:
+        - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.app.json coverage/frontend/lcov.info
+        - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2
+        - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi
     - stage: "Build"
       name: "Browser build"
       script: npm run build:browser:production
@@ -50,8 +55,3 @@ jobs:
     - stage: "Server"
       name: "Compile server"
       script: npm run compile:server
-
-after_script:
-  - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.app.json coverage/frontend/lcov.info
-  - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2
-  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi
