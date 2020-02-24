@@ -21,6 +21,7 @@ export class TranslocoHttpLoader implements TranslocoLoader {
   public getTranslation(lang: string): Observable<Translation> {
     // tslint:enable:rxjs-finnish
 
+    // @ts-ignore
     return this.httpClient.get<Translation>(`./assets/i18n/${lang}.json?v=${cacheBusting[ lang ]}`);
   }
 }

@@ -236,7 +236,7 @@
                   "with": "src/seo/robots/robots.production.txt"
                 }
               ],
-              "bundleDependencies": "all",
+              "bundleDependencies": true,
               "sourceMap": false,
               "optimization": {
                 "scripts": false,
