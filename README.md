@@ -3,7 +3,7 @@
 > *Dark Heresy application for the role-playing game*
 
 [![Downloads](https://img.shields.io/npm/dt/@dark-heresy/front-end.svg?style=flat-square)]()
-[![Build Status](https://img.shields.io/travis/dark-heresy/front-end.svg?style=flat-square)](https://travis-ci.org/dark-heresy/front-end)
+[![Build Status](https://travis-ci.com/Dark-Heresy/front-end.svg?branch=develop&style=flat-square)](https://travis-ci.com/Dark-Heresy/front-end)
 [![All Contributors](https://img.shields.io/badge/all_contributors-41-orange.svg?style=flat-square)](#contributors)
 [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
 [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
