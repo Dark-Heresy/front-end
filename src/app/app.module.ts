@@ -17,6 +17,7 @@ import { ENVIRONMENT } from '@app/environments/environment';
 import { TranslocoHttpLoader } from '@app/features/translation/loaders/transloco-http-loader';
 import { TRANSLATION_SERVICE_PROVIDER } from '@app/features/translation/providers/translation-service.provider';
 import { TRANSLOCO_CONFIG_PROVIDER } from '@app/features/translation/providers/transloco-config.provider';
+import { TRANSLOCO_LOADING_TEMPLATE_PROVIDER } from '@app/features/translation/providers/transloco-loading-template.provider';
 import { AppRoutingModule } from '@app/routing-module';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { TranslocoModule } from '@ngneat/transloco';
@@ -111,7 +112,8 @@ const langLocalForage: LocalForage = localForage.createInstance({
   ],
   providers: [
     TRANSLATION_SERVICE_PROVIDER,
-    TRANSLOCO_CONFIG_PROVIDER
+    TRANSLOCO_CONFIG_PROVIDER,
+    TRANSLOCO_LOADING_TEMPLATE_PROVIDER
   ]
 })
 export class AppModule {
