@@ -6,6 +6,7 @@ import { TRANSLOCO_LOADING_TEMPLATE_PROVIDER } from '@app/features/translation/p
 import { TranslocoModule } from '@ngneat/transloco';
 import { TranslocoMessageFormatModule } from '@ngneat/transloco-messageformat';
 import {
+  cookiesStorage,
   TRANSLOCO_PERSIST_LANG_STORAGE,
   TranslocoPersistLangModule
 } from '@ngneat/transloco-persist-lang';
@@ -28,19 +29,6 @@ const i18nLocalForage: LocalForage = localForage.createInstance({
   version: 1.0
 });
 
-const langLocalForage: LocalForage = localForage.createInstance({
-  description: 'storage for the lang',
-  driver: [
-    localForage.INDEXEDDB,
-    localForage.LOCALSTORAGE,
-    localForage.WEBSQL
-  ],
-  name: 'app_lang',
-  size: 4980736,
-  storeName: 'app_lang',
-  version: 1.0
-});
-
 @NgModule({
   exports: [
     TranslocoModule
@@ -59,7 +47,7 @@ const langLocalForage: LocalForage = localForage.createInstance({
     TranslocoPersistLangModule.init({
       storage: {
         provide: TRANSLOCO_PERSIST_LANG_STORAGE,
-        useValue: langLocalForage
+        useValue: cookiesStorage()
       }
     }),
     TranslocoMessageFormatModule.init({
