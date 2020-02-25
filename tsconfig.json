@@ -79,6 +79,8 @@
     "generateCodeForLibraries": true,
     "fullTemplateTypeCheck": true,
     "trace": true,
-    "enableIvy": true
+    "enableIvy": true,
+    "strictTemplates": true,
+    "strictInputTypes": true
   }
 }
