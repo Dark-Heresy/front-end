@@ -30,6 +30,7 @@ import {
   TranslocoPersistTranslationsModule
 } from '@ngneat/transloco-persist-translations';
 import { TransferHttpCacheModule } from '@nguniversal/common';
+import { StorageModule } from '@ngx-pwa/local-storage';
 import localForage from 'localforage';
 
 // Angular i18n
@@ -79,6 +80,12 @@ const langLocalForage: LocalForage = localForage.createInstance({
     ENVIRONMENT.isProduction ? [] : AkitaNgDevtools.forRoot(),
     ServiceWorkerModule.register('./ngsw-worker.js', {
       enabled: ENVIRONMENT.isProduction
+    }),
+    StorageModule.forRoot({
+      IDBDBName: 'app_storage',
+      IDBDBVersion: 1,
+      IDBNoWrap: true,
+      LSPrefix: 'app'
     }),
     TranslocoModule,
     TranslocoPersistTranslationsModule.init({
