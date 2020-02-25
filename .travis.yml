@@ -50,8 +50,8 @@ jobs:
     - stage: "Build"
       name: "Server build"
       script: npm run build:server:production
-    - stage: "Server"
-      name: "Compile server"
+    - stage: "Build"
+      name: "Server compile"
       script: npm run compile:server
     - stage: "Versioning"
       name: "Semantic versioning"
