@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ENVIRONMENT } from '@app/environments/environment';
 import {
   Translation,
   TranslocoLoader
@@ -22,6 +23,6 @@ export class TranslocoHttpLoader implements TranslocoLoader {
     // tslint:enable:rxjs-finnish
 
     // @ts-ignore
-    return this.httpClient.get<Translation>(`./assets/i18n/${lang}.json?v=${cacheBusting[ lang ]}`);
+    return this.httpClient.get<Translation>(`${ENVIRONMENT.baseUrl}/assets/i18n/${lang}.json?v=${cacheBusting[ lang ]}`);
   }
 }
