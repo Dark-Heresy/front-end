@@ -46,13 +46,19 @@ jobs:
         - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
     - stage: "Build"
       name: "Browser build"
-      script: npm run build:browser:production
+      script:
+        - npm run build:18n
+        - npm run build:browser:production
     - stage: "Build"
       name: "Server build"
-      script: npm run build:server:production
+      script:
+        - npm run build:18n
+        - npm run build:server:production
     - stage: "Build"
       name: "Server compile"
-      script: npm run compile:server
+      script:
+        - npm run build:18n
+        - npm run compile:server
     - stage: "Versioning"
       name: "Semantic versioning"
       script: skip
