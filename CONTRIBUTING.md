@@ -88,3 +88,16 @@ The rest of the commit message is then used for this.
 
 If you add some assets, [checkout the list of extensions](.gitattributes) and add the new ones into Git LFS if necessary.  
 You can read the [documentation](https://github.com/git-lfs/git-lfs/wiki/Tutorial) of Git LFS if you do not understand this.
+
+## Styles
+
+### Variables naming convention
+
+#### Internal variables
+
+Some variables like colors should never be used directly during the development inside classes or components.  
+This is not recommended because it could leads to a painful experience during an UI breaking change.  
+
+These internal variables should then be prefixed with an "_"  
+
+Example: $_color-white
