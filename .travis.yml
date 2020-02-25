@@ -53,11 +53,22 @@ jobs:
     - stage: "Server"
       name: "Compile server"
       script: npm run compile:server
-    - stage: "Release"
+    - stage: "Versioning"
       name: "Semantic versioning"
       script: skip
       deploy:
         provider: script
         skip_cleanup: true
         script: npm run semver
+      if: branch = develop
+    - stage: "Release"
+      name: "NPM release"
+      script: skip
+      deploy:
+        provider: npm
+        skip_cleanup: true
+        email: "darkheresy.contact@gmail.com"
+        api_key: $NPM_TOKEN
+        on:
+          tags: true
       if: branch = develop
