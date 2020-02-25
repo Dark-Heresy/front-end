@@ -197,18 +197,6 @@
             "format": "codeFrame"
           }
         },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "dark-heresy:serve"
-          },
-          "configurations": {
-            "development": {
-              "devServerTarget": "dark-heresy:serve:development"
-            }
-          }
-        },
         "server": {
           "builder": "@angular-builders/custom-webpack:server",
           "options": {
