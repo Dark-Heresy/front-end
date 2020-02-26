@@ -1,19 +1,20 @@
 import { DhRootComponent } from '@dh/component';
-import { cleanStylesFromDom } from '@test/test';
-import { configureTestSuite } from 'ng-bullet';
+import {
+  createComponentFactory,
+  Spectator
+} from '@ngneat/spectator';
 
 describe('DhRootComponent', () => {
-  let component: DhRootComponent;
+  const createComponent = createComponentFactory({
+    component: DhRootComponent
+  });
+  let spectator: Spectator<DhRootComponent>;
 
-  configureTestSuite(() => {
-    component = new DhRootComponent();
+  beforeEach(() => {
+    spectator = createComponent();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
-  afterAll(() => {
-    cleanStylesFromDom();
+    expect(spectator.component).toBeTruthy();
   });
 });

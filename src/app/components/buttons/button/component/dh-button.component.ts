@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 import { DhButtonSizeEnum } from '@dh/components/buttons/button/enums/dh-button-size.enum';
 import { DhButtonTypeEnum } from '@dh/components/buttons/button/enums/dh-button-type-enum';
-import _ from 'lodash';
+import { IDhButtonClickEvent } from '@dh/components/buttons/button/interfaces/dh-button-click-event';
 
 @Component({
   selector: 'dh-button',
@@ -26,13 +26,6 @@ export class DhButtonComponent {
 
   /**
    * @description
-   * Default to false
-   */
-  @Input('dhButtonIsDisabled')
-  public isDisabled = false;
-
-  /**
-   * @description
    * Default to [primary]{@link DhButtonTypeEnum#PRIMARY}
    */
   @Input('dhButtonType')
@@ -40,19 +33,24 @@ export class DhButtonComponent {
 
   /**
    * @description
+   * Default to false
+   */
+  @Input('dhButtonIsDisabled')
+  public isDisabled = false;
+
+  /**
+   * @description
    * Emit on button click when:
    * - [disabled state]{@link DhButtonComponent#isDisabled} is false
    */
   @Output('dhButtonOnClick')
-  public clickEvent = new EventEmitter<MouseEvent>();
+  public clickEvent = new EventEmitter<IDhButtonClickEvent>();
 
   public onButtonClick(mouseEvent: Readonly<MouseEvent>): void {
-    if (!_.isNil(mouseEvent)) {
-      mouseEvent.preventDefault();
-    }
-
     if (!this.isDisabled) {
-      this.clickEvent.emit(mouseEvent);
+      this.clickEvent.emit({
+        mouseEvent
+      });
     }
   }
 }

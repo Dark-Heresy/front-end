@@ -1,4 +1,4 @@
-import { IDhEnvironmentHmr } from '@dh/environments/models/dh-environment-hmr';
+import { IDhEnvironmentHmr } from '@dh/environments/interfaces/dh-environment-hmr';
 
 export interface IDhEnvironment {
   baseUrl: string;
