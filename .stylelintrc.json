@@ -1,10 +1,14 @@
 {
   "extends": [
+    "stylelint-config-recommended",
     "stylelint-config-standard"
   ],
   "plugins": [
-    "stylelint-scss"
+    "stylelint-scss",
+    "stylelint-high-performance-animation",
+    "stylelint-order"
   ],
+  "defaultSeverity": "error",
   "rules": {
     "selector-type-no-unknown": [
       true,
@@ -60,6 +64,11 @@
         ]
       }
     ],
+    "unit-whitelist": [
+      "em",
+      "rem",
+      "px"
+    ],
     "scss/at-else-empty-line-before": "never",
     "scss/at-function-named-arguments": null,
     "scss/at-function-parentheses-space-before": "never",
@@ -87,6 +96,34 @@
     "scss/function-color-relative": null,
     "scss/comment-no-loud": true,
     "scss/map-keys-quotes": "always",
-    "scss/no-duplicate-mixins": true
+    "scss/no-duplicate-mixins": true,
+    "plugin/no-low-performance-animation-properties": true,
+    "order/order": [
+      [
+        "position",
+        "display",
+        "flex-direction",
+        "justify-content",
+        "align-items",
+        "margin",
+        "margin-top",
+        "margin-right",
+        "margin-bottom",
+        "margin-left",
+        "padding",
+        "padding-top",
+        "padding-right",
+        "padding-bottom",
+        "padding-left",
+        "color",
+        "background-color",
+        "z-index"
+      ],
+      {
+        "unspecified": "bottomAlphabetical",
+        "emptyLineBeforeUnspecified": "always"
+      }
+    ],
+    "order/properties-alphabetical-order": true
   }
 }
