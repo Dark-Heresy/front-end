@@ -16,7 +16,7 @@ describe('DhRootComponent', () => {
   });
 
   it('should create', () => {
-    expect(spectator.component).toBeTruthy();
+    expect(spectator.component).toBeDefined();
   });
 
   afterAll(() => {

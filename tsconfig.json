@@ -61,11 +61,17 @@
       "@dh/components/*": [
         "src/app/components/*"
       ],
+      "@dh/directives/*": [
+        "src/app/directives/*"
+      ],
       "@dh/features/*": [
         "src/app/features/*"
       ],
       "@dh/functions/*": [
         "src/app/functions/*"
+      ],
+      "@dh/mocks/*": [
+        "src/app/mocks/*"
       ],
       "@dh/types/*": [
         "src/app/types/*"

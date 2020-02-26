@@ -10,8 +10,8 @@
     "dark-heresy": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
+        "@ngneat/spectator:spectator-component": {
+          "styleext": "scss"
         }
       },
       "root": "",

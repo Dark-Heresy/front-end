@@ -44,7 +44,7 @@
         "allow-else-if": true
       }
     ],
-    "no-null-undefined-union": true,
+    "no-null-undefined-union": false,
     "component-max-inline-declarations": true,
     "no-host-metadata-property": false,
     "no-inputs-metadata-property": false,
