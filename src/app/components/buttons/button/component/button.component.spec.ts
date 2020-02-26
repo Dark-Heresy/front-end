@@ -1,12 +1,12 @@
-import { AppComponent } from '@app/component';
+import { ButtonComponent } from '@app/components/buttons/button/component/button.component';
 import { cleanStylesFromDom } from '@test/test';
 import { configureTestSuite } from 'ng-bullet';
 
-describe('AppComponent', () => {
-  let component: AppComponent;
+describe('ButtonComponent', () => {
+  let component: ButtonComponent;
 
   configureTestSuite(() => {
-    component = new AppComponent();
+    component = new ButtonComponent();
   });
 
   it('should create', () => {

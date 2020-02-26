@@ -43,6 +43,9 @@
       }
     ],
     "paths": {
+      "@test/test": [
+        "src/test.ts"
+      ],
       "@app/component": [
         "src/app/app.component.ts"
       ],
