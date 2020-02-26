@@ -224,7 +224,7 @@
     "no-output-rename": false,
     "use-pipe-transform-interface": true,
     "no-assign-mutated-array": true,
-    "no-missing-dollar-expect": true,
+    "no-dtslint-typo": true,
     "no-enum": false,
     "no-unused-declaration": {
       "options": [
