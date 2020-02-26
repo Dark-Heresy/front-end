@@ -2,7 +2,7 @@ import { DhButtonComponent } from '@dh/components/buttons/button/component/dh-bu
 import { cleanStylesFromDom } from '@test/test';
 import { configureTestSuite } from 'ng-bullet';
 
-describe('ButtonComponent', () => {
+describe('DhButtonComponent', () => {
   let component: DhButtonComponent;
 
   configureTestSuite(() => {

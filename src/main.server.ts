@@ -1,8 +1,8 @@
 import { enableProdMode } from '@angular/core';
 import { enableAkitaProdMode } from '@datorama/akita';
-import { ENVIRONMENT } from '@dh/environments/environment';
+import { DH_ENVIRONMENT } from '@dh/environments/dh-environment';
 
-if (ENVIRONMENT.isProduction) {
+if (DH_ENVIRONMENT.isProduction) {
   enableProdMode();
   enableAkitaProdMode();
 }

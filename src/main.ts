@@ -9,7 +9,7 @@ import {
   enableAkitaProdMode,
   persistState
 } from '@datorama/akita';
-import { ENVIRONMENT } from '@dh/environments/environment';
+import { DH_ENVIRONMENT } from '@dh/environments/dh-environment';
 import { dhCreateScript } from '@dh/functions/scripts/dh-create-script';
 import { dhLoadScript } from '@dh/functions/scripts/dh-load-script';
 import { DhRootModule } from '@dh/module';
@@ -19,7 +19,7 @@ import { MonoTypeOperatorFunction } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { HMR_BOOTSTRAP } from './hmr';
 
-if (ENVIRONMENT.isProduction) {
+if (DH_ENVIRONMENT.isProduction) {
   enableProdMode();
   enableAkitaProdMode();
 } else {
@@ -35,7 +35,7 @@ const akitaLocalForage: LocalForage = localForage.createInstance({
     localForage.LOCALSTORAGE,
     localForage.WEBSQL
   ],
-  name: 'app_akita',
+  name: 'dh_akita',
   size: 4980736,
   storeName: 'dark_heresy',
   version: 1.0
@@ -56,7 +56,7 @@ const bootstrap: any = (): Promise<NgModuleRef<DhRootModule>> => platformBrowser
   defaultEncapsulation: ViewEncapsulation.None
 });
 
-if (ENVIRONMENT.hmr.isEnabled) {
+if (DH_ENVIRONMENT.hmr.isEnabled) {
   if ((module as any)[ 'hot' ]) {
     HMR_BOOTSTRAP(module, bootstrap);
   } else {

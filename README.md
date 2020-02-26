@@ -57,9 +57,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 Run `npm run generate-certificate` to create the certificate and the key.  
 Add the certificate to Windows or iOS to make it trusted by your OS.  
-You can read this article https://medium.com/@richardr39/using-angular-cli-to-serve-over-https-locally-70dab07417c8 if you want to learn more about it.
+You can read this [article](https://medium.com/@richardr39/using-angular-cli-to-serve-over-https-locally-70dab07417c8) if you want to learn more about it.
 
-Note that if `openssl` is not recognized, you can download manually the latest version available here: https://code.google.com/archive/p/openssl-for-windows/downloads  
+Note that if `openssl` is not recognized, you can download manually the [latest version available](https://code.google.com/archive/p/openssl-for-windows/downloads)
 Then, extract the content and add it anywhere on the computer  
 Add the bin path to the Windows environment variable `PATH`  
 Run `openssl` and then write the content of the `npm run generate-certificate` script

@@ -1,5 +1,5 @@
 import { ValueProvider } from '@angular/core';
-import { ENVIRONMENT } from '@dh/environments/environment';
+import { DH_ENVIRONMENT } from '@dh/environments/dh-environment';
 import {
   TRANSLOCO_CONFIG,
   TranslocoConfig
@@ -15,14 +15,14 @@ export const DH_TRANSLOCO_CONFIG_PROVIDER: ValueProvider = {
     failedRetries: 1,
     fallbackLang: 'fr',
     flatten: {
-      aot: ENVIRONMENT.isProduction
+      aot: DH_ENVIRONMENT.isProduction
     },
     missingHandler: {
-      allowEmpty: ENVIRONMENT.isProduction,
-      logMissingKey: !ENVIRONMENT.isProduction,
+      allowEmpty: DH_ENVIRONMENT.isProduction,
+      logMissingKey: !DH_ENVIRONMENT.isProduction,
       useFallbackTranslation: false
     },
-    prodMode: ENVIRONMENT.isProduction,
+    prodMode: DH_ENVIRONMENT.isProduction,
     reRenderOnLangChange: true
   }
 };

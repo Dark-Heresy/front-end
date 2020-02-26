@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ENVIRONMENT } from '@dh/environments/environment';
+import { DH_ENVIRONMENT } from '@dh/environments/dh-environment';
 import {
   Translation,
   TranslocoLoader
@@ -23,6 +23,6 @@ export class DhTranslocoHttpLoader implements TranslocoLoader {
     // tslint:enable:rxjs-finnish
 
     // @ts-ignore
-    return this.httpClient.get<Translation>(`${ENVIRONMENT.baseUrl}/assets/i18n/${lang}.json?v=${cacheBusting[ lang ]}`);
+    return this.httpClient.get<Translation>(`${DH_ENVIRONMENT.baseUrl}/assets/i18n/${lang}.json?v=${cacheBusting[ lang ]}`);
   }
 }

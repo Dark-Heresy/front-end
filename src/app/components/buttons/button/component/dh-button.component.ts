@@ -21,21 +21,21 @@ export class DhButtonComponent {
    * @description
    * Default to [medium]{@link DhButtonSizeEnum#MEDIUM}
    */
-  @Input('buttonSize')
+  @Input('dhButtonSize')
   public size: DhButtonSizeEnum = DhButtonSizeEnum.MEDIUM;
 
   /**
    * @description
    * Default to false
    */
-  @Input('buttonIsDisabled')
+  @Input('dhButtonIsDisabled')
   public isDisabled = false;
 
   /**
    * @description
    * Default to [primary]{@link DhButtonTypeEnum#PRIMARY}
    */
-  @Input('buttonType')
+  @Input('dhButtonType')
   public type: DhButtonTypeEnum = DhButtonTypeEnum.PRIMARY;
 
   /**
@@ -43,7 +43,7 @@ export class DhButtonComponent {
    * Emit on button click when:
    * - [disabled state]{@link DhButtonComponent#isDisabled} is false
    */
-  @Output('buttonOnClick')
+  @Output('dhButtonOnClick')
   public clickEvent = new EventEmitter<MouseEvent>();
 
   public onButtonClick(mouseEvent: Readonly<MouseEvent>): void {

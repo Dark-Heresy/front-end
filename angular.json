@@ -66,8 +66,8 @@
             "stats": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/browser/environment-browser.production.ts"
+                  "replace": "src/environments/dh-environment.ts",
+                  "with": "src/environments/browser/dh-environment-browser.production.ts"
                 },
                 {
                   "replace": "src/manifest.json",
@@ -108,8 +108,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/browser/environment-browser.production.ts"
+                  "replace": "src/environments/dh-environment.ts",
+                  "with": "src/environments/browser/dh-environment-browser.production.ts"
                 },
                 {
                   "replace": "src/manifest.json",
@@ -216,8 +216,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/server/environment-server.production.ts"
+                  "replace": "src/environments/dh-environment.ts",
+                  "with": "src/environments/server/dh-environment-server.production.ts"
                 },
                 {
                   "replace": "src/manifest.json",

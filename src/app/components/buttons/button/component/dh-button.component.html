@@ -1,3 +1,5 @@
-<div class="button-component">
-
+<div (click)="onButtonClick($event)"
+     [ngClass]="[size, type]"
+     [tabindex]="isDisabled ? -1 : 0"
+     class="dh-button-component">
 </div>

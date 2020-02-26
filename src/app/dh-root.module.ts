@@ -14,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { DhRootComponent } from '@dh/component';
-import { ENVIRONMENT } from '@dh/environments/environment';
+import { DH_ENVIRONMENT } from '@dh/environments/dh-environment';
 import { DhTranslationRootModule } from '@dh/features/translation/dh-translation-root.module';
 import { DhRootRoutingModule } from '@dh/routing-module';
 import { TransferHttpCacheModule } from '@nguniversal/common';
@@ -37,15 +37,15 @@ registerLocaleData(localeFr, 'fr', localeFrExtra);
     BrowserAnimationsModule,
     HttpClientModule,
     TransferHttpCacheModule,
-    ENVIRONMENT.isProduction ? [] : AkitaNgDevtools.forRoot(),
+    DH_ENVIRONMENT.isProduction ? [] : AkitaNgDevtools.forRoot(),
     ServiceWorkerModule.register('./ngsw-worker.js', {
-      enabled: ENVIRONMENT.isProduction
+      enabled: DH_ENVIRONMENT.isProduction
     }),
     StorageModule.forRoot({
-      IDBDBName: 'app_storage',
+      IDBDBName: 'dh_storage',
       IDBDBVersion: 1,
       IDBNoWrap: true,
-      LSPrefix: 'app'
+      LSPrefix: 'dh'
     }),
     HammerModule,
     DhTranslationRootModule,
