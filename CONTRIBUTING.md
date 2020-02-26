@@ -101,3 +101,10 @@ This is not recommended because it could leads to a painful experience during an
 These internal variables should then be prefixed with an "_"  
 
 Example: $_color-white
+
+## Errors
+
+### An unhandled exception occurred: getaddrinfo ENOTFOUND
+
+This error is caused by the lack of custom host on your OS.  
+Checkout the [README](README.md), there is a section called "Development server" with the required configuration.
