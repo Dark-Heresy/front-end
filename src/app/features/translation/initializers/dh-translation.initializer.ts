@@ -1,9 +1,9 @@
 import { Meta } from '@angular/platform-browser';
 import { TranslocoService } from '@ngneat/transloco';
 
-export function translationInitializer(
-  translocoService: TranslocoService,
-  meta: Meta
+export function dhTranslationInitializer(
+  translocoService: Readonly<TranslocoService>,
+  meta: Readonly<Meta>
 ): () => Promise<void> {
   return (): Promise<void> => {
     const lang = 'fr';

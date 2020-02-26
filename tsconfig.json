@@ -46,31 +46,34 @@
       "@test/test": [
         "src/test.ts"
       ],
-      "@app/component": [
-        "src/app/app.component.ts"
+      "@dh/component": [
+        "src/app/dh-root.component.ts"
       ],
-      "@app/module": [
-        "src/app/app.module.ts"
+      "@dh/module": [
+        "src/app/dh-root.module.ts"
       ],
-      "@app/server-module": [
-        "src/app/app.server.module.ts"
+      "@dh/server-module": [
+        "src/app/dh-root.server.module.ts"
       ],
-      "@app/routing-module": [
-        "src/app/app-routing.module.ts"
+      "@dh/routing-module": [
+        "src/app/dh-root-routing.module.ts"
       ],
-      "@app/components/*": [
+      "@dh/components/*": [
         "src/app/components/*"
       ],
-      "@app/features/*": [
+      "@dh/features/*": [
         "src/app/features/*"
       ],
-      "@app/functions/*": [
+      "@dh/functions/*": [
         "src/app/functions/*"
       ],
-      "@app/loaders/*": [
+      "@dh/types/*": [
+        "src/app/types/*"
+      ],
+      "@dh/loaders/*": [
         "src/app/loaders/*"
       ],
-      "@app/environments/*": [
+      "@dh/environments/*": [
         "src/environments/*"
       ]
     }

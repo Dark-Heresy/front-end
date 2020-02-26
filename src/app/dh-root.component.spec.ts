@@ -1,12 +1,12 @@
-import { AppComponent } from '@app/component';
+import { DhRootComponent } from '@dh/component';
 import { cleanStylesFromDom } from '@test/test';
 import { configureTestSuite } from 'ng-bullet';
 
-describe('AppComponent', () => {
-  let component: AppComponent;
+describe('DhRootComponent', () => {
+  let component: DhRootComponent;
 
   configureTestSuite(() => {
-    component = new AppComponent();
+    component = new DhRootComponent();
   });
 
   it('should create', () => {

@@ -4,7 +4,7 @@
 
 [![Downloads](https://img.shields.io/npm/dt/@dark-heresy/front-end.svg?style=flat-square)]()
 [![Build Status](https://travis-ci.com/Dark-Heresy/front-end.svg?branch=develop&style=flat-square)](https://travis-ci.com/Dark-Heresy/front-end)
-[![All Contributors](https://img.shields.io/badge/all_contributors-41-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
 [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)

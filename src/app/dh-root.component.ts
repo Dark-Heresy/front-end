@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'dh-root',
   template: ''
 })
-export class AppComponent {
+export class DhRootComponent {
 }

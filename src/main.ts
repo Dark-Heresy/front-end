@@ -4,15 +4,15 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { ENVIRONMENT } from '@app/environments/environment';
-import { createScript } from '@app/functions/scripts/create-script';
-import { loadScript } from '@app/functions/scripts/load-script';
-import { AppModule } from '@app/module';
 import {
   akitaConfig,
   enableAkitaProdMode,
   persistState
 } from '@datorama/akita';
+import { ENVIRONMENT } from '@dh/environments/environment';
+import { dhCreateScript } from '@dh/functions/scripts/dh-create-script';
+import { dhLoadScript } from '@dh/functions/scripts/dh-load-script';
+import { DhRootModule } from '@dh/module';
 import 'hammerjs';
 import localForage from 'localforage';
 import { MonoTypeOperatorFunction } from 'rxjs';
@@ -23,9 +23,9 @@ if (ENVIRONMENT.isProduction) {
   enableProdMode();
   enableAkitaProdMode();
 } else {
-  const script: HTMLScriptElement = createScript('lazy-styles.js');
+  const script: HTMLScriptElement = dhCreateScript('lazy-styles.js');
 
-  loadScript(script);
+  dhLoadScript(script);
 }
 
 const akitaLocalForage: LocalForage = localForage.createInstance({
@@ -52,7 +52,7 @@ akitaConfig({
   resettable: true
 });
 
-const bootstrap: any = (): Promise<NgModuleRef<AppModule>> => platformBrowserDynamic().bootstrapModule(AppModule, {
+const bootstrap: any = (): Promise<NgModuleRef<DhRootModule>> => platformBrowserDynamic().bootstrapModule(DhRootModule, {
   defaultEncapsulation: ViewEncapsulation.None
 });
 

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { TranslocoHttpLoader } from '@app/features/translation/loaders/transloco-http-loader';
-import { TRANSLATION_SERVICE_PROVIDER } from '@app/features/translation/providers/translation-service.provider';
-import { TRANSLOCO_CONFIG_PROVIDER } from '@app/features/translation/providers/transloco-config.provider';
-import { TRANSLOCO_LOADING_TEMPLATE_PROVIDER } from '@app/features/translation/providers/transloco-loading-template.provider';
+import { DhTranslocoHttpLoader } from '@dh/features/translation/loaders/dh-transloco-http-loader';
+import { DH_TRANSLATION_SERVICE_PROVIDER } from '@dh/features/translation/providers/dh-translation-service.provider';
+import { DH_TRANSLOCO_CONFIG_PROVIDER } from '@dh/features/translation/providers/dh-transloco-config.provider';
+import { DH_TRANSLOCO_LOADING_TEMPLATE_PROVIDER } from '@dh/features/translation/providers/dh-transloco-loading-template.provider';
 import { TranslocoModule } from '@ngneat/transloco';
 import { TranslocoMessageFormatModule } from '@ngneat/transloco-messageformat';
 import {
@@ -23,9 +23,9 @@ const i18nLocalForage: LocalForage = localForage.createInstance({
     localForage.LOCALSTORAGE,
     localForage.WEBSQL
   ],
-  name: 'app_i18n',
+  name: 'dh_i18n',
   size: 4980736,
-  storeName: 'app_i18n',
+  storeName: 'dh_i18n',
   version: 1.0
 });
 
@@ -36,12 +36,12 @@ const i18nLocalForage: LocalForage = localForage.createInstance({
   imports: [
     TranslocoModule,
     TranslocoPersistTranslationsModule.init({
-      loader: TranslocoHttpLoader,
+      loader: DhTranslocoHttpLoader,
       storage: {
         provide: PERSIST_TRANSLATIONS_STORAGE,
         useValue: i18nLocalForage
       },
-      storageKey: 'app_i18n',
+      storageKey: 'dh_i18n',
       ttl: 3600
     }),
     TranslocoPersistLangModule.init({
@@ -55,10 +55,10 @@ const i18nLocalForage: LocalForage = localForage.createInstance({
     })
   ],
   providers: [
-    TRANSLATION_SERVICE_PROVIDER,
-    TRANSLOCO_CONFIG_PROVIDER,
-    TRANSLOCO_LOADING_TEMPLATE_PROVIDER
+    DH_TRANSLATION_SERVICE_PROVIDER,
+    DH_TRANSLOCO_CONFIG_PROVIDER,
+    DH_TRANSLOCO_LOADING_TEMPLATE_PROVIDER
   ]
 })
-export class TranslationRootModule {
+export class DhTranslationRootModule {
 }

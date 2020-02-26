@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ENVIRONMENT } from '@app/environments/environment';
+import { ENVIRONMENT } from '@dh/environments/environment';
 import {
   Translation,
   TranslocoLoader
@@ -11,7 +11,7 @@ import cacheBusting from '../../../../assets/i18n-cache-busting.json';
 @Injectable({
   providedIn: 'root'
 })
-export class TranslocoHttpLoader implements TranslocoLoader {
+export class DhTranslocoHttpLoader implements TranslocoLoader {
 
   public constructor(
     private httpClient: HttpClient

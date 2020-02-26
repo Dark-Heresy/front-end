@@ -1,4 +1,4 @@
-export function createScript(scriptSource: Readonly<string>): HTMLScriptElement {
+export function dhCreateScript(scriptSource: Readonly<string>): HTMLScriptElement {
   const scriptElement: HTMLScriptElement = document.createElement('script');
 
   scriptElement.src = scriptSource;

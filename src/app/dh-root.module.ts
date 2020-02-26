@@ -12,11 +12,11 @@ import {
 } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { AppComponent } from '@app/component';
-import { ENVIRONMENT } from '@app/environments/environment';
-import { TranslationRootModule } from '@app/features/translation/translation-root.module';
-import { AppRoutingModule } from '@app/routing-module';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { DhRootComponent } from '@dh/component';
+import { ENVIRONMENT } from '@dh/environments/environment';
+import { DhTranslationRootModule } from '@dh/features/translation/dh-translation-root.module';
+import { DhRootRoutingModule } from '@dh/routing-module';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { StorageModule } from '@ngx-pwa/local-storage';
 
@@ -24,10 +24,10 @@ registerLocaleData(localeFr, 'fr', localeFrExtra);
 
 @NgModule({
   bootstrap: [
-    AppComponent
+    DhRootComponent
   ],
   declarations: [
-    AppComponent
+    DhRootComponent
   ],
   imports: [
     CommonModule,
@@ -47,10 +47,10 @@ registerLocaleData(localeFr, 'fr', localeFrExtra);
       IDBNoWrap: true,
       LSPrefix: 'app'
     }),
-    TranslationRootModule,
     HammerModule,
-    AppRoutingModule
+    DhTranslationRootModule,
+    DhRootRoutingModule
   ]
 })
-export class AppModule {
+export class DhRootModule {
 }

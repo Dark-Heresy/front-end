@@ -4,25 +4,25 @@ import {
   ServerModule,
   ServerTransferStateModule
 } from '@angular/platform-server';
-import { AppComponent } from '@app/component';
-import { TRANSLOCO_LOADER_PROVIDER } from '@app/features/translation/providers/transloco-loader.provider';
-import { AppModule } from '@app/module';
+import { DhRootComponent } from '@dh/component';
+import { DH_TRANSLOCO_LOADER_PROVIDER } from '@dh/features/translation/providers/dh-transloco-loader.provider';
+import { DhRootModule } from '@dh/module';
 import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
 
 @NgModule({
   bootstrap: [
-    AppComponent
+    DhRootComponent
   ],
   imports: [
-    AppModule,
+    DhRootModule,
     NoopAnimationsModule,
     ServerModule,
     ModuleMapLoaderModule,
     ServerTransferStateModule
   ],
   providers: [
-    TRANSLOCO_LOADER_PROVIDER
+    DH_TRANSLOCO_LOADER_PROVIDER
   ]
 })
-export class AppServerModule {
+export class DhRootServerModule {
 }
