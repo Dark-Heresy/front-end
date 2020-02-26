@@ -1,7 +1,11 @@
-import { ElementRef } from '@angular/core';
+import {
+  ElementRef,
+  Renderer2
+} from '@angular/core';
 import { DhDisabledDirective } from '@dh/directives/disabled/directive/dh-disabled.directive';
 import {
   createDirectiveFactory,
+  mockProvider,
   SpectatorDirective
 } from '@ngneat/spectator';
 
@@ -10,6 +14,9 @@ describe('DhDisabledDirective', () => {
     directive: DhDisabledDirective,
     mocks: [
       ElementRef
+    ],
+    providers: [
+      mockProvider(Renderer2)
     ]
   });
   let spectator: SpectatorDirective<DhDisabledDirective>;
@@ -26,7 +33,7 @@ describe('DhDisabledDirective', () => {
     expect(spectator.directive.disabledClass).toBeUndefined();
   });
 
-  it('should not be disabled', () => {
+  it('should be enabled', () => {
     expect(spectator.directive.isDisabled).toBe(false);
   });
 

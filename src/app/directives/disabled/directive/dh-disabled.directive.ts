@@ -65,23 +65,23 @@ export class DhDisabledDirective implements AfterViewInit {
   private updateTabindexAttribute(): void {
     const tabindexValue = this.isDisabled ? '-1' : '0';
 
-    this.renderer.setAttribute(this.elementRef, 'tabindex', tabindexValue);
+    this.renderer.setAttribute(this.elementRef.nativeElement, 'tabindex', tabindexValue);
   }
 
   private updateDisabledAttribute(): void {
     if (this.isDisabled) {
-      this.renderer.setAttribute(this.elementRef, 'disabled', '');
+      this.renderer.setAttribute(this.elementRef.nativeElement, 'disabled', '');
     } else {
-      this.renderer.removeAttribute(this.elementRef, 'disabled');
+      this.renderer.removeAttribute(this.elementRef.nativeElement, 'disabled');
     }
   }
 
   private updateDisabledClass(): void {
     if (!_.isNil(this.disabledClass) && !_.isEmpty(this.disabledClass)) {
       if (this.isDisabled) {
-        this.renderer.addClass(this.elementRef, this.disabledClass);
+        this.renderer.addClass(this.elementRef.nativeElement, this.disabledClass);
       } else {
-        this.renderer.removeClass(this.elementRef, this.disabledClass);
+        this.renderer.removeClass(this.elementRef.nativeElement, this.disabledClass);
       }
     }
   }

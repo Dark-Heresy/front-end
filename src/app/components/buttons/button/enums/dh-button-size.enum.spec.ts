@@ -2,10 +2,10 @@ import { DhButtonSizeEnum } from '@dh/components/buttons/button/enums/dh-button-
 
 describe('DhButtonSizeEnum', () => {
   it('should have a member "MEDIUM"', () => {
-    expect(DhButtonSizeEnum.MEDIUM).toEqual('dh-button-component-size-medium');
+    expect(DhButtonSizeEnum.MEDIUM).toEqual('dh-button-size-medium');
   });
 
   it('should have a member "LARGE"', () => {
-    expect(DhButtonSizeEnum.LARGE).toEqual('dh-button-component-size-large');
+    expect(DhButtonSizeEnum.LARGE).toEqual('dh-button-size-large');
   });
 });

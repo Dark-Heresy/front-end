@@ -1,6 +1,5 @@
 import { EventEmitter } from '@angular/core';
 import { DhButtonComponent } from '@dh/components/buttons/button/component/dh-button.component';
-import { DhButtonTestingModule } from '@dh/components/buttons/button/dh-button-testing.module';
 import { DhButtonSizeEnum } from '@dh/components/buttons/button/enums/dh-button-size.enum';
 import { DhButtonTypeEnum } from '@dh/components/buttons/button/enums/dh-button-type-enum';
 import { IDhButtonClickEvent } from '@dh/components/buttons/button/interfaces/dh-button-click-event';
@@ -11,12 +10,9 @@ import {
 import { cleanStylesFromDom } from '@test/test';
 
 describe('DhButtonComponent', () => {
-  const componentRootClass = '.dh-button-component';
+  const componentRootClass = '.dh-button';
   const createComponent = createComponentFactory({
-    component: DhButtonComponent,
-    imports: [
-      DhButtonTestingModule
-    ]
+    component: DhButtonComponent
   });
   let spectator: Spectator<DhButtonComponent>;
 

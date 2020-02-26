@@ -2,6 +2,6 @@ import { DhButtonTypeEnum } from '@dh/components/buttons/button/enums/dh-button-
 
 describe('DhButtonTypeEnum', () => {
   it('should have a member "PRIMARY"', () => {
-    expect(DhButtonTypeEnum.PRIMARY).toEqual('dh-button-component-type-primary');
+    expect(DhButtonTypeEnum.PRIMARY).toEqual('dh-button-type-primary');
   });
 });

@@ -2,13 +2,15 @@ import {
   Component,
   EventEmitter,
   Input,
-  Output
+  Output,
+  ViewEncapsulation
 } from '@angular/core';
 import { DhButtonSizeEnum } from '@dh/components/buttons/button/enums/dh-button-size.enum';
 import { DhButtonTypeEnum } from '@dh/components/buttons/button/enums/dh-button-type-enum';
 import { IDhButtonClickEvent } from '@dh/components/buttons/button/interfaces/dh-button-click-event';
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'dh-button',
   styleUrls: [
     './dh-button.component.scss'
