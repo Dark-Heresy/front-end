@@ -3,6 +3,7 @@ import {
   createComponentFactory,
   Spectator
 } from '@ngneat/spectator';
+import { cleanStylesFromDom } from '@test/test';
 
 describe('DhRootComponent', () => {
   const createComponent = createComponentFactory({
@@ -16,5 +17,9 @@ describe('DhRootComponent', () => {
 
   it('should create', () => {
     expect(spectator.component).toBeTruthy();
+  });
+
+  afterAll(() => {
+    cleanStylesFromDom();
   });
 });

@@ -7,6 +7,7 @@ import {
   createComponentFactory,
   Spectator
 } from '@ngneat/spectator';
+import { cleanStylesFromDom } from '@test/test';
 
 describe('DhButtonComponent', () => {
   const componentRootClass = '.dh-button-component';
@@ -84,5 +85,9 @@ describe('DhButtonComponent', () => {
         });
       });
     });
+  });
+
+  afterAll(() => {
+    cleanStylesFromDom();
   });
 });

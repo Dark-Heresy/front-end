@@ -100,6 +100,18 @@
     "plugin/no-low-performance-animation-properties": true,
     "order/order": [
       [
+        "at-rules",
+        "custom-properties",
+        "dollar-variables",
+        "declarations",
+        "rules"
+      ],
+      {
+        "unspecified": "bottom"
+      }
+    ],
+    "order/properties-order": [
+      [
         "position",
         "display",
         "flex-direction",

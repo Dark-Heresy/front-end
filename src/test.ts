@@ -27,10 +27,10 @@ const context: any = require.context('./', true, /\.spec\.ts$/);
 context.keys().map(context);
 
 export function cleanStylesFromDom(): void {
-  const head: HTMLHeadElement | null = document.getElementsByTagName('head')[ 0 ];
+  const head = document.getElementsByTagName('head')[ 0 ];
 
   if (!_.isNil(head)) {
-    const styles: HTMLCollectionOf<HTMLStyleElement> = head.getElementsByTagName('style');
+    const styles = head.getElementsByTagName('style');
 
     // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < styles.length; i++) {
