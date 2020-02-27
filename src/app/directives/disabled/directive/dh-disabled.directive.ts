@@ -28,11 +28,9 @@ export class DhDisabledDirective implements AfterViewInit {
   }
 
   public set disabledClass(disabledClass: Readonly<DhOptional<string>>) {
-    this.removeOldDisabledClass();
+    this.updateDisabledClass(disabledClass);
 
     this._disabledClass = disabledClass;
-
-    this.updateDisabledClass();
   }
 
   private _isDisabled: DhOptional<boolean | string> = false;
@@ -40,11 +38,30 @@ export class DhDisabledDirective implements AfterViewInit {
   /**
    * @description
    * Default to false
+   *
+   * Conversion table:
+   * undefined        = true
+   * null             = true
+   * true (string)    = true
+   * false (string)   = false
+   * any other string = true
+   *
+   * @example
+   * <div dhDisabled></div>          = disabled
+   * <div dhDisabled="true"></div>   = disabled
+   * <div dhDisabled="[true]"></div> = disabled
+   *
+   * <div dhDisabled="false"></div>   = not disabled
+   * <div dhDisabled="[false]"></div> = not disabled
    */
   @Input('dhDisabled')
   public get isDisabled(): DhOptional<boolean | string> {
-    if (_.isNil(this._isDisabled) || _.isString(this._isDisabled)) {
+    if (_.isNil(this._isDisabled)) {
       return true;
+    }
+
+    if (_.isString(this._isDisabled)) {
+      return this._isDisabled !== 'false';
     }
 
     return this._isDisabled;
@@ -55,7 +72,7 @@ export class DhDisabledDirective implements AfterViewInit {
 
     this.updateTabindexAttribute();
     this.updateDisabledAttribute();
-    this.updateDisabledClass();
+    this.updateDisabledClass(this.disabledClass);
   }
 
   public constructor(
@@ -82,10 +99,12 @@ export class DhDisabledDirective implements AfterViewInit {
     }
   }
 
-  private updateDisabledClass(): void {
-    if (!_.isNil(this.disabledClass) && !_.isEmpty(this.disabledClass)) {
+  private updateDisabledClass(newDisabledClass: Readonly<DhOptional<string>>): void {
+    this.removeOldDisabledClass();
+
+    if (!_.isNil(newDisabledClass) && !_.isEmpty(newDisabledClass)) {
       if (this.isDisabled) {
-        this.renderer.addClass(this.elementRef.nativeElement, this.disabledClass);
+        this.renderer.addClass(this.elementRef.nativeElement, newDisabledClass);
       }
     }
   }
