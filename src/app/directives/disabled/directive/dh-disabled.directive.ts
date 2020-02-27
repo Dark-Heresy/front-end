@@ -28,23 +28,29 @@ export class DhDisabledDirective implements AfterViewInit {
   }
 
   public set disabledClass(disabledClass: Readonly<DhOptional<string>>) {
+    this.removeOldDisabledClass();
+
     this._disabledClass = disabledClass;
 
     this.updateDisabledClass();
   }
 
-  private _isDisabled = false;
+  private _isDisabled: DhOptional<boolean | string> = false;
 
   /**
    * @description
    * Default to false
    */
   @Input('dhDisabled')
-  public get isDisabled(): boolean {
+  public get isDisabled(): DhOptional<boolean | string> {
+    if (_.isNil(this._isDisabled) || _.isString(this._isDisabled)) {
+      return true;
+    }
+
     return this._isDisabled;
   }
 
-  public set isDisabled(isDisabled: Readonly<boolean>) {
+  public set isDisabled(isDisabled: Readonly<DhOptional<boolean | string>>) {
     this._isDisabled = isDisabled;
 
     this.updateTabindexAttribute();
@@ -80,9 +86,13 @@ export class DhDisabledDirective implements AfterViewInit {
     if (!_.isNil(this.disabledClass) && !_.isEmpty(this.disabledClass)) {
       if (this.isDisabled) {
         this.renderer.addClass(this.elementRef.nativeElement, this.disabledClass);
-      } else {
-        this.renderer.removeClass(this.elementRef.nativeElement, this.disabledClass);
       }
+    }
+  }
+
+  private removeOldDisabledClass(): void {
+    if (!_.isNil(this.disabledClass) && !_.isEmpty(this.disabledClass)) {
+      this.renderer.removeClass(this.elementRef.nativeElement, this.disabledClass);
     }
   }
 }

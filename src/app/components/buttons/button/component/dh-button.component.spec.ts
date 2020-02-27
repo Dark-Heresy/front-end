@@ -10,80 +10,93 @@ import {
 import { cleanStylesFromDom } from '@test/test';
 
 describe('DhButtonComponent', () => {
-  const componentRootClass = '.dh-button';
   const createComponent = createComponentFactory({
     component: DhButtonComponent
   });
   let spectator: Spectator<DhButtonComponent>;
 
-  beforeEach(() => {
-    spectator = createComponent();
-  });
-
-  it('should create', () => {
-    expect(spectator.component).toBeDefined();
-  });
-
-  it('should have a medium size', () => {
-    expect(spectator.component.size).toEqual(DhButtonSizeEnum.MEDIUM);
-  });
-
-  it('should have a medium size class', () => {
-    expect(spectator.query(componentRootClass)).toHaveClass(DhButtonSizeEnum.MEDIUM);
-  });
-
-  it('should have a primary type', () => {
-    expect(spectator.component.type).toBe(DhButtonTypeEnum.PRIMARY);
-  });
-
-  it('should have a primary type class', () => {
-    expect(spectator.query(componentRootClass)).toHaveClass(DhButtonTypeEnum.PRIMARY);
-  });
-
-  it('should be enabled', () => {
-    expect(spectator.component.isDisabled).toBe(false);
-  });
-
-  it('should be able to notify when clicked', () => {
-    expect(spectator.component.clickEvent).toEqual(new EventEmitter());
-  });
-
-  describe('onButtonClick()', () => {
-    let mouseEvent: MouseEvent;
-
-    let clickEventEmitSpy: jasmine.Spy;
-
+  describe('TypeScript testing', () => {
     beforeEach(() => {
-      mouseEvent = spectator.dispatchMouseEvent(document, 'click');
-
-      clickEventEmitSpy = spyOn(spectator.component.clickEvent, 'emit').and.stub();
+      spectator = createComponent();
     });
 
-    describe('when the button is disabled', () => {
-      beforeEach(() => {
-        spectator.component.isDisabled = true;
-      });
-
-      it('should not notify that the button has been clicked', () => {
-        spectator.component.onButtonClick(mouseEvent);
-
-        expect(clickEventEmitSpy).not.toHaveBeenCalled();
-      });
+    it('should create', () => {
+      expect(spectator.component).toBeDefined();
     });
 
-    describe('when the button is not disabled', () => {
+    it('should have a medium size', () => {
+      expect(spectator.component.size).toEqual(DhButtonSizeEnum.MEDIUM);
+    });
+
+    it('should have a primary type', () => {
+      expect(spectator.component.type).toBe(DhButtonTypeEnum.PRIMARY);
+    });
+
+    it('should be enabled', () => {
+      expect(spectator.component.isDisabled).toBe(false);
+    });
+
+    it('should be able to notify when clicked', () => {
+      expect(spectator.component.clickEvent).toEqual(new EventEmitter());
+    });
+
+    describe('onButtonClick()', () => {
+      let mouseEvent: MouseEvent;
+
+      let clickEventEmitSpy: jasmine.Spy;
+
       beforeEach(() => {
-        spectator.component.isDisabled = false;
+        mouseEvent = spectator.dispatchMouseEvent(document, 'click');
+
+        clickEventEmitSpy = spyOn(spectator.component.clickEvent, 'emit').and.stub();
       });
 
-      it('should notify that the button has been clicked', () => {
-        spectator.component.onButtonClick(mouseEvent);
+      describe('when the button is disabled', () => {
+        beforeEach(() => {
+          spectator.component.isDisabled = true;
+        });
 
-        expect(clickEventEmitSpy).toHaveBeenCalledTimes(1);
-        expect(clickEventEmitSpy).toHaveBeenCalledWith(<IDhButtonClickEvent>{
-          mouseEvent
+        it('should not notify that the button has been clicked', () => {
+          spectator.component.onButtonClick(mouseEvent);
+
+          expect(clickEventEmitSpy).not.toHaveBeenCalled();
         });
       });
+
+      describe('when the button is not disabled', () => {
+        beforeEach(() => {
+          spectator.component.isDisabled = false;
+        });
+
+        it('should notify that the button has been clicked', () => {
+          spectator.component.onButtonClick(mouseEvent);
+
+          expect(clickEventEmitSpy).toHaveBeenCalledTimes(1);
+          expect(clickEventEmitSpy).toHaveBeenCalledWith(<IDhButtonClickEvent>{
+            mouseEvent
+          });
+        });
+      });
+    });
+  });
+
+  describe('DOM testing', () => {
+    const componentRootClass = '.dh-button';
+
+    beforeEach(() => {
+      spectator = createComponent();
+    });
+
+    it('should create', () => {
+      expect(spectator.component).toBeDefined();
+    });
+
+    it('should have a medium size class', () => {
+      expect(spectator.query(componentRootClass)).toHaveClass(DhButtonSizeEnum.MEDIUM);
+    });
+
+    it('should have a primary type class', () => {
+      expect(spectator.query(componentRootClass)).toHaveClass(DhButtonTypeEnum.PRIMARY);
     });
   });
 
