@@ -10,7 +10,7 @@
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
 [![Maintainability](https://api.codeclimate.com/v1/badges/db32cd18a29bb54553e4/maintainability?style=flat-square)](https://codeclimate.com/github/Dark-Heresy/front-end/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/db32cd18a29bb54553e4/test_coverage?style=flat-square)](https://codeclimate.com/github/Dark-Heresy/front-end/test_coverage)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9078790d-583d-4a64-95d5-d4d8bb0f5702/deploy-status)](https://app.netlify.com/sites/dark-heresy/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/474fece6-33b0-4472-8c2f-25cbb4493ecb/deploy-status)](https://app.netlify.com/sites/dark-heresy/deploys)
 [![Coverage Status](https://coveralls.io/repos/github/Dark-Heresy/front-end/badge.svg?branch=develop)](https://coveralls.io/github/Dark-Heresy/front-end?branch=develop)
 [![spectator](https://img.shields.io/badge/tested%20with-spectator-2196F3.svg?style=flat-square)]()
 
