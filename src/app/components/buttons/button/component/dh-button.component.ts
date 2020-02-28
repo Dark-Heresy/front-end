@@ -9,6 +9,18 @@ import { DhButtonSizeEnum } from '@dh/components/buttons/button/enums/dh-button-
 import { DhButtonTypeEnum } from '@dh/components/buttons/button/enums/dh-button-type-enum';
 import { IDhButtonClickEvent } from '@dh/components/buttons/button/interfaces/dh-button-click-event';
 
+/**
+ * @description
+ * Could contains:
+ * - a dh-button-label
+ *
+ * @example
+ * ```html
+ * <dh-button>
+ *   <dh-button-label></dh-button-label>
+ * </dh-button>
+ * ```
+ */
 @Component({
   encapsulation: ViewEncapsulation.None,
   selector: 'dh-button',
