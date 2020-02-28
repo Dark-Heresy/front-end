@@ -18,10 +18,6 @@ describe('DhButtonComponent:TestDOM', () => {
     spectator = createComponent();
   });
 
-  it('should create', () => {
-    expect(spectator.component).toBeDefined();
-  });
-
   it('should have a medium size class', () => {
     expect(spectator.query(componentRootClass)).toHaveClass(DhButtonSizeEnum.MEDIUM);
   });

@@ -522,7 +522,7 @@ describe('DhDisabledDirective:TestTS', () => {
         spectator.directive.isDisabled = isDisabled;
 
         expect(rendererRemoveAttributeSpy).toHaveBeenCalledTimes(1);
-        expect(rendererRemoveAttributeSpy).toHaveBeenCalledWith(spectator.element, 'disabled',);
+        expect(rendererRemoveAttributeSpy).toHaveBeenCalledWith(spectator.element, 'disabled');
         expect(rendererSetAttributeSpy).toHaveBeenCalledTimes(1);
       });
 
@@ -751,7 +751,7 @@ describe('DhDisabledDirective:TestTS', () => {
         spectator.directive.isDisabled = isDisabled;
 
         expect(rendererRemoveAttributeSpy).toHaveBeenCalledTimes(1);
-        expect(rendererRemoveAttributeSpy).toHaveBeenCalledWith(spectator.element, 'disabled',);
+        expect(rendererRemoveAttributeSpy).toHaveBeenCalledWith(spectator.element, 'disabled');
         expect(rendererSetAttributeSpy).toHaveBeenCalledTimes(1);
       });
 
