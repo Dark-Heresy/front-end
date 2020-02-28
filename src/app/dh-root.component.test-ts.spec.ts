@@ -5,7 +5,7 @@ import {
 } from '@ngneat/spectator';
 import { cleanStylesFromDom } from '@test/test';
 
-describe('DhRootComponent', () => {
+describe('DhRootComponent:TestTS', () => {
   const createComponent = createComponentFactory({
     component: DhRootComponent
   });
