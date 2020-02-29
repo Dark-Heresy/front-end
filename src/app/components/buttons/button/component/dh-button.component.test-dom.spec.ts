@@ -33,7 +33,6 @@ describe('DhButtonComponent:TestDOM', () => {
 
   it('should not be disabled by default', () => {
     expect(spectator.query(componentRootClass)).not.toHaveAttribute('disabled');
-    expect(spectator.query(componentRootClass)).not.toHaveAttribute('dh-button-disabled');
   });
 
   it('should be focusable by default', () => {
@@ -45,7 +44,7 @@ describe('DhButtonComponent:TestDOM', () => {
 
     describe('when the button is disabled', () => {
       beforeEach(() => {
-        spectator.component.isDisabled = true;
+        spectator.setInput('isDisabled', true);
       });
 
       it('should not notify the click', () => {
@@ -58,7 +57,7 @@ describe('DhButtonComponent:TestDOM', () => {
 
     describe('when the button is not disabled', () => {
       beforeEach(() => {
-        spectator.component.isDisabled = false;
+        spectator.setInput('isDisabled', false);
       });
 
       it('should notify the click', () => {
@@ -68,6 +67,42 @@ describe('DhButtonComponent:TestDOM', () => {
         expect(output).toBeDefined();
         expect(output.mouseEvent).toEqual(jasmine.any(MouseEvent));
       });
+    });
+  });
+
+  describe('when the button is disabled', () => {
+    beforeEach(() => {
+      spectator.setInput('isDisabled', true);
+    });
+
+    it('should have a disabled attribute', () => {
+      expect(spectator.query(componentRootClass)).toHaveAttribute('disabled');
+    });
+
+    it('should have a disabled class', () => {
+      expect(spectator.query(componentRootClass)).toHaveClass('dh-button-disabled');
+    });
+
+    it('should have a negative tabindex', () => {
+      expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '-1');
+    });
+  });
+
+  describe('when the button is enabled', () => {
+    beforeEach(() => {
+      spectator.setInput('isDisabled', false);
+    });
+
+    it('should not have a disabled attribute', () => {
+      expect(spectator.query(componentRootClass)).not.toHaveAttribute('disabled');
+    });
+
+    it('should not have a disabled class', () => {
+      expect(spectator.query(componentRootClass)).not.toHaveClass('dh-button-disabled');
+    });
+
+    it('should have a positive tabindex', () => {
+      expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '0');
     });
   });
 
