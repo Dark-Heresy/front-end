@@ -4,9 +4,9 @@ $dh-button-small-height: 42;
 $dh-button-medium-height: 60;
 $dh-button-large-height: 72;
 
-$dh-button-small-min-width: 144;
-$dh-button-medium-min-width: 144;
-$dh-button-large-min-width: 144;
+$dh-button-small-min-width: $dh-button-small-height * 2;
+$dh-button-medium-min-width: $dh-button-medium-height * 2;
+$dh-button-large-min-width: $dh-button-large-height * 2;
 
 $dh-button-small-font-size: 16;
 $dh-button-medium-font-size: 16;
@@ -15,3 +15,7 @@ $dh-button-large-font-size: 16;
 $dh-button-small-padding: 20;
 $dh-button-medium-padding: 20;
 $dh-button-large-padding: 20;
+
+$dh-button-small-margin-with-sibling: 36;
+$dh-button-medium-margin-with-sibling: 24;
+$dh-button-large-margin-with-sibling: 12;

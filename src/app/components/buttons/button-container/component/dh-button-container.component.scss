@@ -1,0 +1,30 @@
+@import 'imports';
+
+dh-button-container {
+  display: flex;
+  width: 100%;
+
+  .dh-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+
+    dh-button + dh-button {
+      .dh-button {
+        &.dh-button-size-small {
+          margin-left: dh-pixels-to-em($dh-button-small-margin-with-sibling);
+        }
+
+        &.dh-button-size-medium {
+          margin-left: dh-pixels-to-em($dh-button-medium-margin-with-sibling);
+        }
+
+        &.dh-button-size-large {
+          margin-left: dh-pixels-to-em($dh-button-large-margin-with-sibling);
+        }
+      }
+    }
+  }
+}
