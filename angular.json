@@ -188,7 +188,12 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "codeCoverage": true,
-            "watch": true
+            "watch": true,
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/assets/styles/"
+              ]
+            }
           }
         },
         "lint": {
