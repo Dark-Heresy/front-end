@@ -3,6 +3,6 @@ import { DhOptional } from '@dh/types/dh-optional';
 
 export interface IDhTranslation {
   key: string;
+  scope: string;
   params?: DhOptional<IDhTranslationParams>;
-  scope?: DhOptional<string>;
 }
