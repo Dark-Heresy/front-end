@@ -67,7 +67,8 @@
     "unit-whitelist": [
       "em",
       "rem",
-      "px"
+      "px",
+      "%"
     ],
     "scss/at-else-empty-line-before": "never",
     "scss/at-function-named-arguments": null,

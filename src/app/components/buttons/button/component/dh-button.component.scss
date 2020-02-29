@@ -3,5 +3,22 @@ dh-button {
 
   .dh-button {
     display: flex;
+
+    &.dh-button-size-medium {
+    }
+
+    &.dh-button-size-large {
+
+    }
+
+    &.dh-button-type-primary {
+      &.dh-button-disabled {
+
+      }
+
+      &:not(.dh-button-disabled) {
+
+      }
+    }
   }
 }
