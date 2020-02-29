@@ -1,5 +1,5 @@
 {
-  "name": "front-end",
+  "name": "dark-heresy",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "\n# UTILS SCRIPTS:": "",
+    "generate-certificate": "openssl req -new -x509 -newkey rsa:2048 -sha256 -nodes -keyout ssl/dark-heresy.key -days 3560 -out ssl/dark-heresy.crt -config ssl/certificate.cnf"
   },
   "private": true,
   "dependencies": {
