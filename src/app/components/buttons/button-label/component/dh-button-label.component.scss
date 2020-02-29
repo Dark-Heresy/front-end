@@ -1,3 +1,5 @@
+@import 'imports';
+
 dh-button-label {
   display: flex;
 
@@ -10,23 +12,46 @@ dh-button-label {
   }
 }
 
-:host-context(.dh-button.dh-button-type-primary) {
-  .dh-button-label {
-    .dh-button-label--label {
+dh-button .dh-button {
+  &.dh-button-size-small {
+    dh-button-label .dh-button-label {
+      .dh-button-label--label {
+        font-size: dh-pixels-to-em($dh-button-small-font-size);
+      }
     }
   }
-}
 
-:host-context(.dh-button.dh-button-size-medium) {
-  .dh-button-label {
-    .dh-button-label--label {
+  &.dh-button-size-medium {
+    dh-button-label .dh-button-label {
+      .dh-button-label--label {
+        font-size: dh-pixels-to-em($dh-button-medium-font-size);
+      }
     }
   }
-}
 
-:host-context(.dh-button.dh-button-size-large) {
-  .dh-button-label {
-    .dh-button-label--label {
+  &.dh-button-size-large {
+    dh-button-label .dh-button-label {
+      .dh-button-label--label {
+        font-size: dh-pixels-to-em($dh-button-large-font-size);
+      }
+    }
+  }
+
+  &.dh-button-type-primary {
+    &.dh-button-disabled {
+      dh-button-label .dh-button-label {
+        .dh-button-label--label {
+          color: $dh-disabled-color;
+        }
+      }
+    }
+
+    &:not(.dh-button-disabled) {
+      dh-button-label .dh-button-label {
+        .dh-button-label--label {
+          color: $dh-color-secondary;
+        }
+      }
     }
   }
 }

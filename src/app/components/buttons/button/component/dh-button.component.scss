@@ -1,23 +1,50 @@
+@import 'imports';
+
 dh-button {
   display: flex;
 
   .dh-button {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &.dh-button-disabled {
+      cursor: not-allowed;
+    }
+
+    &:not(.dh-button-disabled) {
+      cursor: pointer;
+    }
+
+    &.dh-button-size-small {
+      height: dh-pixels-to-em($dh-button-small-height);
+      min-width: dh-pixels-to-em($dh-button-small-min-width);
+      padding: 0 dh-pixels-to-em($dh-button-small-padding);
+      border-radius: 2px;
+    }
 
     &.dh-button-size-medium {
+      height: dh-pixels-to-em($dh-button-medium-height);
+      min-width: dh-pixels-to-em($dh-button-medium-min-width);
+      padding: 0 dh-pixels-to-em($dh-button-medium-padding);
+      border-radius: 2px;
     }
 
     &.dh-button-size-large {
-
+      height: dh-pixels-to-em($dh-button-large-height);
+      min-width: dh-pixels-to-em($dh-button-large-min-width);
+      padding: 0 dh-pixels-to-em($dh-button-large-padding);
+      border-radius: 2px;
     }
 
     &.dh-button-type-primary {
       &.dh-button-disabled {
-
+        background-color: $dh-disabled-background-color;
       }
 
       &:not(.dh-button-disabled) {
-
+        background-color: $dh-color-primary;
       }
     }
   }

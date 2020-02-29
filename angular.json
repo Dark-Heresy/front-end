@@ -55,7 +55,12 @@
                 "bundleName": "lazy-styles"
               }
             ],
-            "es5BrowserSupport": true
+            "es5BrowserSupport": true,
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/assets/styles/"
+              ]
+            }
           },
           "configurations": {
             "development": {

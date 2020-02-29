@@ -13,7 +13,8 @@ import { DhHomeComponent } from './component/dh-home.component';
     CommonModule,
     RouterModule.forChild([
       {
-        component: DhHomeComponent
+        component: DhHomeComponent,
+        path: ''
       }
     ]),
     DhButtonLabelModule,

@@ -118,18 +118,30 @@
         "flex-direction",
         "justify-content",
         "align-items",
-        "margin",
-        "margin-top",
-        "margin-right",
-        "margin-bottom",
-        "margin-left",
+        "height",
+        "min-height",
+        "max-height",
+        "width",
+        "min-width",
+        "max-width",
+        "color",
+        "background-color",
         "padding",
         "padding-top",
         "padding-right",
         "padding-bottom",
         "padding-left",
-        "color",
-        "background-color",
+        "border",
+        "border-top",
+        "border-right",
+        "border-bottom",
+        "border-left",
+        "border-radius",
+        "margin",
+        "margin-top",
+        "margin-right",
+        "margin-bottom",
+        "margin-left",
         "z-index"
       ],
       {
@@ -137,6 +149,6 @@
         "emptyLineBeforeUnspecified": "always"
       }
     ],
-    "order/properties-alphabetical-order": true
+    "order/properties-alphabetical-order": null
   }
 }
