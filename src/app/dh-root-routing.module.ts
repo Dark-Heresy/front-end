@@ -6,7 +6,16 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   imports: [
-    RouterModule.forRoot([], {
+    RouterModule.forRoot([
+      {
+        path: '**',
+        redirectTo: 'error/page-not-found'
+      },
+      {
+        loadChildren: (): Promise<any> => import('./views/home/dh-home.module').then((m) => m.DhHomeModule),
+        path: ''
+      }
+    ], {
       paramsInheritanceStrategy: 'always'
     })
   ]
