@@ -1,6 +1,6 @@
 body {
-  font-family: unquote($dh-font-family-primary);
   height: 100%;
-  -webkit-overflow-scrolling: touch;
+  font-family: unquote($dh-font-family-primary);
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }

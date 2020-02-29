@@ -126,11 +126,15 @@
         "max-width",
         "color",
         "background-color",
+        "font-family",
+        "font-weight",
+        "font-style",
         "padding",
         "padding-top",
         "padding-right",
         "padding-bottom",
         "padding-left",
+        "box-sizing",
         "border",
         "border-top",
         "border-right",
@@ -142,11 +146,12 @@
         "margin-right",
         "margin-bottom",
         "margin-left",
-        "z-index"
+        "z-index",
+        "scroll-behavior"
       ],
       {
         "unspecified": "bottomAlphabetical",
-        "emptyLineBeforeUnspecified": "always"
+        "emptyLineBeforeUnspecified": "never"
       }
     ],
     "order/properties-alphabetical-order": null
