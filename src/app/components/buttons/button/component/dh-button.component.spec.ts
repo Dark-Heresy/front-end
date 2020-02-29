@@ -9,7 +9,7 @@ import {
 } from '@ngneat/spectator';
 import { cleanStylesFromDom } from '@test/test';
 
-describe('DhButtonComponent:TestDOM', () => {
+describe('DhButtonComponent', () => {
   const componentRootClass = '.dh-button';
   const createComponent = createComponentFactory({
     component: DhButtonComponent,
@@ -23,19 +23,23 @@ describe('DhButtonComponent:TestDOM', () => {
     spectator = createComponent();
   });
 
-  it('should have a medium size by default', () => {
+  it('should have a medium size class by default', () => {
     expect(spectator.query(componentRootClass)).toHaveClass(DhButtonSizeEnum.MEDIUM);
   });
 
-  it('should have a primary type by default', () => {
+  it('should have a primary type class by default', () => {
     expect(spectator.query(componentRootClass)).toHaveClass(DhButtonTypeEnum.PRIMARY);
   });
 
-  it('should not be disabled by default', () => {
+  it('should not have a disabled attribute by default', () => {
     expect(spectator.query(componentRootClass)).not.toHaveAttribute('disabled');
   });
 
-  it('should be focusable by default', () => {
+  it('should not have a disabled class by default', () => {
+    expect(spectator.query(componentRootClass)).not.toHaveAttribute('dh-button-disabled');
+  });
+
+  it('should have a tabindex at 0 by default', () => {
     expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '0');
   });
 

@@ -21,7 +21,7 @@ class DhCustomHostComponent {
   public disabledClass: DhOptional<string> = undefined;
 }
 
-describe('DhDisabledDirective:TestDom', () => {
+describe('DhDisabledDirective', () => {
   const createDirective = createDirectiveFactory({
     directive: DhDisabledDirective,
     host: DhCustomHostComponent,
