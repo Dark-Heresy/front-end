@@ -31,10 +31,10 @@ jobs:
   include:
     - stage: "Lint"
       name: "Style lint"
-      script: npm run stylelint
+      script: npm run stylelint:ci
     - stage: "Lint"
       name: "TypeScript lint"
-      script: npm run tslint
+      script: npm run tslint:ci
     - stage: "Test"
       name: "App test"
       script: npm run test:ci -- --watch=false

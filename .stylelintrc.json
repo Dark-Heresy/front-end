@@ -1,12 +1,12 @@
 {
   "extends": [
-    "stylelint-config-recommended",
-    "stylelint-config-standard"
+    "./stylelint-config-recommended",
+    "./stylelint-config-standard"
   ],
   "plugins": [
-    "stylelint-scss",
-    "stylelint-high-performance-animation",
-    "stylelint-order"
+    "./stylelint-scss",
+    "./stylelint-high-performance-animation",
+    "./stylelint-order"
   ],
   "defaultSeverity": "error",
   "rules": {
