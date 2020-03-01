@@ -28,6 +28,7 @@ checks:
 plugins:
   stylelint:
     enabled: true
+    config: .stylelintrc.json
   tslint:
     enabled: true
     config: tslint.json
