@@ -141,6 +141,7 @@
         "border-bottom",
         "border-left",
         "border-radius",
+        "outline",
         "margin",
         "margin-top",
         "margin-right",
