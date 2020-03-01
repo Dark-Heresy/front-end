@@ -28,7 +28,7 @@ checks:
 plugins:
   stylelint:
     enabled: true
-    config: .stylelintrc.json
+    config: .stylelintrc-code-climate.json
   tslint:
     enabled: true
     config: tslint.json
