@@ -18,4 +18,9 @@
       <dh-button-label [dhButtonLabelTranslation]="{key: 'label', scope: 'home'}"></dh-button-label>
     </dh-button>
   </dh-button-container>
+  <form [formGroup]="formGroup">
+    <dh-input-text formControlName="name"></dh-input-text>
+  </form>
+  <p>{{ formGroup.valid }}</p>
+  <p>{{ formGroup.controls.name.value }}</p>
 </div>
