@@ -28,7 +28,6 @@ checks:
 plugins:
   stylelint:
     enabled: true
-    config: .stylelintrc-code-climate.json
   tslint:
     enabled: true
     config: tslint.json
@@ -36,5 +35,3 @@ plugins:
 exclude_patterns:
   - "**/node_modules/"
   - "dist/"
-  - ".stylelintcache"
-  - "**/.stylelintcache"
