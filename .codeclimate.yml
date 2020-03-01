@@ -36,3 +36,5 @@ plugins:
 exclude_patterns:
   - "**/node_modules/"
   - "dist/"
+  - ".stylelintcache"
+  - "**/.stylelintcache"
