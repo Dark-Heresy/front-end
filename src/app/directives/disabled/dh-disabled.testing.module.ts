@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { DhDisabledDirective } from '@dh/directives/disabled/directive/dh-disabled.directive';
+import { DhDisabledModule } from '@dh/directives/disabled/dh-disabled.module';
 
 @NgModule({
-  declarations: [
-    DhDisabledDirective
-  ],
   exports: [
-    DhDisabledDirective
+    DhDisabledModule
+  ],
+  imports: [
+    DhDisabledModule
   ]
 })
 export class DhDisabledTestingModule {

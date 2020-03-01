@@ -56,15 +56,13 @@ export class DhDisabledDirective implements AfterViewInit {
    */
   @Input('dhDisabled')
   public get isDisabled(): DhOptional<boolean | string> {
-    if (_.isNil(this._isDisabled)) {
-      return true;
-    }
-
-    if (_.isString(this._isDisabled)) {
+    if (_.isBoolean(this._isDisabled)) {
+      return this._isDisabled;
+    } else if (_.isString(this._isDisabled)) {
       return this._isDisabled !== 'false';
     }
 
-    return this._isDisabled;
+    return true;
   }
 
   public set isDisabled(isDisabled: Readonly<DhOptional<boolean | string>>) {
