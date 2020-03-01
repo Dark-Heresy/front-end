@@ -3,6 +3,7 @@ import { DhButtonSizeEnum } from '@dh/components/buttons/button/enums/dh-button-
 import { DhButtonTypeEnum } from '@dh/components/buttons/button/enums/dh-button-type-enum';
 import { IDhButtonClickEvent } from '@dh/components/buttons/button/interfaces/dh-button-click-event';
 import { DhDisabledTestingModule } from '@dh/directives/disabled/dh-disabled.testing.module';
+import { DhOptional } from '@dh/types/dh-optional';
 import {
   createComponentFactory,
   Spectator
@@ -204,7 +205,11 @@ describe('DhButtonComponent', () => {
   });
 
   describe('when the button is clicked', () => {
-    let output: IDhButtonClickEvent;
+    let output: DhOptional<IDhButtonClickEvent>;
+
+    beforeEach(() => {
+      output = undefined;
+    });
 
     describe('when the isDisabled value is undefined', () => {
       beforeEach(() => {
@@ -215,6 +220,7 @@ describe('DhButtonComponent', () => {
         spectator.output('clickEvent').subscribe((result: any) => (output = result));
 
         spectator.click(spectator.query(componentRootClass) as Element);
+
         expect(output).toBeUndefined();
       });
     });
@@ -228,6 +234,7 @@ describe('DhButtonComponent', () => {
         spectator.output('clickEvent').subscribe((result: any) => (output = result));
 
         spectator.click(spectator.query(componentRootClass) as Element);
+
         expect(output).toBeUndefined();
       });
     });
@@ -241,6 +248,7 @@ describe('DhButtonComponent', () => {
         spectator.output('clickEvent').subscribe((result: any) => (output = result));
 
         spectator.click(spectator.query(componentRootClass) as Element);
+
         expect(output).toBeUndefined();
       });
     });
@@ -254,6 +262,7 @@ describe('DhButtonComponent', () => {
         spectator.output('clickEvent').subscribe((result: any) => (output = result));
 
         spectator.click(spectator.query(componentRootClass) as Element);
+
         expect(output).toBeUndefined();
       });
     });
@@ -267,8 +276,9 @@ describe('DhButtonComponent', () => {
         spectator.output('clickEvent').subscribe((result: any) => (output = result));
 
         spectator.click(spectator.query(componentRootClass) as Element);
+
         expect(output).toBeDefined();
-        expect(output.mouseEvent).toEqual(jasmine.any(MouseEvent));
+        expect(output?.mouseEvent).toEqual(jasmine.any(MouseEvent));
       });
     });
 
@@ -281,6 +291,7 @@ describe('DhButtonComponent', () => {
         spectator.output('clickEvent').subscribe((result: any) => (output = result));
 
         spectator.click(spectator.query(componentRootClass) as Element);
+
         expect(output).toBeUndefined();
       });
     });
@@ -294,8 +305,9 @@ describe('DhButtonComponent', () => {
         spectator.output('clickEvent').subscribe((result: any) => (output = result));
 
         spectator.click(spectator.query(componentRootClass) as Element);
+
         expect(output).toBeDefined();
-        expect(output.mouseEvent).toEqual(jasmine.any(MouseEvent));
+        expect(output?.mouseEvent).toEqual(jasmine.any(MouseEvent));
       });
     });
   });
