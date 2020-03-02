@@ -1,8 +1,13 @@
 import {
   Component,
+  ExistingProvider,
+  forwardRef,
   ViewEncapsulation
 } from '@angular/core';
-import { ControlValueAccessor } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR
+} from '@angular/forms';
 import { DhOptional } from '@dh/types/dh-optional';
 import _ from 'lodash';
 
@@ -20,6 +25,13 @@ import _ from 'lodash';
  */
 @Component({
   encapsulation: ViewEncapsulation.None,
+  providers: [
+    <ExistingProvider> {
+      multi: true,
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => DhInputTextComponent)
+    }
+  ],
   selector: 'dh-input-text',
   styleUrls: [
     './dh-input-text.component.scss'
@@ -28,14 +40,14 @@ import _ from 'lodash';
 })
 export class DhInputTextComponent implements ControlValueAccessor {
 
-  public value: any = undefined;
-  public onChange: DhOptional<(_: any) => void> = undefined;
+  public value: DhOptional<string> = undefined;
+  public onChange: DhOptional<(_value: DhOptional<string>) => void> = undefined;
 
-  public writeValue(value: any): void {
+  public writeValue(value: Readonly<DhOptional<string>>): void {
     this.value = value;
   }
 
-  public registerOnChange(onChange: any): void {
+  public registerOnChange(onChange: DhOptional<(_value: DhOptional<string>) => void>): void {
     this.onChange = onChange;
   }
 
@@ -43,8 +55,8 @@ export class DhInputTextComponent implements ControlValueAccessor {
   public registerOnTouched(): void {
   }
 
-  public onTextChange(text: any): void {
-    if (!_.isNil(this.onChange)) {
+  public onTextChange(text: Readonly<DhOptional<string>>): void {
+    if (_.isFunction(this.onChange)) {
       this.onChange(text);
     }
   }
