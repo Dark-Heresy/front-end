@@ -1,17 +1,31 @@
 import {
   enableProdMode,
+  NgModuleRef,
   ViewEncapsulation
 } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
+import { ENVIRONMENT } from '@environment';
+import 'hammerjs';
 import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+import { HMR_BOOTSTRAP } from './hmr';
 
-if (environment.production) {
+if (ENVIRONMENT.isProduction) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule, {
+const bootstrap: any = (): Promise<NgModuleRef<AppModule>> => platformBrowserDynamic().bootstrapModule(AppModule, {
   defaultEncapsulation: ViewEncapsulation.None
-})
-  .catch(err => console.error(err));
+});
+
+if (ENVIRONMENT.hmr.isEnabled) {
+  if ((module as any)[ 'hot' ]) {
+    HMR_BOOTSTRAP(module, bootstrap);
+  } else {
+    console.error('HMR is not enabled for webpack-dev-server !');
+    console.log('Are you using the --hmr flag for ng serve ?');
+  }
+} else {
+  document.addEventListener('DOMContentLoaded', () => {
+    bootstrap().catch((error: any) => console.error(error));
+  });
+}

@@ -19,7 +19,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
-    "strict": false,
+    "strict": true,
     "target": "es2015",
     "typeRoots": [
       "node_modules/@types",
@@ -51,6 +51,9 @@
       ],
       "@environment": [
         "src/environments/environment.ts"
+      ],
+      "@environment/*": [
+        "src/environments/models/*"
       ],
       "@animations/*": [
         "src/app/animations/*"

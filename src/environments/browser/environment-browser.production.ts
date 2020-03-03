@@ -2,7 +2,7 @@ import { IEnvironment } from '@environment/models/environment';
 
 export const ENVIRONMENT: IEnvironment = {
   hmr: {
-    isEnabled: true
+    isEnabled: false
   },
-  isProduction: false
+  isProduction: true
 };
