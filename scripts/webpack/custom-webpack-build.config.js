@@ -1,5 +1,6 @@
 const IMAGEMIN_WEBPACK_PLUGIN = require('imagemin-webpack-plugin').default;
 const COMPRESSION_WEBPACK_PLUGIN = require('compression-webpack-plugin');
+const WEBPACK_BUNDLE_ANALYZER_PLUGIN = require('webpack-bundle-analyzer');
 
 module.exports = {
   plugins: [
@@ -33,6 +34,12 @@ module.exports = {
     new COMPRESSION_WEBPACK_PLUGIN({
       test: /\.xml$/,
       include: /(?:(sitemap-){1}.*(.xml){1})/
-    })
+    }),
+
+    /**
+     * @description
+     * Visualize size of webpack output files
+     */
+    new WEBPACK_BUNDLE_ANALYZER_PLUGIN.BundleAnalyzerPlugin()
   ]
 };
