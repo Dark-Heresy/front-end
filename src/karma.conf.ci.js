@@ -31,7 +31,7 @@ module.exports = function (config) {
     reporters: [
       'progress'
     ],
-    port: 9876,
+    port: 3101,
     colors: false,
     logLevel: config.LOG_WARN,
     autoWatch: true,

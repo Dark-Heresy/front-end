@@ -9,13 +9,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 
 Run `npm run start` to start a local development server.  
-Navigate to `https://dark-heresy:6666/` to check it out.
+Navigate to `https://dark-heresy:3100/` to check it out.
 
 You need to setup a custom host:
 
 ```
 # Dark Heresy Front-End
-# Use url => https://dark-heresy:6666
+# Use url => https://dark-heresy:3100
 127.0.0.1 dark-heresy
 ```
 
@@ -50,6 +50,14 @@ Note that if `openssl` is not recognized, you can download manually the latest v
 Then, extract the content and add it anywhere on the computer  
 Add the bin path to the Windows environment variable `PATH`  
 Run `openssl` and then write the content of the `npm run generate-certificate` script
+
+## Stats
+
+You can analyze the webpack production bundle size by running the command `npm run analyze:stats`.
+
+## Debug
+
+You can checkout if there is any circular dependency by running the command `npm run circular-dependencies-check`.
 
 ## Further help
 

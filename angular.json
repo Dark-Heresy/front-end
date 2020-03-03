@@ -58,7 +58,7 @@
               "verbose": false,
               "optimization": false
             },
-            "production": {
+            "stats": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -99,6 +99,48 @@
               "extractLicenses": true,
               "verbose": false,
               "index": "src/index-pages/production/index.html"
+            },
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/browser/environment-browser.production.ts"
+                },
+                {
+                  "replace": "src/manifest.json",
+                  "with": "src/manifests/manifest.production.json"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/seo/robots/robots.production.txt"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "buildOptimizer": true,
+              "vendorChunk": true,
+              "statsJson": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "progress": true,
+              "extractLicenses": true,
+              "verbose": false,
+              "index": "src/index-pages/production/index.html"
             }
           }
         },
@@ -110,7 +152,7 @@
               "replaceDuplicatePlugins": false
             },
             "browserTarget": "dark-heresy:build",
-            "port": 6666,
+            "port": 3100,
             "ssl": true,
             "sslKey": "ssl/dark-heresy.key",
             "sslCert": "ssl/dark-heresy.crt",
@@ -164,6 +206,42 @@
           "configurations": {
             "development": {
               "devServerTarget": "dark-heresy:serve:development"
+            }
+          }
+        },
+        "server": {
+          "builder": "@angular-builders/custom-webpack:server",
+          "options": {
+            "customWebpackConfig": {
+              "path": "./scripts/webpack/custom-webpack-server.config.js",
+              "replaceDuplicatePlugins": false
+            },
+            "outputPath": "dist/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "src/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/server/environment-server.production.ts"
+                },
+                {
+                  "replace": "src/manifest.json",
+                  "with": "src/manifests/manifest.production.json"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/seo/robots/robots.production.txt"
+                }
+              ],
+              "bundleDependencies": "all",
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
             }
           }
         }
