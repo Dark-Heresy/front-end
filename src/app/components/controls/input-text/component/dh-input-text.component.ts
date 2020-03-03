@@ -41,7 +41,7 @@ import _ from 'lodash';
 export class DhInputTextComponent implements ControlValueAccessor {
 
   public value: DhOptional<string> = undefined;
-  public onChange: DhOptional<(_value: DhOptional<string>) => void> = undefined;
+  private onChange: DhOptional<(_value: DhOptional<string>) => void> = undefined;
 
   public writeValue(value: Readonly<DhOptional<string>>): void {
     this.value = value;
