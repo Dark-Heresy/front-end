@@ -1,0 +1,75 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictNullChecks": true,
+    "downlevelIteration": true,
+    "baseUrl": "./",
+    "importHelpers": true,
+    "module": "esnext",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/@types/",
+      "types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "types": [
+      "jasmine",
+      "jasminewd2",
+      "node"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "plugins": [
+      {
+        "name": "@angular/language-service"
+      }
+    ],
+    "paths": {
+      "@app/component": [
+        "src/app/app.component.ts"
+      ],
+      "@app/module": [
+        "src/app/app.module.ts"
+      ],
+      "@app/routing-module": [
+        "src/app/app-routing.module.ts"
+      ],
+      "@app/functions/*": [
+        "src/app/functions/*"
+      ],
+      "@app/environments/*": [
+        "src/environments/*"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "enableResourceInlining": false,
+    "skipMetadataEmit": false,
+    "strictMetadataEmit": true,
+    "skipTemplateCodegen": false,
+    "strictInjectionParameters": true,
+    "generateCodeForLibraries": true,
+    "fullTemplateTypeCheck": true,
+    "trace": true,
+    "enableIvy": true
+  }
+}
