@@ -5,6 +5,7 @@ import {
   Input,
   Renderer2
 } from '@angular/core';
+import { dhIsDisabled } from '@dh/functions/states/dh-is-disabled';
 import { DhOptional } from '@dh/types/dh-optional';
 import _ from 'lodash';
 
@@ -56,13 +57,7 @@ export class DhDisabledDirective implements AfterViewInit {
    */
   @Input('dhDisabled')
   public get isDisabled(): DhOptional<boolean | string> {
-    if (_.isBoolean(this._isDisabled)) {
-      return this._isDisabled;
-    } else if (_.isString(this._isDisabled)) {
-      return this._isDisabled !== 'false';
-    }
-
-    return true;
+    return dhIsDisabled(this._isDisabled);
   }
 
   public set isDisabled(isDisabled: Readonly<DhOptional<boolean | string>>) {

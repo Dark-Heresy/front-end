@@ -5,6 +5,8 @@ import {
   ReactiveFormsModule
 } from '@angular/forms';
 import { DhControlTextComponent } from '@dh/components/controls/control-text/component/dh-control-text.component';
+import { DhDisabledControlModule } from '@dh/directives/disabled-control/dh-disabled-control.module';
+import { DhDisabledModule } from '@dh/directives/disabled/dh-disabled.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { DhControlTextComponent } from '@dh/components/controls/control-text/com
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    DhDisabledControlModule,
+    DhDisabledModule
   ]
 })
 export class DhControlTextModule {

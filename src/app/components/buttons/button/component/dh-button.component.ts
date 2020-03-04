@@ -8,8 +8,8 @@ import {
 import { DhButtonSizeEnum } from '@dh/components/buttons/button/enums/dh-button-size.enum';
 import { DhButtonTypeEnum } from '@dh/components/buttons/button/enums/dh-button-type-enum';
 import { IDhButtonClickEvent } from '@dh/components/buttons/button/interfaces/dh-button-click-event';
+import { dhIsDisabled } from '@dh/functions/states/dh-is-disabled';
 import { DhOptional } from '@dh/types/dh-optional';
-import _ from 'lodash';
 
 /**
  * @description
@@ -74,12 +74,6 @@ export class DhButtonComponent {
   }
 
   private isButtonDisabled(): boolean {
-    if (_.isBoolean(this.isDisabled)) {
-      return this.isDisabled;
-    } else if (_.isString(this.isDisabled)) {
-      return this.isDisabled !== 'false';
-    }
-
-    return true;
+    return dhIsDisabled(this.isDisabled);
   }
 }
