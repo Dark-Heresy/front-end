@@ -19,7 +19,7 @@
     </dh-button>
   </dh-button-container>
   <form [formGroup]="formGroup">
-    <dh-input-text formControlName="name"></dh-input-text>
+    <dh-control-text formControlName="name"></dh-control-text>
   </form>
   <p>{{ formGroup.valid }}</p>
   <p>{{ formGroup.controls.name.value }}</p>

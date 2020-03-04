@@ -4,14 +4,14 @@ import {
   FormsModule,
   ReactiveFormsModule
 } from '@angular/forms';
-import { DhInputTextComponent } from '@dh/components/controls/input-text/component/dh-input-text.component';
+import { DhControlTextComponent } from '@dh/components/controls/control-text/component/dh-control-text.component';
 
 @NgModule({
   declarations: [
-    DhInputTextComponent
+    DhControlTextComponent
   ],
   exports: [
-    DhInputTextComponent
+    DhControlTextComponent
   ],
   imports: [
     CommonModule,
@@ -19,5 +19,5 @@ import { DhInputTextComponent } from '@dh/components/controls/input-text/compone
     FormsModule
   ]
 })
-export class DhInputTextModule {
+export class DhControlTextModule {
 }

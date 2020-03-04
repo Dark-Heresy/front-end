@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { DhButtonContainerModule } from '@dh/components/buttons/button-container/dh-button-container.module';
 import { DhButtonLabelModule } from '@dh/components/buttons/button-label/dh-button-label.module';
 import { DhButtonModule } from '@dh/components/buttons/button/dh-button.module';
-import { DhInputTextModule } from '@dh/components/controls/input-text/dh-input-text.module';
+import { DhControlTextModule } from '@dh/components/controls/control-text/dh-control-text.module';
 import { DhHomeComponent } from './component/dh-home.component';
 
 @NgModule({
@@ -28,7 +28,7 @@ import { DhHomeComponent } from './component/dh-home.component';
     DhButtonContainerModule,
     ReactiveFormsModule,
     FormsModule,
-    DhInputTextModule
+    DhControlTextModule
   ]
 })
 export class DhHomeModule {

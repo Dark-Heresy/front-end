@@ -3,8 +3,8 @@ import {
   FormControl,
   FormGroup
 } from '@angular/forms';
-import { DhInputTextComponent } from '@dh/components/controls/input-text/component/dh-input-text.component';
-import { DhInputTextTestingModule } from '@dh/components/controls/input-text/dh-input-text.testing.module';
+import { DhControlTextComponent } from '@dh/components/controls/control-text/component/dh-control-text.component';
+import { DhControlTextTestingModule } from '@dh/components/controls/control-text/dh-control-text.testing.module';
 import { DhOptional } from '@dh/types/dh-optional';
 import {
   createHostFactory,
@@ -22,19 +22,19 @@ class DhCustomHostComponent {
   });
 }
 
-describe('DhInputTextComponent', () => {
+describe('DhControlTextComponent', () => {
   const componentRootClass = '.dh-input-text';
   const createHost = createHostFactory({
-    component: DhInputTextComponent,
+    component: DhControlTextComponent,
     host: DhCustomHostComponent,
     imports: [
-      DhInputTextTestingModule
+      DhControlTextTestingModule
     ]
   });
-  let spectator: SpectatorHost<DhInputTextComponent, DhCustomHostComponent>;
+  let spectator: SpectatorHost<DhControlTextComponent, DhCustomHostComponent>;
 
   beforeEach(() => {
-    spectator = createHost(`<form [formGroup]="formGroup"><dh-input-text formControlName="text"></dh-input-text></form>`);
+    spectator = createHost(`<form [formGroup]="formGroup"><dh-control-text formControlName="text"></dh-control-text></form>`);
   });
 
   it('should create', () => {

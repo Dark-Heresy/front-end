@@ -2,6 +2,7 @@ import {
   Component,
   ExistingProvider,
   forwardRef,
+  Input,
   ViewEncapsulation
 } from '@angular/core';
 import {
@@ -29,19 +30,29 @@ import _ from 'lodash';
     <ExistingProvider> {
       multi: true,
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => DhInputTextComponent)
+      useExisting: forwardRef(() => DhControlTextComponent)
     }
   ],
-  selector: 'dh-input-text',
+  selector: 'dh-control-text',
   styleUrls: [
-    './dh-input-text.component.scss'
+    './dh-control-text.component.scss'
   ],
-  templateUrl: './dh-input-text.component.html'
+  templateUrl: './dh-control-text.component.html'
 })
-export class DhInputTextComponent implements ControlValueAccessor {
+export class DhControlTextComponent implements ControlValueAccessor {
 
   public value: DhOptional<string> = undefined;
   private onChange: DhOptional<(_value: DhOptional<string>) => void> = undefined;
+
+  /**
+   * @description
+   * Default to false
+   *
+   * Uses the conversion table of the [disabled directive]{@link DhDisabledDirective#isDisabled}
+   * To allows more syntaxes when using this @Input
+   */
+  @Input('dhControlTextIsDisabled')
+  public isDisabled: DhOptional<boolean | string> = false;
 
   public writeValue(value: Readonly<DhOptional<string>>): void {
     this.value = value;
