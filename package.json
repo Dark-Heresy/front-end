@@ -1,6 +1,54 @@
 {
   "name": "dark-heresy",
   "version": "0.0.0",
+  "author": {
+    "email": "geoffrey.testelin@gmail.com",
+    "name": "Geoffrey 'C0ZEN' Testelin",
+    "url": "https://github.com/C0ZEN"
+  },
+  "contributors": [
+    {
+      "email": "geoffrey.testelin@gmail.com",
+      "name": "Geoffrey 'C0ZEN' Testelin",
+      "url": "https://github.com/C0ZEN"
+    }
+  ],
+  "description": "Dark Heresy application for the role-playing game",
+  "homepage": "",
+  "maintainers": [
+    {
+      "email": "geoffrey.testelin@gmail.com",
+      "name": "Geoffrey 'C0ZEN' Testelin",
+      "url": "https://github.com/C0ZEN"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Angular",
+    "TypeScript",
+    "Akita",
+    "Transloco",
+    "Front-End",
+    "SCSS",
+    "RxJS",
+    "Dark Heresy"
+  ],
+  "repository": {
+    "url": "https://github.com/Dark-Heresy/front-end.git",
+    "type": "git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./scripts/commitizen.js"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "private": false,
   "scripts": {
     "\n# LOCAL DEV SCRIPTS:": "",
     "start": "npm run i18n:cache-busting && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve -c development",
@@ -11,7 +59,7 @@
     "build:browser:production": "npm run transloco:optimize && npm run i18n:cache-busting && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod --configuration production",
     "build:server:production": "ng run dark-heresy:server:production",
     "build:client-and-server-bundles:production": "concurrently \"npm run build:browser:production\" \"npm run build:server:production\"",
-    "build:ssr:production": "concurrently \"npm run build:client-and-server-bundles:production\" \"npm run compile:server\"",
+    "build:ssr:production": "npm run build:client-and-server-bundles:production && npm run compile:server",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "\n# TEST SCRIPTS:": "",
     "test": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng test dark-heresy",
@@ -33,15 +81,6 @@
     "i18n:cache-busting": "node ./scripts/node/i18n-cache-busting.js",
     "generate-certificate": "openssl req -new -x509 -newkey rsa:2048 -sha256 -nodes -keyout ssl/dark-heresy.key -days 3560 -out ssl/dark-heresy.crt -config ssl/certificate.cnf"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-customizable"
-    },
-    "cz-customizable": {
-      "config": "./scripts/commitizen.js"
-    }
-  },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~9.0.2",
     "@angular/common": "~9.0.2",
