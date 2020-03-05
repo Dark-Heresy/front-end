@@ -30,7 +30,7 @@ import _ from 'lodash';
     <ExistingProvider> {
       multi: true,
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => DhControlTextComponent)
+      useExisting: forwardRef((): typeof DhControlTextComponent => DhControlTextComponent)
     }
   ],
   selector: 'dh-control-text',

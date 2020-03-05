@@ -64,7 +64,7 @@ if (DH_ENVIRONMENT.hmr.isEnabled) {
     console.log('Are you using the --hmr flag for ng serve ?');
   }
 } else {
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', (): void => {
     bootstrap().catch((error: any): void => {
       console.error(error);
     });

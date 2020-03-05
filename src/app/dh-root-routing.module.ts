@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { DhHomeModule } from './views/home/dh-home.module';
 
 @NgModule({
   exports: [
@@ -12,7 +13,7 @@ import { RouterModule } from '@angular/router';
         redirectTo: 'error/page-not-found'
       },
       {
-        loadChildren: (): Promise<any> => import('./views/home/dh-home.module').then((m) => m.DhHomeModule),
+        loadChildren: (): Promise<any> => import('./views/home/dh-home.module').then((m): DhHomeModule => m.DhHomeModule),
         path: ''
       }
     ], {

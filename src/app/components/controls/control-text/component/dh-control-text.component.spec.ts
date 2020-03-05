@@ -22,7 +22,7 @@ class DhCustomHostComponent {
   });
 }
 
-describe('DhControlTextComponent', () => {
+describe('DhControlTextComponent', (): void => {
   const componentRootClass = '.dh-input-text';
   const createHost = createHostFactory({
     component: DhControlTextComponent,
@@ -33,50 +33,50 @@ describe('DhControlTextComponent', () => {
   });
   let spectator: SpectatorHost<DhControlTextComponent, DhCustomHostComponent>;
 
-  beforeEach(() => {
+  beforeEach((): void => {
     spectator = createHost('<form [formGroup]="formGroup"><dh-control-text formControlName="text"></dh-control-text></form>');
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(spectator.component).toBeDefined();
   });
 
-  it('should have a default value in the input based on the given form control', () => {
+  it('should have a default value in the input based on the given form control', (): void => {
     expect(spectator.query(componentRootClass)).toHaveValue('dummy-text');
   });
 
-  it('should have a type to text by default', () => {
+  it('should have a type to text by default', (): void => {
     expect(spectator.query(componentRootClass)).toHaveAttribute('type', 'text');
   });
 
-  describe('writeValue()', () => {
+  describe('writeValue()', (): void => {
     let value: DhOptional<string>;
 
-    beforeEach(() => {
+    beforeEach((): void => {
       value = 'dummy-value';
     });
 
-    it('should update the value with the given one', () => {
+    it('should update the value with the given one', (): void => {
       spectator.component.writeValue(value);
 
       expect(spectator.query(componentRootClass)).toHaveValue('dummy-value');
     });
   });
 
-  describe('when the input value change', () => {
-    beforeEach(() => {
+  describe('when the input value change', (): void => {
+    beforeEach((): void => {
       spectator.component.writeValue('a');
       spectator.component.writeValue('ab');
     });
 
-    it('should', () => {
+    it('should', (): void => {
       spectator.detectChanges();
 
       expect(spectator.hostComponent.formGroup.controls.text.value).toEqual('ab');
     });
   });
 
-  afterAll(() => {
+  afterAll((): void => {
     cleanStylesFromDom();
   });
 });

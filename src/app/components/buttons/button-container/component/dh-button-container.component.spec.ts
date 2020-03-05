@@ -6,7 +6,7 @@ import {
 } from '@ngneat/spectator';
 import { cleanStylesFromDom } from '@test/test';
 
-describe('DhButtonContainerComponent', () => {
+describe('DhButtonContainerComponent', (): void => {
   const createComponent = createComponentFactory({
     component: DhButtonContainerComponent,
     imports: [
@@ -15,15 +15,15 @@ describe('DhButtonContainerComponent', () => {
   });
   let spectator: Spectator<DhButtonContainerComponent>;
 
-  beforeEach(() => {
+  beforeEach((): void => {
     spectator = createComponent();
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(spectator.component).toBeDefined();
   });
 
-  afterAll(() => {
+  afterAll((): void => {
     cleanStylesFromDom();
   });
 });

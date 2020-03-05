@@ -15,16 +15,16 @@ export const HMR_BOOTSTRAP: any = (
 
   module.hot.accept();
 
-  bootstrap().then((mod: any) => {
+  bootstrap().then((mod: any): any => {
     ngModule = mod;
 
     return hmrModule(mod, module);
   });
   (window as any).hmrEnabled = true;
 
-  module.hot.dispose(() => {
+  module.hot.dispose((): void => {
     const appRef: ApplicationRef = ngModule.injector.get(ApplicationRef);
-    const elements: any = appRef.components.map((c: any) => c.location.nativeElement);
+    const elements: any = appRef.components.map((c: any): void => c.location.nativeElement);
     const makeVisible: () => void = createNewHosts(elements);
 
     makeVisible();
