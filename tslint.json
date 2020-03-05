@@ -1,4 +1,7 @@
 {
+  "rulesDirectory": [
+    "node_modules/codelyzer"
+  ],
   "extends": [
     "tslint:recommended",
     "codelyzer",
@@ -19,6 +22,108 @@
         "Use string instead"
       ]
     ],
+    "no-unnecessary-class": [
+      true,
+      "allow-constructor-only",
+      "allow-static-only",
+      "allow-empty-class"
+    ],
+    "prefer-readonly": true,
+    "adjacent-overload-signatures": [
+      true,
+      {
+        "ignore-accessors": true
+      }
+    ],
+    "prefer-function-over-method": [
+      true,
+      "allow-public",
+      "allow-protected"
+    ],
+    "no-invalid-this": [
+      true,
+      "check-function-in-method"
+    ],
+    "no-this-assignment": true,
+    "unnecessary-constructor": false,
+    "new-parens": true,
+    "prefer-method-signature": true,
+    "no-parameter-reassignment": true,
+    "no-void-expression": true,
+    "invalid-void": [
+      true,
+      {
+        "allow-generics": [
+          "EventEmitter",
+          "Promise",
+          "Observable"
+        ]
+      }
+    ],
+    "return-undefined": true,
+    "only-arrow-functions": false,
+    "arrow-parens": false,
+    "arrow-return-shorthand": false,
+    "no-unnecessary-callback-wrapper": true,
+    "no-implicit-dependencies": false,
+    "no-import-side-effect": [
+      true,
+      {
+        "ignore-module": "(hammerjs|core-js|zone.js)"
+      }
+    ],
+    "no-duplicate-imports": true,
+    "no-require-imports": true,
+    "no-default-import": true,
+    "no-default-export": true,
+    "no-reference": true,
+    "use-default-type-parameter": true,
+    "no-object-literal-type-assertion": false,
+    "no-unnecessary-type-assertion": true,
+    "no-null-keyword": false,
+    "object-literal-shorthand": true,
+    "prefer-template": true,
+    "no-invalid-template-strings": true,
+    "strict-string-expressions": true,
+    "increment-decrement": [
+      true,
+      "allow-post"
+    ],
+    "restrict-plus-operands": true,
+    "no-dynamic-delete": true,
+    "use-isnan": true,
+    "no-conditional-assignment": true,
+    "prefer-conditional-expression": false,
+    "strict-boolean-expressions": [
+      true,
+      "allow-undefined-union",
+      "allow-string",
+      "allow-enum",
+      "allow-number",
+      "allow-mix",
+      "allow-rhs"
+    ],
+    "cyclomatic-complexity": [
+      true,
+      20
+    ],
+    "encoding": true,
+    "file-name-casing": [
+      true,
+      {
+        ".ts": "kebab-case"
+      }
+    ],
+    "variable-name": [
+      true,
+      "check-format",
+      "allow-leading-underscore",
+      "require-const-for-all-caps",
+      "ban-keywords"
+    ],
+    "no-namespace": true,
+    "no-internal-module": true,
+    "no-unused-variable": true,
     "no-angle-bracket-type-assertion": false,
     "comment-type": [
       true,
@@ -66,7 +171,6 @@
     ],
     "trailing-comma": false,
     "no-consecutive-blank-lines": true,
-    "arrow-parens": true,
     "interface-name": [
       true,
       "always-prefix"
@@ -80,7 +184,6 @@
       true,
       "consistent-as-needed"
     ],
-    "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
     "curly": true,
@@ -102,7 +205,7 @@
     "label-position": true,
     "max-line-length": [
       true,
-      300
+      400
     ],
     "member-access": [
       true,
@@ -158,7 +261,20 @@
     "no-misused-new": true,
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
-    "no-shadowed-variable": true,
+    "no-shadowed-variable": [
+      true,
+      {
+        "temporalDeadZone": false
+      }
+    ],
+    "one-variable-per-declaration": [
+      true,
+      "ignore-for-loop"
+    ],
+    "no-duplicate-variable": [
+      true,
+      "check-parameters"
+    ],
     "no-string-literal": false,
     "no-string-throw": true,
     "no-switch-case-fall-through": true,
@@ -180,7 +296,9 @@
     "prefer-const": true,
     "quotemark": [
       true,
-      "single"
+      "single",
+      "avoid-template",
+      "avoid-escape"
     ],
     "radix": true,
     "semicolon": [
@@ -210,7 +328,6 @@
       }
     ],
     "unified-signatures": true,
-    "variable-name": false,
     "whitespace": [
       true,
       "check-branch",
@@ -253,8 +370,5 @@
     "rxjs-throw-error": true,
     "rxjs-no-index": true,
     "rxjs-no-redundant-notify": true
-  },
-  "rulesDirectory": [
-    "codelyzer"
-  ]
+  }
 }

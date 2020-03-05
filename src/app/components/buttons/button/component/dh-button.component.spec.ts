@@ -73,10 +73,6 @@ describe('DhButtonComponent', () => {
   });
 
   describe('when the isDisabled input change', () => {
-    beforeEach(() => {
-      spectator.setInput('isDisabled', false);
-    });
-
     describe('when the isDisabled new value is undefined', () => {
       beforeEach(() => {
         spectator.setInput('isDisabled', undefined);

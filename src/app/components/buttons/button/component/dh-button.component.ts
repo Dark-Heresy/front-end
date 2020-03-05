@@ -49,31 +49,31 @@ export class DhButtonComponent {
 
   /**
    * @description
-   * Default to false
-   *
-   * Uses the conversion table of the [disabled directive]{@link DhDisabledDirective#isDisabled}
-   * To allows more syntaxes when using this @Input
-   */
-  @Input('dhButtonIsDisabled')
-  public isDisabled: DhOptional<boolean | string> = false;
-
-  /**
-   * @description
    * Emit on button click when:
    * - [disabled state]{@link DhButtonComponent#isDisabled} is false
    */
   @Output('dhButtonOnClick')
   public clickEvent = new EventEmitter<IDhButtonClickEvent>();
 
+  public _isDisabled = false;
+
+  /**
+   * @description
+   * Default to false
+   *
+   * Uses the conversion table of the [disabled directive]{@link DhDisabledDirective#isDisabled}
+   * To allows more syntaxes when using this @Input
+   */
+  @Input('dhButtonIsDisabled')
+  public set isDisabled(isDisabled: DhOptional<boolean | string>) {
+    this._isDisabled = dhIsDisabled(isDisabled);
+  }
+
   public onButtonClick(mouseEvent: Readonly<MouseEvent>): void {
-    if (!this.isButtonDisabled()) {
+    if (!this._isDisabled) {
       this.clickEvent.emit({
         mouseEvent
       });
     }
-  }
-
-  private isButtonDisabled(): boolean {
-    return dhIsDisabled(this.isDisabled);
   }
 }

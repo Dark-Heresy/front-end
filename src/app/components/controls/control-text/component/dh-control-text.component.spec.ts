@@ -34,7 +34,7 @@ describe('DhControlTextComponent', () => {
   let spectator: SpectatorHost<DhControlTextComponent, DhCustomHostComponent>;
 
   beforeEach(() => {
-    spectator = createHost(`<form [formGroup]="formGroup"><dh-control-text formControlName="text"></dh-control-text></form>`);
+    spectator = createHost('<form [formGroup]="formGroup"><dh-control-text formControlName="text"></dh-control-text></form>');
   });
 
   it('should create', () => {

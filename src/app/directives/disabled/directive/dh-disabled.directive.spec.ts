@@ -36,7 +36,7 @@ describe('DhDisabledDirective', () => {
 
   describe('when using the directive like an attribute', () => {
     beforeEach(() => {
-      spectator = createDirective(`<div dhDisabled></div>`);
+      spectator = createDirective('<div dhDisabled></div>');
     });
 
     it('should be disabled', () => {
@@ -50,7 +50,7 @@ describe('DhDisabledDirective', () => {
 
   describe('when using the directive with an input and undefined as value', () => {
     beforeEach(() => {
-      spectator = createDirective(`<div [dhDisabled]="isDisabled"></div>`);
+      spectator = createDirective('<div [dhDisabled]="isDisabled"></div>');
       spectator.setHostInput('isDisabled', undefined);
     });
 
@@ -65,7 +65,7 @@ describe('DhDisabledDirective', () => {
 
   describe('when using the directive with an input and null as value', () => {
     beforeEach(() => {
-      spectator = createDirective(`<div [dhDisabled]="isDisabled"></div>`);
+      spectator = createDirective('<div [dhDisabled]="isDisabled"></div>');
       spectator.setHostInput('isDisabled', null);
     });
 
@@ -80,7 +80,7 @@ describe('DhDisabledDirective', () => {
 
   describe('when using the directive like an attribute with true as value', () => {
     beforeEach(() => {
-      spectator = createDirective(`<div dhDisabled="{{ isDisabled }}"></div>`);
+      spectator = createDirective('<div dhDisabled="{{ isDisabled }}"></div>');
       spectator.setHostInput('isDisabled', 'true');
     });
 
@@ -95,7 +95,7 @@ describe('DhDisabledDirective', () => {
 
   describe('when using the directive like an attribute with false as value', () => {
     beforeEach(() => {
-      spectator = createDirective(`<div dhDisabled="{{ isDisabled }}"></div>`);
+      spectator = createDirective('<div dhDisabled="{{ isDisabled }}"></div>');
       spectator.setHostInput('isDisabled', 'false');
     });
 
@@ -110,7 +110,7 @@ describe('DhDisabledDirective', () => {
 
   describe('when using the directive with an input and true as value', () => {
     beforeEach(() => {
-      spectator = createDirective(`<div [dhDisabled]="isDisabled"></div>`);
+      spectator = createDirective('<div [dhDisabled]="isDisabled"></div>');
       spectator.setHostInput('isDisabled', true);
     });
 
@@ -125,7 +125,7 @@ describe('DhDisabledDirective', () => {
 
   describe('when using the directive with an input and false as value', () => {
     beforeEach(() => {
-      spectator = createDirective(`<div [dhDisabled]="isDisabled"></div>`);
+      spectator = createDirective('<div [dhDisabled]="isDisabled"></div>');
       spectator.setHostInput('isDisabled', false);
     });
 
@@ -140,7 +140,7 @@ describe('DhDisabledDirective', () => {
 
   describe('when using the directive with a disabled class like an attribute', () => {
     beforeEach(() => {
-      spectator = createDirective(`<div dhDisabled dhDisabledClass="{{ disabledClass }}"></div>`);
+      spectator = createDirective('<div dhDisabled dhDisabledClass="{{ disabledClass }}"></div>');
       spectator.setHostInput('disabledClass', 'dh-disabled');
     });
 
@@ -151,7 +151,7 @@ describe('DhDisabledDirective', () => {
 
   describe('when using the directive with a disabled class with an input', () => {
     beforeEach(() => {
-      spectator = createDirective(`<div dhDisabled [dhDisabledClass]="disabledClass"></div>`);
+      spectator = createDirective('<div dhDisabled [dhDisabledClass]="disabledClass"></div>');
       spectator.setHostInput('disabledClass', 'dh-disabled');
     });
 
@@ -162,7 +162,7 @@ describe('DhDisabledDirective', () => {
 
   describe('when using the directive with a disabled class and the disabled class change once again', () => {
     beforeEach(() => {
-      spectator = createDirective(`<div dhDisabled [dhDisabledClass]="disabledClass"></div>`);
+      spectator = createDirective('<div dhDisabled [dhDisabledClass]="disabledClass"></div>');
       spectator.setHostInput('disabledClass', 'dh-disabled-old-class');
       spectator.setHostInput('disabledClass', 'dh-disabled-new-class');
     });

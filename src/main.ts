@@ -65,6 +65,8 @@ if (DH_ENVIRONMENT.hmr.isEnabled) {
   }
 } else {
   document.addEventListener('DOMContentLoaded', () => {
-    bootstrap().catch((error: any) => console.error(error));
+    bootstrap().catch((error: any): void => {
+      console.error(error);
+    });
   });
 }

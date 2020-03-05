@@ -2,12 +2,15 @@ import { dhCreateScript } from '@dh/functions/scripts/dh-create-script';
 
 describe('DhCreateScript', () => {
   describe('dhCreateScript()', () => {
-    const scriptSource = 'dummy-script-source';
-    const htmlScriptElement: HTMLScriptElement = document.createElement('script');
+    let scriptSource: string;
+    let htmlScriptElement: HTMLScriptElement;
 
     let documentCreateElementSpy: jasmine.Spy;
 
     beforeEach(() => {
+      scriptSource = 'dummy-script-source';
+      htmlScriptElement = document.createElement('script');
+
       documentCreateElementSpy = spyOn(document, 'createElement').and.returnValue(htmlScriptElement);
     });
 

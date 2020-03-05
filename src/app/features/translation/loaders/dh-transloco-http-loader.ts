@@ -6,6 +6,7 @@ import {
   TranslocoLoader
 } from '@ngneat/transloco';
 import { Observable } from 'rxjs';
+// tslint:disable-next-line:no-default-import
 import cacheBusting from '../../../../assets/i18n-cache-busting.json';
 
 @Injectable({
@@ -14,7 +15,7 @@ import cacheBusting from '../../../../assets/i18n-cache-busting.json';
 export class DhTranslocoHttpLoader implements TranslocoLoader {
 
   public constructor(
-    private httpClient: HttpClient
+    private readonly httpClient: HttpClient
   ) {
   }
 
