@@ -83,7 +83,8 @@
     "transloco:optimize": "transloco-optimize dist/browser/assets/i18n",
     "i18n:cache-busting": "node ./scripts/node/i18n-cache-busting.js",
     "generate-certificate": "openssl req -new -x509 -newkey rsa:2048 -sha256 -nodes -keyout ssl/dark-heresy.key -days 3560 -out ssl/dark-heresy.crt -config ssl/certificate.cnf",
-    "commitmsg": "cz-customizable-ghooks"
+    "commitmsg": "cz-customizable-ghooks",
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "dependencies": {
     "@angular/animations": "~9.0.5",
