@@ -79,7 +79,7 @@ describe('DhDisabledDirective', (): void => {
     });
   });
 
-  describe('when using the directive like an attribute with true as value', (): void => {
+  describe('when using the directive like an attribute with true string as value', (): void => {
     beforeEach((): void => {
       spectator = directiveFactory('<div dhDisabled="{{ isDisabled }}"></div>');
       spectator.setHostInput('isDisabled', 'true');
@@ -94,7 +94,7 @@ describe('DhDisabledDirective', (): void => {
     });
   });
 
-  describe('when using the directive like an attribute with false as value', (): void => {
+  describe('when using the directive like an attribute with false string as value', (): void => {
     beforeEach((): void => {
       spectator = directiveFactory('<div dhDisabled="{{ isDisabled }}"></div>');
       spectator.setHostInput('isDisabled', 'false');
