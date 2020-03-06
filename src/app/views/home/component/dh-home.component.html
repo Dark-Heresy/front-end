@@ -20,6 +20,9 @@
   </dh-button-container>
   <form [formGroup]="formGroup">
     <dh-control-text formControlName="name"></dh-control-text>
+    <dh-control-text dhControlTextIsDisabled
+                     formControlName="name1">
+    </dh-control-text>
   </form>
   <p>{{ formGroup.valid }}</p>
   <p>{{ formGroup.controls.name.value }}</p>

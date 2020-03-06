@@ -10,7 +10,7 @@ import { DhOptional } from '@dh/types/dh-optional';
 import _ from 'lodash';
 
 @Directive({
-  selector: '[dhDisabledControl]'
+  selector: 'input[dhDisabledControl]'
 })
 export class DhDisabledControlDirective {
   public _disabledControl = false;
