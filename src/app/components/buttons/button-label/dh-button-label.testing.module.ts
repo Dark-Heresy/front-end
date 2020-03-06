@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { dhGetTranslocoTestingModule } from '@dh/features/translation/dh-translation.testing.module';
+import { TranslocoTestingModule } from '@ngneat/transloco';
 
 @NgModule({
-  imports: [
-    dhGetTranslocoTestingModule()
+  exports: [
+    TranslocoTestingModule
   ]
 })
 export class DhButtonLabelTestingModule {

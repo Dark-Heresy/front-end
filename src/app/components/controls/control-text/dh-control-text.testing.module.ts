@@ -8,9 +8,6 @@ import { DhControlTextModule } from '@dh/components/controls/control-text/dh-con
 
 @NgModule({
   exports: [
-    DhControlTextModule
-  ],
-  imports: [
     DhControlTextModule,
     CommonModule,
     FormsModule,

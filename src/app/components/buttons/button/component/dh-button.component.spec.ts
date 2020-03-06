@@ -1,8 +1,8 @@
 import { DhButtonComponent } from '@dh/components/buttons/button/component/dh-button.component';
+import { DhButtonTestingModule } from '@dh/components/buttons/button/dh-button.testing.module';
 import { DhButtonSizeEnum } from '@dh/components/buttons/button/enums/dh-button-size.enum';
 import { DhButtonTypeEnum } from '@dh/components/buttons/button/enums/dh-button-type-enum';
 import { IDhButtonClickEvent } from '@dh/components/buttons/button/interfaces/dh-button-click-event';
-import { DhDisabledTestingModule } from '@dh/directives/disabled/dh-disabled.testing.module';
 import { DhOptional } from '@dh/types/dh-optional';
 import {
   createComponentFactory,
@@ -16,7 +16,7 @@ describe('DhButtonComponent', (): void => {
   const componentFactory: SpectatorFactory<DhButtonComponent> = createComponentFactory({
     component: DhButtonComponent,
     imports: [
-      DhDisabledTestingModule
+      DhButtonTestingModule
     ]
   });
   let spectator: Spectator<DhButtonComponent>;
