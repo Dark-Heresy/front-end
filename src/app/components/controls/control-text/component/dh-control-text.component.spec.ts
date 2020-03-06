@@ -8,7 +8,8 @@ import { DhControlTextTestingModule } from '@dh/components/controls/control-text
 import { DhOptional } from '@dh/types/dh-optional';
 import {
   createHostFactory,
-  SpectatorHost
+  SpectatorHost,
+  SpectatorHostFactory
 } from '@ngneat/spectator';
 import { cleanStylesFromDom } from '@test/test';
 import _ from 'lodash';
@@ -31,7 +32,7 @@ class DhCustomHostComponent {
  */
 describe('DhControlTextComponent', (): void => {
   const componentRootClass = '.dh-control-text';
-  const createHost = createHostFactory({
+  const hostFactory: SpectatorHostFactory<DhControlTextComponent, DhCustomHostComponent> = createHostFactory({
     component: DhControlTextComponent,
     host: DhCustomHostComponent,
     imports: [
@@ -41,7 +42,7 @@ describe('DhControlTextComponent', (): void => {
   let spectator: SpectatorHost<DhControlTextComponent, DhCustomHostComponent>;
 
   beforeEach((): void => {
-    spectator = createHost('<form [formGroup]="formGroup"><dh-control-text formControlName="text"></dh-control-text></form>');
+    spectator = hostFactory('<form [formGroup]="formGroup"><dh-control-text formControlName="text"></dh-control-text></form>');
   });
 
   it('should create', (): void => {

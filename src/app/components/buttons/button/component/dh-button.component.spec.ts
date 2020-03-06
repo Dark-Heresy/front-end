@@ -6,13 +6,14 @@ import { DhDisabledTestingModule } from '@dh/directives/disabled/dh-disabled.tes
 import { DhOptional } from '@dh/types/dh-optional';
 import {
   createComponentFactory,
-  Spectator
+  Spectator,
+  SpectatorFactory
 } from '@ngneat/spectator';
 import { cleanStylesFromDom } from '@test/test';
 
 describe('DhButtonComponent', (): void => {
   const componentRootClass = '.dh-button';
-  const createComponent = createComponentFactory({
+  const componentFactory: SpectatorFactory<DhButtonComponent> = createComponentFactory({
     component: DhButtonComponent,
     imports: [
       DhDisabledTestingModule
@@ -21,7 +22,7 @@ describe('DhButtonComponent', (): void => {
   let spectator: Spectator<DhButtonComponent>;
 
   beforeEach((): void => {
-    spectator = createComponent();
+    spectator = componentFactory();
   });
 
   it('should create', (): void => {

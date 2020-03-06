@@ -20,7 +20,7 @@ export class DhTranslocoHttpLoader implements TranslocoLoader {
   }
 
   // tslint:disable:rxjs-finnish
-  public getTranslation(lang: string): Observable<Translation> {
+  public getTranslation(lang: Readonly<string>): Observable<Translation> {
     // tslint:enable:rxjs-finnish
 
     // @ts-ignore

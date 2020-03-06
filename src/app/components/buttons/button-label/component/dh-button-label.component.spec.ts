@@ -3,13 +3,14 @@ import { DhButtonLabelTestingModule } from '@dh/components/buttons/button-label/
 import { dhGetFakeTranslation } from '@dh/features/translation/functions/fakes/dh-get-fake-translation';
 import {
   createComponentFactory,
-  Spectator
+  Spectator,
+  SpectatorFactory
 } from '@ngneat/spectator';
 import { cleanStylesFromDom } from '@test/test';
 
 describe('DhButtonLabelComponent', (): void => {
   const componentRootClass = '.dh-button-label';
-  const createComponent = createComponentFactory({
+  const componentFactory: SpectatorFactory<DhButtonLabelComponent> = createComponentFactory({
     component: DhButtonLabelComponent,
     imports: [
       DhButtonLabelTestingModule
@@ -18,7 +19,7 @@ describe('DhButtonLabelComponent', (): void => {
   let spectator: Spectator<DhButtonLabelComponent>;
 
   beforeEach((): void => {
-    spectator = createComponent();
+    spectator = componentFactory();
   });
 
   it('should create', (): void => {
