@@ -23,8 +23,13 @@ class DhCustomHostComponent {
   });
 }
 
+/**
+ * @todo add DOM coverage for:
+ * - default value
+ * - value change
+ */
 describe('DhControlTextComponent', (): void => {
-  const componentRootClass = '.dh-input-text';
+  const componentRootClass = '.dh-control-text';
   const createHost = createHostFactory({
     component: DhControlTextComponent,
     host: DhCustomHostComponent,
@@ -42,12 +47,148 @@ describe('DhControlTextComponent', (): void => {
     expect(spectator.component).toBeDefined();
   });
 
-  it('should have a default value in the input based on the given form control', (): void => {
-    expect(spectator.query(componentRootClass)).toHaveValue('dummy-text');
-  });
-
   it('should have a type to text by default', (): void => {
     expect(spectator.query(componentRootClass)).toHaveAttribute('type', 'text');
+  });
+
+  it('should not have a disabled attribute by default', (): void => {
+    expect(spectator.query(componentRootClass)).not.toHaveAttribute('disabled');
+  });
+
+  it('should not have a disabled class by default', (): void => {
+    expect(spectator.query(componentRootClass)).not.toHaveClass('dh-control-text-disabled');
+  });
+
+  it('should have a tabindex at 0 by default', (): void => {
+    expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '0');
+  });
+
+  describe('when the isDisabled input change', (): void => {
+    describe('when the isDisabled new value is undefined', (): void => {
+      beforeEach((): void => {
+        spectator.setInput('isDisabled', undefined);
+      });
+
+      it('should have a disabled attribute', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('disabled');
+      });
+
+      it('should have a disabled class', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveClass('dh-control-text-disabled');
+      });
+
+      it('should have a tabindex at -1', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '-1');
+      });
+    });
+
+    describe('when the isDisabled new value is null', (): void => {
+      beforeEach((): void => {
+        spectator.setInput('isDisabled', null);
+      });
+
+      it('should have a disabled attribute', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('disabled');
+      });
+
+      it('should have a disabled class', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveClass('dh-control-text-disabled');
+      });
+
+      it('should have a tabindex at -1', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '-1');
+      });
+    });
+
+    describe('when the isDisabled new value is an empty string', (): void => {
+      beforeEach((): void => {
+        spectator.setInput('isDisabled', '');
+      });
+
+      it('should have a disabled attribute', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('disabled');
+      });
+
+      it('should have a disabled class', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveClass('dh-control-text-disabled');
+      });
+
+      it('should have a tabindex at -1', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '-1');
+      });
+    });
+
+    describe('when the isDisabled new value is true as a string', (): void => {
+      beforeEach((): void => {
+        spectator.setInput('isDisabled', 'true');
+      });
+
+      it('should have a disabled attribute', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('disabled');
+      });
+
+      it('should have a disabled class', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveClass('dh-control-text-disabled');
+      });
+
+      it('should have a tabindex at -1', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '-1');
+      });
+    });
+
+    describe('when the isDisabled new value is false as a string', (): void => {
+      beforeEach((): void => {
+        spectator.setInput('isDisabled', 'false');
+      });
+
+      it('should not have a disabled attribute', (): void => {
+        expect(spectator.query(componentRootClass)).not.toHaveAttribute('disabled');
+      });
+
+      it('should not have a disabled class', (): void => {
+        expect(spectator.query(componentRootClass)).not.toHaveClass('dh-control-text-disabled');
+      });
+
+      it('should have a tabindex at 0', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '0');
+      });
+    });
+
+    describe('when the isDisabled new value is true', (): void => {
+      beforeEach((): void => {
+        spectator.setInput('isDisabled', true);
+      });
+
+      it('should have a disabled attribute', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('disabled');
+      });
+
+      it('should have a disabled class', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveClass('dh-control-text-disabled');
+      });
+
+      it('should have a tabindex at -1', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '-1');
+      });
+    });
+
+    describe('when the isDisabled new value is false', (): void => {
+      beforeEach((): void => {
+        spectator.setInput('isDisabled', false);
+      });
+
+      it('should not have a disabled attribute', (): void => {
+        expect(spectator.query(componentRootClass)).not.toHaveAttribute('disabled');
+      });
+
+      it('should not have a disabled class', (): void => {
+        expect(spectator.query(componentRootClass)).not.toHaveClass('dh-control-text-disabled');
+      });
+
+      it('should have a tabindex at 0', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '0');
+      });
+    });
   });
 
   describe('writeValue()', (): void => {
