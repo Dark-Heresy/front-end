@@ -11,6 +11,7 @@ import {
   SpectatorHost
 } from '@ngneat/spectator';
 import { cleanStylesFromDom } from '@test/test';
+import _ from 'lodash';
 
 @Component({
   selector: 'dh-custom-host',
@@ -59,20 +60,63 @@ describe('DhControlTextComponent', (): void => {
     it('should update the value with the given one', (): void => {
       spectator.component.writeValue(value);
 
-      expect(spectator.query(componentRootClass)).toHaveValue('dummy-value');
+      expect(spectator.component.value).toEqual('dummy-value');
     });
   });
 
-  describe('when the input value change', (): void => {
+  describe('registerOnChange()', (): void => {
+    let onChange: DhOptional<(_value: DhOptional<string>) => void>;
+
     beforeEach((): void => {
-      spectator.component.writeValue('a');
-      spectator.component.writeValue('ab');
+      onChange = _.noop;
     });
 
-    it('should', (): void => {
-      spectator.detectChanges();
+    it('should update the onChange method with the given one', (): void => {
+      spectator.component[ 'onChange' ] = null;
 
-      expect(spectator.hostComponent.formGroup.controls.text.value).toEqual('ab');
+      spectator.component.registerOnChange(onChange);
+
+      expect(spectator.component[ 'onChange' ]).toEqual(_.noop);
+    });
+  });
+
+  describe('onTextChange()', (): void => {
+    let text: DhOptional<string>;
+
+    let onChangeSpy: jasmine.Spy;
+    let isFunctionSpy: jasmine.Spy;
+
+    beforeEach((): void => {
+      text = 'dummy-text';
+      spectator.component[ 'onChange' ] = _.noop;
+
+      onChangeSpy = spyOn<any>(spectator.component, 'onChange').and.stub();
+      isFunctionSpy = spyOn(_, 'isFunction').and.returnValue(false);
+    });
+
+    describe('when the onChange method is not a function', (): void => {
+      beforeEach((): void => {
+        isFunctionSpy.and.returnValue(false);
+      });
+
+      it('should not call the onChange method', (): void => {
+        spectator.component.onTextChange(text);
+
+        expect(onChangeSpy).not.toHaveBeenCalled();
+      });
+    });
+
+    describe('when the onChange method is a function', (): void => {
+      beforeEach((): void => {
+        isFunctionSpy.and.returnValue(true);
+      });
+
+      it('should call the onChange method with the given text', (): void => {
+        spectator.component.onTextChange(text);
+
+        expect(onChangeSpy).toHaveBeenCalledTimes(1);
+        expect(onChangeSpy).toHaveBeenCalledWith('dummy-text');
+      });
     });
   });
 
