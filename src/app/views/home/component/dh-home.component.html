@@ -20,6 +20,9 @@
   </dh-button-container>
   <form [formGroup]="formGroup">
     <dh-control-text formControlName="name"></dh-control-text>
+    <dh-button (dhButtonOnClick)="setName()">
+      <dh-button-label [dhButtonLabelTranslation]="{key: 'Set same', scope: 'home'}"></dh-button-label>
+    </dh-button>
     <dh-control-text dhControlTextIsDisabled
                      formControlName="name1">
     </dh-control-text>

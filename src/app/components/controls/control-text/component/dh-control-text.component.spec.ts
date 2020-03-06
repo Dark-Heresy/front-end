@@ -20,15 +20,13 @@ import _ from 'lodash';
 })
 class DhCustomHostComponent {
   public formGroup = new FormGroup({
-    text: new FormControl('dummy-text')
+    text: new FormControl(null)
   });
 }
 
 /**
  * @todo add DOM coverage for:
- * - default value
  * - value change
- * - value change with the reactive form
  */
 describe('DhControlTextComponent', (): void => {
   const componentRootClass = '.dh-control-text';
@@ -47,6 +45,10 @@ describe('DhControlTextComponent', (): void => {
 
   it('should create', (): void => {
     expect(spectator.component).toBeDefined();
+  });
+
+  it('should have an empty string as default value', (): void => {
+    expect(spectator.query(componentRootClass)).toHaveValue('');
   });
 
   it('should have a type to text by default', (): void => {
@@ -190,6 +192,19 @@ describe('DhControlTextComponent', (): void => {
       it('should have a tabindex at 0', (): void => {
         expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '0');
       });
+    });
+  });
+
+  describe('when the form control value change', (): void => {
+    beforeEach((): void => {
+      spectator.hostComponent.formGroup.controls.text.setValue('dummy-text');
+    });
+
+    /**
+     * @todo fix this test
+     */
+    xit('should update the input value with the form control value', (): void => {
+      expect(spectator.query(componentRootClass)).toHaveValue('dummy-text');
     });
   });
 

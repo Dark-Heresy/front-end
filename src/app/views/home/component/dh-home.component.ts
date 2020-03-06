@@ -27,4 +27,8 @@ export class DhHomeComponent {
       Validators.required
     ])
   });
+
+  public setName(): void {
+    this.formGroup.controls.name.setValue('dummy-name');
+  }
 }

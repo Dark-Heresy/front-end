@@ -7,7 +7,7 @@ import { cleanStylesFromDom } from '@test/test';
 import { DhHomeTestingModule } from '../dh-home.testing.module';
 import { DhHomeComponent } from './dh-home.component';
 
-xdescribe('DhHomeComponent', (): void => {
+describe('DhHomeComponent', (): void => {
   const componentFactory: SpectatorFactory<DhHomeComponent> = createComponentFactory({
     component: DhHomeComponent,
     imports: [
