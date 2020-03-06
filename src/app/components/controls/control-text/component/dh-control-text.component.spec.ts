@@ -27,6 +27,7 @@ class DhCustomHostComponent {
  * @todo add DOM coverage for:
  * - default value
  * - value change
+ * - value change with the reactive form
  */
 describe('DhControlTextComponent', (): void => {
   const componentRootClass = '.dh-control-text';
