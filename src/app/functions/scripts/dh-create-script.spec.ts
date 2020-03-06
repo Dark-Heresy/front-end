@@ -24,7 +24,7 @@ describe('DhCreateScript', (): void => {
     it('should update the source of the created html script element with the given one', (): void => {
       const result = dhCreateScript(scriptSource);
 
-      expect(result.src).toEqual(scriptSource);
+      expect(result.src).toEqual(`${document.location.origin}/${scriptSource}`);
     });
 
     it('should update the type of the created html script element to text/javascript', (): void => {
