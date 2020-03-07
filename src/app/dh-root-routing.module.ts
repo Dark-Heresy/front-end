@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { DhErrorPageNotFoundModule } from './views/error/page-not-found/dh-error-page-not-found.module';
 import { DhHomeModule } from './views/home/dh-home.module';
 import { DhIntroductionModule } from './views/introduction/dh-introduction.module';
 
@@ -10,8 +11,8 @@ import { DhIntroductionModule } from './views/introduction/dh-introduction.modul
   imports: [
     RouterModule.forRoot([
       {
-        path: '**',
-        redirectTo: 'error/page-not-found'
+        loadChildren: (): Promise<any> => import('./views/error/page-not-found/dh-error-page-not-found.module').then((m): DhErrorPageNotFoundModule => m.DhErrorPageNotFoundModule),
+        path: 'error/page-not-found'
       },
       {
         loadChildren: (): Promise<any> => import('./views/home/dh-home.module').then((m): DhHomeModule => m.DhHomeModule),
@@ -20,6 +21,10 @@ import { DhIntroductionModule } from './views/introduction/dh-introduction.modul
       {
         loadChildren: (): Promise<any> => import('./views/introduction/dh-introduction.module').then((m): DhIntroductionModule => m.DhIntroductionModule),
         path: 'introduction'
+      },
+      {
+        path: '**',
+        redirectTo: 'error/page-not-found'
       }
     ], {
       paramsInheritanceStrategy: 'always'
