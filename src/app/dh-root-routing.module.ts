@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { QuicklinkStrategy } from 'ngx-quicklink';
+import {
+  QuicklinkModule,
+  QuicklinkStrategy
+} from 'ngx-quicklink';
 import { DhErrorPageNotFoundModule } from './views/error/page-not-found/dh-error-page-not-found.module';
 import { DhHomeModule } from './views/home/dh-home.module';
 import { DhIntroductionModule } from './views/introduction/dh-introduction.module';
@@ -10,6 +13,7 @@ import { DhIntroductionModule } from './views/introduction/dh-introduction.modul
     RouterModule
   ],
   imports: [
+    QuicklinkModule,
     RouterModule.forRoot([
       {
         loadChildren: (): Promise<any> => import('./views/error/page-not-found/dh-error-page-not-found.module').then((m): DhErrorPageNotFoundModule => m.DhErrorPageNotFoundModule),
