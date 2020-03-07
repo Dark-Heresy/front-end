@@ -40,6 +40,8 @@ dh-button {
     }
 
     &.dh-button-type-primary {
+      text-decoration: none;
+      
       &.dh-button-disabled {
         dh-button-label .dh-button-label {
           .dh-button-label--label {
