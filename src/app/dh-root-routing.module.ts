@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { QuicklinkStrategy } from 'ngx-quicklink';
 import { DhErrorPageNotFoundModule } from './views/error/page-not-found/dh-error-page-not-found.module';
 import { DhHomeModule } from './views/home/dh-home.module';
 import { DhIntroductionModule } from './views/introduction/dh-introduction.module';
@@ -27,7 +28,8 @@ import { DhIntroductionModule } from './views/introduction/dh-introduction.modul
         redirectTo: 'error/page-not-found'
       }
     ], {
-      paramsInheritanceStrategy: 'always'
+      paramsInheritanceStrategy: 'always',
+      preloadingStrategy: QuicklinkStrategy
     })
   ]
 })
