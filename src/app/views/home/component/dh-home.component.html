@@ -29,7 +29,8 @@
   </form>
   <p>{{ formGroup.valid }}</p>
   <p>{{ formGroup.controls.name.value }}</p>
-  <dh-button-router>
+  <dh-button-router [dhButtonQueryParams]="{param: 'value'}"
+                    dhButtonRouterLink="introduction">
     <dh-button-label [dhButtonLabelTranslation]="{key: 'Button with route to test preloading strategy', scope: 'home'}"></dh-button-label>
   </dh-button-router>
 </div>

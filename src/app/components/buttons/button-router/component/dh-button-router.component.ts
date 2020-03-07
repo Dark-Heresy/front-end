@@ -10,6 +10,7 @@ import { DhButtonTypeEnum } from '@dh/components/buttons/button/enums/dh-button-
 import { IDhButtonClickEvent } from '@dh/components/buttons/button/interfaces/dh-button-click-event';
 import { dhIsDisabled } from '@dh/functions/states/dh-is-disabled';
 import { DhOptional } from '@dh/types/dh-optional';
+import { IDhQueryParams } from '../../../../interfaces/dh-query-params';
 
 /**
  * @description
@@ -51,10 +52,19 @@ export class DhButtonRouterComponent {
    * @description
    * Default to an empty array
    *
-   * Will be used for the [routerLink]
+   * Will be used by the [routerLink] directive
    */
   @Input('dhButtonRouterLink')
   public routerLink: any[] | string = [];
+
+  /**
+   * @description
+   * Default to an empty array
+   *
+   * Will be used by the [queryParams] directive
+   */
+  @Input('dhButtonQueryParams')
+  public queryParams: IDhQueryParams = [];
 
   /**
    * @description

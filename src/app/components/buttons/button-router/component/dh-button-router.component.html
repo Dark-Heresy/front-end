@@ -1,8 +1,10 @@
 <a (click)="onButtonClick($event)"
    [dhDisabled]="_isDisabled"
    [ngClass]="[size, type]"
+   [queryParams]="queryParams"
    [routerLink]="routerLink"
    class="dh-button"
-   dhDisabledClass="dh-button-disabled">
+   dhDisabledClass="dh-button-disabled"
+   queryParamsHandling="merge">
   <ng-content select="dh-button-label"></ng-content>
 </a>
