@@ -27,7 +27,6 @@ import { DhOptional } from '@dh/types/dh-optional';
   encapsulation: ViewEncapsulation.None,
   selector: 'dh-button-router',
   styleUrls: [
-    '../../button/component/dh-button.component.scss',
     './dh-button-router.component.scss'
   ],
   templateUrl: './dh-button-router.component.html'
