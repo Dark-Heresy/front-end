@@ -6,7 +6,9 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   imports: [
-    RouterModule.forRoot([])
+    RouterModule.forRoot([], {
+      paramsInheritanceStrategy: 'always'
+    })
   ]
 })
 export class AppRoutingModule {

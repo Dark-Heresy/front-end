@@ -49,11 +49,20 @@
       "@app/module": [
         "src/app/app.module.ts"
       ],
+      "@app/server-module": [
+        "src/app/app.server.module.ts"
+      ],
       "@app/routing-module": [
         "src/app/app-routing.module.ts"
       ],
+      "@app/features/*": [
+        "src/app/features/*"
+      ],
       "@app/functions/*": [
         "src/app/functions/*"
+      ],
+      "@app/loaders/*": [
+        "src/app/loaders/*"
       ],
       "@app/environments/*": [
         "src/environments/*"

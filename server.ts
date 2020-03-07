@@ -1,9 +1,9 @@
 import { enableProdMode } from '@angular/core';
-import * as express from 'express';
+import express from 'express';
+import fs from 'fs';
 import _ from 'lodash';
 import { join } from 'path';
 import 'zone.js/dist/zone-node';
-import * as mainServer from './dist/server/main';
 
 enableProdMode();
 
@@ -12,7 +12,7 @@ const PORT = 6888;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 const DIST_BROWSER_FOLDER = join(DIST_FOLDER, 'browser');
 
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP, ngExpressEngine, provideModuleMap }: any = mainServer;
+const { AppServerModuleNgFactory, LAZY_MODULE_MAP, ngExpressEngine, provideModuleMap }: any = fs.readFileSync('./dist/server/main');
 
 app.engine('html', ngExpressEngine({
   bootstrap: AppServerModuleNgFactory,

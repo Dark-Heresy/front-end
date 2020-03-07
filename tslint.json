@@ -85,7 +85,7 @@
     "class-name": true,
     "curly": true,
     "deprecation": {
-      "severity": "warning"
+      "severity": "error"
     },
     "eofline": true,
     "forin": true,
