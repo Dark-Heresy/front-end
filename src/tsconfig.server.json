@@ -8,6 +8,6 @@
     "main.server.ts"
   ],
   "angularCompilerOptions": {
-    "entryModule": "./app/app.server.module#AppServerModule"
+    "entryModule": "./app/dh-root.server.module#DhRootServerModule"
   }
 }

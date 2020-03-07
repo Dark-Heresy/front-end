@@ -2,7 +2,7 @@
   "index": "/index.html",
   "assetGroups": [
     {
-      "name": "app",
+      "name": "dh",
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "resources": {

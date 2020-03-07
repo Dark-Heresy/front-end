@@ -44,7 +44,7 @@
         "allow-else-if": true
       }
     ],
-    "no-null-undefined-union": true,
+    "no-null-undefined-union": false,
     "component-max-inline-declarations": true,
     "no-host-metadata-property": false,
     "no-inputs-metadata-property": false,
@@ -224,7 +224,7 @@
     "no-output-rename": false,
     "use-pipe-transform-interface": true,
     "no-assign-mutated-array": true,
-    "no-missing-dollar-expect": true,
+    "no-dtslint-typo": true,
     "no-enum": false,
     "no-unused-declaration": {
       "options": [

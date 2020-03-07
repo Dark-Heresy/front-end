@@ -4,7 +4,7 @@
 
 [![Downloads](https://img.shields.io/npm/dt/@dark-heresy/front-end.svg?style=flat-square)]()
 [![Build Status](https://travis-ci.com/Dark-Heresy/front-end.svg?branch=develop&style=flat-square)](https://travis-ci.com/Dark-Heresy/front-end)
-[![All Contributors](https://img.shields.io/badge/all_contributors-41-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
 [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
@@ -12,6 +12,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/db32cd18a29bb54553e4/test_coverage?style=flat-square)](https://codeclimate.com/github/Dark-Heresy/front-end/test_coverage)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9078790d-583d-4a64-95d5-d4d8bb0f5702/deploy-status)](https://app.netlify.com/sites/dark-heresy/deploys)
 [![Coverage Status](https://coveralls.io/repos/github/Dark-Heresy/front-end/badge.svg?branch=develop)](https://coveralls.io/github/Dark-Heresy/front-end?branch=develop)
+[![spectator](https://img.shields.io/badge/tested%20with-spectator-2196F3.svg?style=flat-square)]()
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
@@ -57,9 +58,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 Run `npm run generate-certificate` to create the certificate and the key.  
 Add the certificate to Windows or iOS to make it trusted by your OS.  
-You can read this article https://medium.com/@richardr39/using-angular-cli-to-serve-over-https-locally-70dab07417c8 if you want to learn more about it.
+You can read this [article](https://medium.com/@richardr39/using-angular-cli-to-serve-over-https-locally-70dab07417c8) if you want to learn more about it.
 
-Note that if `openssl` is not recognized, you can download manually the latest version available here: https://code.google.com/archive/p/openssl-for-windows/downloads  
+Note that if `openssl` is not recognized, you can download manually the [latest version available](https://code.google.com/archive/p/openssl-for-windows/downloads)
 Then, extract the content and add it anywhere on the computer  
 Add the bin path to the Windows environment variable `PATH`  
 Run `openssl` and then write the content of the `npm run generate-certificate` script

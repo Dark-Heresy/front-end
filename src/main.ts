@@ -4,28 +4,28 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { ENVIRONMENT } from '@app/environments/environment';
-import { createScript } from '@app/functions/scripts/create-script';
-import { loadScript } from '@app/functions/scripts/load-script';
-import { AppModule } from '@app/module';
 import {
   akitaConfig,
   enableAkitaProdMode,
   persistState
 } from '@datorama/akita';
+import { DH_ENVIRONMENT } from '@dh/environments/dh-environment';
+import { dhCreateScript } from '@dh/functions/scripts/dh-create-script';
+import { dhLoadScript } from '@dh/functions/scripts/dh-load-script';
+import { DhRootModule } from '@dh/module';
 import 'hammerjs';
 import localForage from 'localforage';
 import { MonoTypeOperatorFunction } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { HMR_BOOTSTRAP } from './hmr';
 
-if (ENVIRONMENT.isProduction) {
+if (DH_ENVIRONMENT.isProduction) {
   enableProdMode();
   enableAkitaProdMode();
 } else {
-  const script: HTMLScriptElement = createScript('lazy-styles.js');
+  const script: HTMLScriptElement = dhCreateScript('lazy-styles.js');
 
-  loadScript(script);
+  dhLoadScript(script);
 }
 
 const akitaLocalForage: LocalForage = localForage.createInstance({
@@ -35,7 +35,7 @@ const akitaLocalForage: LocalForage = localForage.createInstance({
     localForage.LOCALSTORAGE,
     localForage.WEBSQL
   ],
-  name: 'app_akita',
+  name: 'dh_akita',
   size: 4980736,
   storeName: 'dark_heresy',
   version: 1.0
@@ -52,11 +52,11 @@ akitaConfig({
   resettable: true
 });
 
-const bootstrap: any = (): Promise<NgModuleRef<AppModule>> => platformBrowserDynamic().bootstrapModule(AppModule, {
+const bootstrap: any = (): Promise<NgModuleRef<DhRootModule>> => platformBrowserDynamic().bootstrapModule(DhRootModule, {
   defaultEncapsulation: ViewEncapsulation.None
 });
 
-if (ENVIRONMENT.hmr.isEnabled) {
+if (DH_ENVIRONMENT.hmr.isEnabled) {
   if ((module as any)[ 'hot' ]) {
     HMR_BOOTSTRAP(module, bootstrap);
   } else {

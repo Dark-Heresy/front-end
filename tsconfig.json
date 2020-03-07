@@ -16,7 +16,7 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noUnusedLocals": false,
+    "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "strict": true,
@@ -43,28 +43,43 @@
       }
     ],
     "paths": {
-      "@app/component": [
-        "src/app/app.component.ts"
+      "@test/test": [
+        "src/test.ts"
       ],
-      "@app/module": [
-        "src/app/app.module.ts"
+      "@dh/component": [
+        "src/app/dh-root.component.ts"
       ],
-      "@app/server-module": [
-        "src/app/app.server.module.ts"
+      "@dh/module": [
+        "src/app/dh-root.module.ts"
       ],
-      "@app/routing-module": [
-        "src/app/app-routing.module.ts"
+      "@dh/server-module": [
+        "src/app/dh-root.server.module.ts"
       ],
-      "@app/features/*": [
+      "@dh/routing-module": [
+        "src/app/dh-root-routing.module.ts"
+      ],
+      "@dh/components/*": [
+        "src/app/components/*"
+      ],
+      "@dh/directives/*": [
+        "src/app/directives/*"
+      ],
+      "@dh/features/*": [
         "src/app/features/*"
       ],
-      "@app/functions/*": [
+      "@dh/functions/*": [
         "src/app/functions/*"
       ],
-      "@app/loaders/*": [
+      "@dh/mocks/*": [
+        "src/app/mocks/*"
+      ],
+      "@dh/types/*": [
+        "src/app/types/*"
+      ],
+      "@dh/loaders/*": [
         "src/app/loaders/*"
       ],
-      "@app/environments/*": [
+      "@dh/environments/*": [
         "src/environments/*"
       ]
     }
@@ -79,6 +94,8 @@
     "generateCodeForLibraries": true,
     "fullTemplateTypeCheck": true,
     "trace": true,
-    "enableIvy": true
+    "enableIvy": true,
+    "strictTemplates": true,
+    "strictInputTypes": true
   }
 }

@@ -88,3 +88,58 @@ The rest of the commit message is then used for this.
 
 If you add some assets, [checkout the list of extensions](.gitattributes) and add the new ones into Git LFS if necessary.  
 You can read the [documentation](https://github.com/git-lfs/git-lfs/wiki/Tutorial) of Git LFS if you do not understand this.
+
+## Styles
+
+### Variables naming convention
+
+#### Internal variables
+
+Some variables like colors should never be used directly during the development inside classes or components.  
+This is not recommended because it could leads to a painful experience during an UI breaking change.  
+
+These internal variables should then be prefixed with an "_"  
+
+Example: $_color-white
+
+## Errors
+
+### An unhandled exception occurred: getaddrinfo ENOTFOUND
+
+This error is caused by the lack of custom host on your OS.  
+Checkout the [README](README.md), there is a section called "Development server" with the required configuration.
+
+## Naming conventions
+
+The dh prefix is for Dark Heresy.  
+This is a pain in the ass to have a prefix nevertheless we think that this is useful to identify our stuff from dependencies stuff.  
+It also avoid potential naming collision.  
+
+For example:  
+The type DhOptional without Dh as prefix should be Optional, which is too much common and we do not want to fall in an import hell.
+
+This is the true story, sorry for that, I do not have any potatoes.
+
+### Files
+
+- Each file should be prefixed with "dh-"
+
+### Components
+
+- Each component should be prefixed with "dh-"
+
+### Classes
+
+- Each class should be prefixed with "Dh"
+
+### Types
+
+- Each class should be prefixed with "Dh"
+
+### Functions
+
+- Each function should be prefixed with "dh"
+
+### CSS variables and mixins
+
+- Each variable and mixin should be prefixed with "dh-"
