@@ -52,7 +52,7 @@
   "private": false,
   "scripts": {
     "\n# LOCAL DEV SCRIPTS:": "",
-    "start": "npm run i18n:cache-busting && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve -c development",
+    "start": "npm run i18n:cache-busting && ibazel build -c development",
     "start:ssr": "node dist/server",
     "\n# BUILD SCRIPTS:": "",
     "build": "npm run build:i18n && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build",
@@ -64,7 +64,7 @@
     "build:production": "npm run build:client-and-server-bundles:production && npm run compile:server",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "\n# TEST SCRIPTS:": "",
-    "test": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng test dark-heresy",
+    "test": "ibazel test dark-heresy",
     "test:ci": "npm run i18n:cache-busting && node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng test dark-heresy --karmaConfig=./src/karma.conf.ci.js",
     "\n# LINT SCRIPTS:": "",
     "lint": "concurrently \"npm run stylelint:dev\" \"npm run tslint:dev\"",
