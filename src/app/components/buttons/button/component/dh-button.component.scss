@@ -4,49 +4,37 @@ dh-button {
   display: flex;
 
   .dh-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    outline: none;
+    @extend %dh-button;
 
     &.dh-button-disabled {
-      cursor: not-allowed;
+      @extend %dh-button-disabled;
     }
 
     &:not(.dh-button-disabled) {
-      cursor: pointer;
+      @extend %dh-button-not-disabled;
     }
 
     &.dh-button-size-small {
-      height: dh-pixels-to-em($dh-button-small-height);
-      min-width: dh-pixels-to-em($dh-button-small-min-width);
-      padding: 0 dh-pixels-to-em($dh-button-small-padding);
-      border-radius: 2px;
+      @extend %dh-button-size-small;
     }
 
     &.dh-button-size-medium {
-      height: dh-pixels-to-em($dh-button-medium-height);
-      min-width: dh-pixels-to-em($dh-button-medium-min-width);
-      padding: 0 dh-pixels-to-em($dh-button-medium-padding);
-      border-radius: 2px;
+      @extend %dh-button-size-medium;
     }
 
     &.dh-button-size-large {
-      height: dh-pixels-to-em($dh-button-large-height);
-      min-width: dh-pixels-to-em($dh-button-large-min-width);
-      padding: 0 dh-pixels-to-em($dh-button-large-padding);
-      border-radius: 2px;
+      @extend %dh-button-size-large;
     }
 
     &.dh-button-type-primary {
+      @extend %dh-button-type-primary;
+
       &.dh-button-disabled {
-        background-color: $dh-disabled-background-color;
+        @extend %dh-button-type-primary-disabled;
       }
 
       &:not(.dh-button-disabled) {
-        background-color: $dh-color-primary;
+        @extend %dh-button-type-primary-not-disabled;
       }
     }
   }
