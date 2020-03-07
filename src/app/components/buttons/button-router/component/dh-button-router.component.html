@@ -1,0 +1,7 @@
+<a (click)="onButtonClick($event)"
+   [dhDisabled]="_isDisabled"
+   [ngClass]="[size, type]"
+   class="dh-button"
+   dhDisabledClass="dh-button-disabled">
+  <ng-content select="dh-button-label"></ng-content>
+</a>
