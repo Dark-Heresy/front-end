@@ -49,6 +49,15 @@ export class DhButtonRouterComponent {
 
   /**
    * @description
+   * Default to an empty array
+   *
+   * Will be used for the [routerLink]
+   */
+  @Input('dhButtonRouterLink')
+  public routerLink: any[] | string = [];
+
+  /**
+   * @description
    * Emit on button click when:
    * - [disabled state]{@link DhButtonComponent#isDisabled} is false
    */

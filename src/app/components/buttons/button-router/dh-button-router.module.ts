@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { DhButtonRouterComponent } from '@dh/components/buttons/button-router/component/dh-button-router.component';
 import { DhDisabledModule } from '@dh/directives/disabled/dh-disabled.module';
 
@@ -12,7 +13,8 @@ import { DhDisabledModule } from '@dh/directives/disabled/dh-disabled.module';
   ],
   imports: [
     CommonModule,
-    DhDisabledModule
+    DhDisabledModule,
+    RouterModule
   ]
 })
 export class DhButtonRouterModule {

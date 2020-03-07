@@ -12,45 +12,47 @@ dh-button-label {
   }
 }
 
-dh-button-router .dh-button,
-dh-button .dh-button {
-  &.dh-button-size-small {
-    dh-button-label .dh-button-label {
-      .dh-button-label--label {
-        font-size: dh-pixels-to-em($dh-button-small-font-size);
-      }
-    }
-  }
-
-  &.dh-button-size-medium {
-    dh-button-label .dh-button-label {
-      .dh-button-label--label {
-        font-size: dh-pixels-to-em($dh-button-medium-font-size);
-      }
-    }
-  }
-
-  &.dh-button-size-large {
-    dh-button-label .dh-button-label {
-      .dh-button-label--label {
-        font-size: dh-pixels-to-em($dh-button-large-font-size);
-      }
-    }
-  }
-
-  &.dh-button-type-primary {
-    &.dh-button-disabled {
+dh-button-router,
+dh-button {
+  .dh-button {
+    &.dh-button-size-small {
       dh-button-label .dh-button-label {
         .dh-button-label--label {
-          color: $dh-disabled-color;
+          font-size: dh-pixels-to-em($dh-button-small-font-size);
         }
       }
     }
 
-    &:not(.dh-button-disabled) {
+    &.dh-button-size-medium {
       dh-button-label .dh-button-label {
         .dh-button-label--label {
-          color: $dh-color-secondary;
+          font-size: dh-pixels-to-em($dh-button-medium-font-size);
+        }
+      }
+    }
+
+    &.dh-button-size-large {
+      dh-button-label .dh-button-label {
+        .dh-button-label--label {
+          font-size: dh-pixels-to-em($dh-button-large-font-size);
+        }
+      }
+    }
+
+    &.dh-button-type-primary {
+      &.dh-button-disabled {
+        dh-button-label .dh-button-label {
+          .dh-button-label--label {
+            color: $dh-disabled-color;
+          }
+        }
+      }
+
+      &:not(.dh-button-disabled) {
+        dh-button-label .dh-button-label {
+          .dh-button-label--label {
+            color: $dh-color-secondary;
+          }
         }
       }
     }

@@ -1,5 +1,5 @@
 import { DhButtonRouterComponent } from '@dh/components/buttons/button-router/component/dh-button-router.component';
-import { DhButtonTestingModule } from '@dh/components/buttons/button/dh-button.testing.module';
+import { DhButtonRouterTestingModule } from '@dh/components/buttons/button-router/dh-button-router.testing.module';
 import { DhButtonSizeEnum } from '@dh/components/buttons/button/enums/dh-button-size.enum';
 import { DhButtonTypeEnum } from '@dh/components/buttons/button/enums/dh-button-type-enum';
 import { IDhButtonClickEvent } from '@dh/components/buttons/button/interfaces/dh-button-click-event';
@@ -11,12 +11,12 @@ import {
 } from '@ngneat/spectator';
 import { cleanStylesFromDom } from '@test/test';
 
-describe('DhButtonRouterComponent', (): void => {
+fdescribe('DhButtonRouterComponent', (): void => {
   const componentRootClass = '.dh-button';
   const componentFactory: SpectatorFactory<DhButtonRouterComponent> = createComponentFactory({
     component: DhButtonRouterComponent,
     imports: [
-      DhButtonTestingModule
+      DhButtonRouterTestingModule
     ]
   });
   let spectator: Spectator<DhButtonRouterComponent>;
