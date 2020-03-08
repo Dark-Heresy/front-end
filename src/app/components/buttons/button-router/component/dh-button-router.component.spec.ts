@@ -74,6 +74,10 @@ fdescribe('DhButtonRouterComponent', (): void => {
   });
 
   describe('when the isDisabled input change', (): void => {
+    beforeEach((): void => {
+      spectator.setInput('routerLink', 'dummy-page');
+    });
+
     describe('when the isDisabled new value is undefined', (): void => {
       beforeEach((): void => {
         spectator.setInput('isDisabled', undefined);
@@ -89,6 +93,10 @@ fdescribe('DhButtonRouterComponent', (): void => {
 
       it('should have a tabindex at -1', (): void => {
         expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '-1');
+      });
+
+      it('should have a page relative href', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
       });
     });
 
@@ -108,6 +116,10 @@ fdescribe('DhButtonRouterComponent', (): void => {
       it('should have a tabindex at -1', (): void => {
         expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '-1');
       });
+
+      it('should have a page relative href', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+      });
     });
 
     describe('when the isDisabled new value is an empty string', (): void => {
@@ -125,6 +137,10 @@ fdescribe('DhButtonRouterComponent', (): void => {
 
       it('should have a tabindex at -1', (): void => {
         expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '-1');
+      });
+
+      it('should have a page relative href', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
       });
     });
 
@@ -144,6 +160,10 @@ fdescribe('DhButtonRouterComponent', (): void => {
       it('should have a tabindex at -1', (): void => {
         expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '-1');
       });
+
+      it('should have a page relative href', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+      });
     });
 
     describe('when the isDisabled new value is false as a string', (): void => {
@@ -161,6 +181,10 @@ fdescribe('DhButtonRouterComponent', (): void => {
 
       it('should have a tabindex at 0', (): void => {
         expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '0');
+      });
+
+      it('should have a complete href', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/dummy-page');
       });
     });
 
@@ -180,6 +204,10 @@ fdescribe('DhButtonRouterComponent', (): void => {
       it('should have a tabindex at -1', (): void => {
         expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '-1');
       });
+
+      it('should have a page relative href', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+      });
     });
 
     describe('when the isDisabled new value is false', (): void => {
@@ -197,6 +225,10 @@ fdescribe('DhButtonRouterComponent', (): void => {
 
       it('should have a tabindex at 0', (): void => {
         expect(spectator.query(componentRootClass)).toHaveAttribute('tabindex', '0');
+      });
+
+      it('should have a complete href', (): void => {
+        expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/dummy-page');
       });
     });
   });
@@ -305,6 +337,86 @@ fdescribe('DhButtonRouterComponent', (): void => {
 
         expect(output).toBeDefined();
         expect(output?.mouseEvent).toEqual(jasmine.any(MouseEvent));
+      });
+    });
+  });
+
+  describe('when the routerLink new value change', (): void => {
+    describe('when the button is disabled', (): void => {
+      beforeEach((): void => {
+        spectator.setInput('isDisabled', true);
+      });
+
+      describe('when the routerLink new value is an empty string', (): void => {
+        beforeEach((): void => {
+          spectator.setInput('routerLink', '');
+        });
+
+        it('should have a page relative href', (): void => {
+          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+        });
+      });
+
+      describe('when the routerLink new value is a string', (): void => {
+        beforeEach((): void => {
+          spectator.setInput('routerLink', 'dummy-route');
+        });
+
+        it('should have a page relative href', (): void => {
+          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+        });
+      });
+
+      describe('when the routerLink new value is an array of string', (): void => {
+        beforeEach((): void => {
+          spectator.setInput('routerLink', [
+            'dummy-route',
+            'dummy-sub-route'
+          ]);
+        });
+
+        it('should have a page relative href', (): void => {
+          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+        });
+      });
+    });
+
+    describe('when the button is enabled', (): void => {
+      beforeEach((): void => {
+        spectator.setInput('isDisabled', false);
+      });
+
+      describe('when the routerLink new value is an empty string', (): void => {
+        beforeEach((): void => {
+          spectator.setInput('routerLink', '');
+        });
+
+        it('should have a page relative href', (): void => {
+          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+        });
+      });
+
+      describe('when the routerLink new value is a string', (): void => {
+        beforeEach((): void => {
+          spectator.setInput('routerLink', 'dummy-route');
+        });
+
+        it('should have a complete href', (): void => {
+          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/dummy-route');
+        });
+      });
+
+      describe('when the routerLink new value is an array of string', (): void => {
+        beforeEach((): void => {
+          spectator.setInput('routerLink', [
+            'dummy-route',
+            'dummy-sub-route'
+          ]);
+        });
+
+        it('should have a complete href', (): void => {
+          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/dummy-route/dummy-sub-route');
+        });
       });
     });
   });
