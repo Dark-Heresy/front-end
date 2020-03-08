@@ -11,7 +11,7 @@ import {
 } from '@ngneat/spectator';
 import { cleanStylesFromDom } from '@test/test';
 
-fdescribe('DhButtonRouterComponent', (): void => {
+describe('DhButtonRouterComponent', (): void => {
   const componentRootClass = '.dh-button';
   const componentFactory: SpectatorFactory<DhButtonRouterComponent> = createComponentFactory({
     component: DhButtonRouterComponent,
@@ -352,8 +352,27 @@ fdescribe('DhButtonRouterComponent', (): void => {
           spectator.setInput('routerLink', '');
         });
 
-        it('should have a page relative href', (): void => {
-          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+        describe('when the queryParams is an empty object', (): void => {
+          beforeEach((): void => {
+            spectator.setInput('queryParams', {});
+          });
+
+          it('should have a page relative href', (): void => {
+            expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+          });
+        });
+
+        describe('when the queryParams is an object', (): void => {
+          beforeEach((): void => {
+            spectator.setInput('queryParams', {
+              param1: 'value1',
+              param2: 'value2'
+            });
+          });
+
+          it('should have a page relative href', (): void => {
+            expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+          });
         });
       });
 
@@ -362,8 +381,27 @@ fdescribe('DhButtonRouterComponent', (): void => {
           spectator.setInput('routerLink', 'dummy-route');
         });
 
-        it('should have a page relative href', (): void => {
-          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+        describe('when the queryParams is an empty object', (): void => {
+          beforeEach((): void => {
+            spectator.setInput('queryParams', {});
+          });
+
+          it('should have a page relative href', (): void => {
+            expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+          });
+        });
+
+        describe('when the queryParams is an object', (): void => {
+          beforeEach((): void => {
+            spectator.setInput('queryParams', {
+              param1: 'value1',
+              param2: 'value2'
+            });
+          });
+
+          it('should have a page relative href', (): void => {
+            expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+          });
         });
       });
 
@@ -375,8 +413,27 @@ fdescribe('DhButtonRouterComponent', (): void => {
           ]);
         });
 
-        it('should have a page relative href', (): void => {
-          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+        describe('when the queryParams is an empty object', (): void => {
+          beforeEach((): void => {
+            spectator.setInput('queryParams', {});
+          });
+
+          it('should have a page relative href', (): void => {
+            expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+          });
+        });
+
+        describe('when the queryParams is an object', (): void => {
+          beforeEach((): void => {
+            spectator.setInput('queryParams', {
+              param1: 'value1',
+              param2: 'value2'
+            });
+          });
+
+          it('should have a page relative href', (): void => {
+            expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+          });
         });
       });
     });
@@ -391,8 +448,27 @@ fdescribe('DhButtonRouterComponent', (): void => {
           spectator.setInput('routerLink', '');
         });
 
-        it('should have a page relative href', (): void => {
-          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+        describe('when the queryParams is an empty object', (): void => {
+          beforeEach((): void => {
+            spectator.setInput('queryParams', {});
+          });
+
+          it('should have a page relative href', (): void => {
+            expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+          });
+        });
+
+        describe('when the queryParams is an object', (): void => {
+          beforeEach((): void => {
+            spectator.setInput('queryParams', {
+              param1: 'value1',
+              param2: 'value2'
+            });
+          });
+
+          it('should have a page relative href', (): void => {
+            expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/?param1=value1&param2=value2');
+          });
         });
       });
 
@@ -401,8 +477,27 @@ fdescribe('DhButtonRouterComponent', (): void => {
           spectator.setInput('routerLink', 'dummy-route');
         });
 
-        it('should have a complete href', (): void => {
-          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/dummy-route');
+        describe('when the queryParams is an empty object', (): void => {
+          beforeEach((): void => {
+            spectator.setInput('queryParams', {});
+          });
+
+          it('should have a complete href', (): void => {
+            expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/dummy-route');
+          });
+        });
+
+        describe('when the queryParams is an object', (): void => {
+          beforeEach((): void => {
+            spectator.setInput('queryParams', {
+              param1: 'value1',
+              param2: 'value2'
+            });
+          });
+
+          it('should have a page relative href', (): void => {
+            expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/dummy-route?param1=value1&param2=value2');
+          });
         });
       });
 
@@ -414,8 +509,91 @@ fdescribe('DhButtonRouterComponent', (): void => {
           ]);
         });
 
+        describe('when the queryParams is an empty object', (): void => {
+          beforeEach((): void => {
+            spectator.setInput('queryParams', {});
+          });
+
+          it('should have a complete href', (): void => {
+            expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/dummy-route/dummy-sub-route');
+          });
+        });
+
+        describe('when the queryParams is an object', (): void => {
+          beforeEach((): void => {
+            spectator.setInput('queryParams', {
+              param1: 'value1',
+              param2: 'value2'
+            });
+          });
+
+          it('should have a complete href', (): void => {
+            expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/dummy-route/dummy-sub-route?param1=value1&param2=value2');
+          });
+        });
+      });
+    });
+  });
+
+  describe('when the queryParams new value change', (): void => {
+    beforeEach((): void => {
+      spectator.setInput('routerLink', 'dummy-route');
+    });
+
+    describe('when the button is disabled', (): void => {
+      beforeEach((): void => {
+        spectator.setInput('isDisabled', true);
+      });
+
+      describe('when the queryParams new value is an empty object', (): void => {
+        beforeEach((): void => {
+          spectator.setInput('queryParams', {});
+        });
+
+        it('should have a page relative href', (): void => {
+          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+        });
+      });
+
+      describe('when the queryParams new value is an object', (): void => {
+        beforeEach((): void => {
+          spectator.setInput('queryParams', {
+            param1: 'value1',
+            param2: 'value2'
+          });
+        });
+
+        it('should have a page relative href', (): void => {
+          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/');
+        });
+      });
+    });
+
+    describe('when the button is enabled', (): void => {
+      beforeEach((): void => {
+        spectator.setInput('isDisabled', false);
+      });
+
+      describe('when the queryParams new value is an empty object', (): void => {
+        beforeEach((): void => {
+          spectator.setInput('queryParams', {});
+        });
+
+        it('should have a page relative href', (): void => {
+          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/dummy-route');
+        });
+      });
+
+      describe('when the queryParams new value is an object', (): void => {
+        beforeEach((): void => {
+          spectator.setInput('queryParams', {
+            param1: 'value1',
+            param2: 'value2'
+          });
+        });
+
         it('should have a complete href', (): void => {
-          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/dummy-route/dummy-sub-route');
+          expect(spectator.query(componentRootClass)).toHaveAttribute('href', '/dummy-route?param1=value1&param2=value2');
         });
       });
     });
