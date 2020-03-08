@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   Input,
   ViewEncapsulation
@@ -7,6 +8,7 @@ import { IDhTranslation } from '@dh/features/translation/interfaces/dh-translati
 import { DhOptional } from '@dh/types/dh-optional';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   selector: 'dh-button-label',
   styleUrls: [
