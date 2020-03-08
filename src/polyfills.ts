@@ -6,3 +6,4 @@
 
 import 'zone.js/dist/zone';
 import 'zone.js/dist/zone-error';
+import 'document-register-element';
