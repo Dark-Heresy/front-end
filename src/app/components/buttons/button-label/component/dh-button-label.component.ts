@@ -4,6 +4,7 @@ import {
   Input,
   ViewEncapsulation
 } from '@angular/core';
+import { IDhButtonLabel } from '@dh/components/buttons/button-label/interfaces/dh-button-label';
 import { IDhTranslation } from '@dh/features/translation/interfaces/dh-translation';
 import { DhOptional } from '@dh/types/dh-optional';
 
@@ -16,7 +17,7 @@ import { DhOptional } from '@dh/types/dh-optional';
   ],
   templateUrl: './dh-button-label.component.html'
 })
-export class DhButtonLabelComponent {
+export class DhButtonLabelComponent implements IDhButtonLabel {
 
   /**
    * @description

@@ -21,8 +21,10 @@ import { DhDisabledModule } from '@dh/directives/disabled/dh-disabled.module';
 })
 export class DhButtonModule {
   public constructor(readonly injector: Injector) {
-    customElements.define('dh-button', createCustomElement(DhButtonComponent, {
-      injector
-    }));
+    if (!customElements.get('dh-button')) {
+      customElements.define('dh-button', createCustomElement(DhButtonComponent, {
+        injector
+      }));
+    }
   }
 }

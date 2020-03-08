@@ -13,6 +13,7 @@ import {
   enableAkitaProdMode,
   persistState
 } from '@datorama/akita';
+import { IDhButtonLabel } from '@dh/components/buttons/button-label/interfaces/dh-button-label';
 import { IDhButton } from '@dh/components/buttons/button/interfaces/dh-button';
 import { DH_ENVIRONMENT } from '@dh/environments/dh-environment';
 import { dhCreateScript } from '@dh/functions/scripts/dh-create-script';
@@ -61,11 +62,13 @@ declare global {
   // tslint:disable-next-line:interface-name
   interface HTMLElementTagNameMap {
     'dh-button': NgElement & WithProperties<IDhButton>;
+    'dh-button-label': NgElement & WithProperties<IDhButtonLabel>;
   }
 }
 
 const bootstrap: any = (): Promise<NgModuleRef<DhRootModule>> => platformBrowserDynamic().bootstrapModule(DhRootModule, {
-  defaultEncapsulation: ViewEncapsulation.None
+  defaultEncapsulation: ViewEncapsulation.None,
+  ngZoneEventCoalescing: true
 });
 
 if (DH_ENVIRONMENT.hmr.isEnabled) {
