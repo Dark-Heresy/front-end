@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { DhButtonSizeEnum } from '@dh/components/buttons/button/enums/dh-button-size.enum';
 import { DhButtonTypeEnum } from '@dh/components/buttons/button/enums/dh-button-type-enum';
+import { IDhButton } from '@dh/components/buttons/button/interfaces/dh-button';
 import { IDhButtonClickEvent } from '@dh/components/buttons/button/interfaces/dh-button-click-event';
 import { dhIsDisabled } from '@dh/functions/states/dh-is-disabled';
 import { DhOptional } from '@dh/types/dh-optional';
@@ -33,7 +34,7 @@ import { DhOptional } from '@dh/types/dh-optional';
   ],
   templateUrl: './dh-button.component.html'
 })
-export class DhButtonComponent {
+export class DhButtonComponent implements IDhButton {
 
   /**
    * @description
@@ -55,7 +56,7 @@ export class DhButtonComponent {
    * - [disabled state]{@link DhButtonComponent#isDisabled} is false
    */
   @Output('dhButtonOnClick')
-  public clickEvent = new EventEmitter<IDhButtonClickEvent>();
+  public clickEvent: EventEmitter<IDhButtonClickEvent> = new EventEmitter<IDhButtonClickEvent>();
 
   public _isDisabled = false;
 

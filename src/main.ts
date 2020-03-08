@@ -3,12 +3,17 @@ import {
   NgModuleRef,
   ViewEncapsulation
 } from '@angular/core';
+import {
+  NgElement,
+  WithProperties
+} from '@angular/elements';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import {
   akitaConfig,
   enableAkitaProdMode,
   persistState
 } from '@datorama/akita';
+import { IDhButton } from '@dh/components/buttons/button/interfaces/dh-button';
 import { DH_ENVIRONMENT } from '@dh/environments/dh-environment';
 import { dhCreateScript } from '@dh/functions/scripts/dh-create-script';
 import { dhLoadScript } from '@dh/functions/scripts/dh-load-script';
@@ -51,6 +56,13 @@ persistState({
 akitaConfig({
   resettable: true
 });
+
+declare global {
+  // tslint:disable-next-line:interface-name
+  interface HTMLElementTagNameMap {
+    'dh-button': NgElement & WithProperties<IDhButton>;
+  }
+}
 
 const bootstrap: any = (): Promise<NgModuleRef<DhRootModule>> => platformBrowserDynamic().bootstrapModule(DhRootModule, {
   defaultEncapsulation: ViewEncapsulation.None
