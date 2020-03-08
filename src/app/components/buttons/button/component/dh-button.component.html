@@ -3,5 +3,5 @@
      [ngClass]="[size, type]"
      class="dh-button"
      dhDisabledClass="dh-button-disabled">
-  <ng-content select="dh-button-label"></ng-content>
+  <slot name="dh-button-label"></slot>
 </div>

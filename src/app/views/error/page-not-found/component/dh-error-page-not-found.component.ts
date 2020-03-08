@@ -6,7 +6,7 @@ import {
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.ShadowDom,
   selector: 'dh-error-page-not-found',
   styleUrls: [
     './dh-error-page-not-found.component.scss'

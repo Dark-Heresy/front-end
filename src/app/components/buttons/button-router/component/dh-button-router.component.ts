@@ -27,7 +27,7 @@ import { IDhQueryParams } from '../../../../interfaces/dh-query-params';
  */
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.ShadowDom,
   selector: 'dh-button-router',
   styleUrls: [
     './dh-button-router.component.scss'

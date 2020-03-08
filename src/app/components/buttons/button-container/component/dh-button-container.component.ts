@@ -6,7 +6,7 @@ import {
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.ShadowDom,
   selector: 'dh-button-container',
   styleUrls: [
     './dh-button-container.component.scss'

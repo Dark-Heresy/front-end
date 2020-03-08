@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   ExistingProvider,
   forwardRef,
@@ -25,7 +26,8 @@ import _ from 'lodash';
  * ```
  */
 @Component({
-  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.ShadowDom,
   providers: [
     <ExistingProvider> {
       multi: true,

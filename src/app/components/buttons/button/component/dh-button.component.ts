@@ -27,7 +27,7 @@ import { DhOptional } from '@dh/types/dh-optional';
  */
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.ShadowDom,
   selector: 'dh-button',
   styleUrls: [
     './dh-button.component.scss'

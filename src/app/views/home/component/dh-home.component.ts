@@ -12,7 +12,7 @@ import { DhButtonSizeEnum } from '@dh/components/buttons/button/enums/dh-button-
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.ShadowDom,
   selector: 'dh-home',
   styleUrls: [
     './dh-home.component.scss'

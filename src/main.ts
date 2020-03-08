@@ -67,7 +67,7 @@ declare global {
 }
 
 const bootstrap: any = (): Promise<NgModuleRef<DhRootModule>> => platformBrowserDynamic().bootstrapModule(DhRootModule, {
-  defaultEncapsulation: ViewEncapsulation.None,
+  defaultEncapsulation: ViewEncapsulation.ShadowDom,
   ngZoneEventCoalescing: true
 });
 
