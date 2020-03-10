@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { DhRootComponent } from '@dh/component';
+import { DhNavbarModule } from '@dh/components/navbar/dh-navbar.module';
 import { DH_ENVIRONMENT } from '@dh/environments/dh-environment';
 import { DhTranslationRootModule } from '@dh/features/translation/dh-translation-root.module';
 import { DhRootRoutingModule } from '@dh/routing-module';
@@ -49,7 +50,8 @@ registerLocaleData(localeFr, 'fr', localeFrExtra);
     }),
     HammerModule,
     DhTranslationRootModule,
-    DhRootRoutingModule
+    DhRootRoutingModule,
+    DhNavbarModule
   ]
 })
 export class DhRootModule {
