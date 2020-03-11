@@ -207,8 +207,17 @@
               "**/node_modules/**"
             ],
             "typeCheck": true,
-            "force": true,
             "format": "codeFrame"
+          },
+          "configurations": {
+            "dev": {
+              "fix": true,
+              "force": true
+            },
+            "ci": {
+              "fix": false,
+              "force": false
+            }
           }
         },
         "server": {
