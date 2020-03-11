@@ -67,7 +67,8 @@
     "unit-whitelist": [
       "em",
       "rem",
-      "px"
+      "px",
+      "%"
     ],
     "scss/at-else-empty-line-before": "never",
     "scss/at-function-named-arguments": null,
@@ -117,25 +118,42 @@
         "flex-direction",
         "justify-content",
         "align-items",
-        "margin",
-        "margin-top",
-        "margin-right",
-        "margin-bottom",
-        "margin-left",
+        "height",
+        "min-height",
+        "max-height",
+        "width",
+        "min-width",
+        "max-width",
+        "color",
+        "background-color",
+        "font-family",
+        "font-weight",
+        "font-style",
         "padding",
         "padding-top",
         "padding-right",
         "padding-bottom",
         "padding-left",
-        "color",
-        "background-color",
-        "z-index"
+        "box-sizing",
+        "border",
+        "border-top",
+        "border-right",
+        "border-bottom",
+        "border-left",
+        "border-radius",
+        "margin",
+        "margin-top",
+        "margin-right",
+        "margin-bottom",
+        "margin-left",
+        "z-index",
+        "scroll-behavior"
       ],
       {
         "unspecified": "bottomAlphabetical",
-        "emptyLineBeforeUnspecified": "always"
+        "emptyLineBeforeUnspecified": "never"
       }
     ],
-    "order/properties-alphabetical-order": true
+    "order/properties-alphabetical-order": null
   }
 }

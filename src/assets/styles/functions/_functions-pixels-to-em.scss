@@ -1,0 +1,3 @@
+@function dh-pixels-to-em($pixels, $context: $dh-body-font-size) {
+  @return #{dh-remove-unit($pixels) / $context}em;
+}

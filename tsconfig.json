@@ -55,6 +55,9 @@
       "@dh/server-module": [
         "src/app/dh-root.server.module.ts"
       ],
+      "@dh/testing-module": [
+        "src/app/dh-root.testing.module.ts"
+      ],
       "@dh/routing-module": [
         "src/app/dh-root-routing.module.ts"
       ],

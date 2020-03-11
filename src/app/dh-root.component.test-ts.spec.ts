@@ -1,4 +1,5 @@
 import { DhRootComponent } from '@dh/component';
+import { DhRootRoutingModule } from '@dh/routing-module';
 import {
   createComponentFactory,
   Spectator
@@ -7,7 +8,10 @@ import { cleanStylesFromDom } from '@test/test';
 
 describe('DhRootComponent:TestTS', () => {
   const createComponent = createComponentFactory({
-    component: DhRootComponent
+    component: DhRootComponent,
+    imports: [
+      DhRootRoutingModule
+    ]
   });
   let spectator: Spectator<DhRootComponent>;
 

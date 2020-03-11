@@ -3,6 +3,7 @@ import { DhButtonComponent } from '@dh/components/buttons/button/component/dh-bu
 import { DhButtonSizeEnum } from '@dh/components/buttons/button/enums/dh-button-size.enum';
 import { DhButtonTypeEnum } from '@dh/components/buttons/button/enums/dh-button-type-enum';
 import { IDhButtonClickEvent } from '@dh/components/buttons/button/interfaces/dh-button-click-event';
+import { DhDisabledTestingModule } from '@dh/directives/disabled/dh-disabled.testing.module';
 import {
   createComponentFactory,
   Spectator
@@ -11,7 +12,10 @@ import { cleanStylesFromDom } from '@test/test';
 
 describe('DhButtonComponent:TestTS', () => {
   const createComponent = createComponentFactory({
-    component: DhButtonComponent
+    component: DhButtonComponent,
+    imports: [
+      DhDisabledTestingModule
+    ]
   });
   let spectator: Spectator<DhButtonComponent>;
 

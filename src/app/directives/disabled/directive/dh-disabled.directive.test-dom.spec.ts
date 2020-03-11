@@ -160,6 +160,22 @@ describe('DhDisabledDirective:TestDom', () => {
     });
   });
 
+  describe('when using the directive with a disabled class and the disabled class change once again', () => {
+    beforeEach(() => {
+      spectator = createDirective(`<div dhDisabled [dhDisabledClass]="disabledClass"></div>`);
+      spectator.setHostInput('disabledClass', 'dh-disabled-old-class');
+      spectator.setHostInput('disabledClass', 'dh-disabled-new-class');
+    });
+
+    it('should not have the old disabled class', () => {
+      expect(spectator.element).not.toHaveClass('dh-disabled-old-class');
+    });
+
+    it('should have the new disabled class', () => {
+      expect(spectator.element).toHaveClass('dh-disabled-new-class');
+    });
+  });
+
   afterAll(() => {
     cleanStylesFromDom();
   });

@@ -55,7 +55,12 @@
                 "bundleName": "lazy-styles"
               }
             ],
-            "es5BrowserSupport": true
+            "es5BrowserSupport": true,
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/assets/styles/"
+              ]
+            }
           },
           "configurations": {
             "development": {
@@ -183,7 +188,12 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "codeCoverage": true,
-            "watch": true
+            "watch": true,
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/assets/styles/"
+              ]
+            }
           }
         },
         "lint": {
@@ -210,7 +220,12 @@
             },
             "outputPath": "dist/server",
             "main": "src/main.server.ts",
-            "tsConfig": "src/tsconfig.server.json"
+            "tsConfig": "src/tsconfig.server.json",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/assets/styles/"
+              ]
+            }
           },
           "configurations": {
             "production": {

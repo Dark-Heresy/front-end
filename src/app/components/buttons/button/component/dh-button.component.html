@@ -1,5 +1,7 @@
 <div (click)="onButtonClick($event)"
      [dhDisabled]="isDisabled"
      [ngClass]="[size, type]"
-     class="dh-button">
+     class="dh-button"
+     dhDisabledClass="dh-button-disabled">
+  <ng-content select="dh-button-label"></ng-content>
 </div>
