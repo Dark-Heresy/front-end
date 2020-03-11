@@ -21,7 +21,7 @@ class DhCustomHostComponent {
   public disabledClass: DhOptional<string> = undefined;
 }
 
-describe('DhDisabledDirective:TestDom', () => {
+describe('DhDisabledDirective', () => {
   const createDirective = createDirectiveFactory({
     directive: DhDisabledDirective,
     host: DhCustomHostComponent,
@@ -37,6 +37,36 @@ describe('DhDisabledDirective:TestDom', () => {
   describe('when using the directive like an attribute', () => {
     beforeEach(() => {
       spectator = createDirective(`<div dhDisabled></div>`);
+    });
+
+    it('should be disabled', () => {
+      expect(spectator.element).toHaveAttribute('disabled');
+    });
+
+    it('should not be focusable', () => {
+      expect(spectator.element).toHaveAttribute('tabindex', '-1');
+    });
+  });
+
+  describe('when using the directive with an input and undefined as value', () => {
+    beforeEach(() => {
+      spectator = createDirective(`<div [dhDisabled]="isDisabled"></div>`);
+      spectator.setHostInput('isDisabled', undefined);
+    });
+
+    it('should be disabled', () => {
+      expect(spectator.element).toHaveAttribute('disabled');
+    });
+
+    it('should not be focusable', () => {
+      expect(spectator.element).toHaveAttribute('tabindex', '-1');
+    });
+  });
+
+  describe('when using the directive with an input and null as value', () => {
+    beforeEach(() => {
+      spectator = createDirective(`<div [dhDisabled]="isDisabled"></div>`);
+      spectator.setHostInput('isDisabled', null);
     });
 
     it('should be disabled', () => {
@@ -75,36 +105,6 @@ describe('DhDisabledDirective:TestDom', () => {
 
     it('should be focusable', () => {
       expect(spectator.element).toHaveAttribute('tabindex', '0');
-    });
-  });
-
-  describe('when using the directive with an input and undefined as value', () => {
-    beforeEach(() => {
-      spectator = createDirective(`<div [dhDisabled]="isDisabled"></div>`);
-      spectator.setHostInput('isDisabled', undefined);
-    });
-
-    it('should be disabled', () => {
-      expect(spectator.element).toHaveAttribute('disabled');
-    });
-
-    it('should not be focusable', () => {
-      expect(spectator.element).toHaveAttribute('tabindex', '-1');
-    });
-  });
-
-  describe('when using the directive with an input and null as value', () => {
-    beforeEach(() => {
-      spectator = createDirective(`<div [dhDisabled]="isDisabled"></div>`);
-      spectator.setHostInput('isDisabled', null);
-    });
-
-    it('should be disabled', () => {
-      expect(spectator.element).toHaveAttribute('disabled');
-    });
-
-    it('should not be focusable', () => {
-      expect(spectator.element).toHaveAttribute('tabindex', '-1');
     });
   });
 

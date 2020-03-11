@@ -4,4 +4,8 @@ describe('DhButtonTypeEnum', () => {
   it('should have a member "PRIMARY"', () => {
     expect(DhButtonTypeEnum.PRIMARY).toEqual('dh-button-type-primary');
   });
+
+  it('should have a member "ERROR"', () => {
+    expect(DhButtonTypeEnum.ERROR).toEqual('dh-button-type-error');
+  });
 });

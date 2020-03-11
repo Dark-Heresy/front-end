@@ -9,6 +9,7 @@ import { DhButtonSizeEnum } from '@dh/components/buttons/button/enums/dh-button-
 import { DhButtonTypeEnum } from '@dh/components/buttons/button/enums/dh-button-type-enum';
 import { IDhButtonClickEvent } from '@dh/components/buttons/button/interfaces/dh-button-click-event';
 import { DhOptional } from '@dh/types/dh-optional';
+import _ from 'lodash';
 
 /**
  * @description
@@ -65,10 +66,20 @@ export class DhButtonComponent {
   public clickEvent = new EventEmitter<IDhButtonClickEvent>();
 
   public onButtonClick(mouseEvent: Readonly<MouseEvent>): void {
-    if (!this.isDisabled) {
+    if (!this.isButtonDisabled()) {
       this.clickEvent.emit({
         mouseEvent
       });
     }
+  }
+
+  private isButtonDisabled(): boolean {
+    if (_.isBoolean(this.isDisabled)) {
+      return this.isDisabled;
+    } else if (_.isString(this.isDisabled)) {
+      return this.isDisabled !== 'false';
+    }
+
+    return true;
   }
 }

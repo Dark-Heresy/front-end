@@ -1,19 +1,19 @@
-import { DhRootComponent } from '@dh/component';
-import { DhRootRoutingModule } from '@dh/routing-module';
 import {
   createComponentFactory,
   Spectator
 } from '@ngneat/spectator';
 import { cleanStylesFromDom } from '@test/test';
+import { DhHomeTestingModule } from '../dh-home.testing.module';
+import { DhHomeComponent } from './dh-home.component';
 
-describe('DhRootComponent:TestTS', () => {
+describe('DhHomeComponent', () => {
   const createComponent = createComponentFactory({
-    component: DhRootComponent,
+    component: DhHomeComponent,
     imports: [
-      DhRootRoutingModule
+      DhHomeTestingModule
     ]
   });
-  let spectator: Spectator<DhRootComponent>;
+  let spectator: Spectator<DhHomeComponent>;
 
   beforeEach(() => {
     spectator = createComponent();
