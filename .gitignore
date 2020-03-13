@@ -49,3 +49,4 @@ Thumbs.db
 
 # i18n generated files
 /src/assets/i18n-cache-busting.json
+/bazel-out
