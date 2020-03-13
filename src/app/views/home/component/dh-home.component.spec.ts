@@ -2,12 +2,13 @@ import {
   createComponentFactory,
   Spectator
 } from '@ngneat/spectator';
+import { SpectatorFactory } from '@ngneat/spectator/lib/spectator/create-factory';
 import { cleanStylesFromDom } from '@test/test';
 import { DhHomeTestingModule } from '../dh-home.testing.module';
 import { DhHomeComponent } from './dh-home.component';
 
-describe('DhHomeComponent', () => {
-  const createComponent = createComponentFactory({
+describe('DhHomeComponent', (): void => {
+  const componentFactory: SpectatorFactory<DhHomeComponent> = createComponentFactory({
     component: DhHomeComponent,
     imports: [
       DhHomeTestingModule
@@ -15,15 +16,15 @@ describe('DhHomeComponent', () => {
   });
   let spectator: Spectator<DhHomeComponent>;
 
-  beforeEach(() => {
-    spectator = createComponent();
+  beforeEach((): void => {
+    spectator = componentFactory();
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(spectator.component).toBeDefined();
   });
 
-  afterAll(() => {
+  afterAll((): void => {
     cleanStylesFromDom();
   });
 });

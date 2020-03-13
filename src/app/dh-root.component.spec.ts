@@ -6,7 +6,7 @@ import {
 } from '@ngneat/spectator';
 import { cleanStylesFromDom } from '@test/test';
 
-describe('DhRootComponent', () => {
+describe('DhRootComponent', (): void => {
   const createComponent = createComponentFactory({
     component: DhRootComponent,
     imports: [
@@ -15,15 +15,15 @@ describe('DhRootComponent', () => {
   });
   let spectator: Spectator<DhRootComponent>;
 
-  beforeEach(() => {
+  beforeEach((): void => {
     spectator = createComponent();
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(spectator.component).toBeDefined();
   });
 
-  afterAll(() => {
+  afterAll((): void => {
     cleanStylesFromDom();
   });
 });

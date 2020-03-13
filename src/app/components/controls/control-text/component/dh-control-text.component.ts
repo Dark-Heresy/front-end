@@ -30,7 +30,7 @@ import _ from 'lodash';
     <ExistingProvider> {
       multi: true,
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => DhControlTextComponent)
+      useExisting: forwardRef((): typeof DhControlTextComponent => DhControlTextComponent)
     }
   ],
   selector: 'dh-control-text',
@@ -42,7 +42,6 @@ import _ from 'lodash';
 export class DhControlTextComponent implements ControlValueAccessor {
 
   public value: DhOptional<string> = undefined;
-  private onChange: DhOptional<(_value: DhOptional<string>) => void> = undefined;
 
   /**
    * @description
@@ -53,6 +52,8 @@ export class DhControlTextComponent implements ControlValueAccessor {
    */
   @Input('dhControlTextIsDisabled')
   public isDisabled: DhOptional<boolean | string> = false;
+
+  private onChange: DhOptional<(_value: DhOptional<string>) => void> = undefined;
 
   public writeValue(value: Readonly<DhOptional<string>>): void {
     this.value = value;

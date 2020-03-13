@@ -2,12 +2,13 @@ import { DhButtonContainerComponent } from '@dh/components/buttons/button-contai
 import { DhButtonContainerTestingModule } from '@dh/components/buttons/button-container/dh-button-container.testing.module';
 import {
   createComponentFactory,
-  Spectator
+  Spectator,
+  SpectatorFactory
 } from '@ngneat/spectator';
 import { cleanStylesFromDom } from '@test/test';
 
-describe('DhButtonContainerComponent', () => {
-  const createComponent = createComponentFactory({
+describe('DhButtonContainerComponent', (): void => {
+  const componentFactory: SpectatorFactory<DhButtonContainerComponent> = createComponentFactory({
     component: DhButtonContainerComponent,
     imports: [
       DhButtonContainerTestingModule
@@ -15,15 +16,15 @@ describe('DhButtonContainerComponent', () => {
   });
   let spectator: Spectator<DhButtonContainerComponent>;
 
-  beforeEach(() => {
-    spectator = createComponent();
+  beforeEach((): void => {
+    spectator = componentFactory();
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(spectator.component).toBeDefined();
   });
 
-  afterAll(() => {
+  afterAll((): void => {
     cleanStylesFromDom();
   });
 });

@@ -3,13 +3,14 @@ import { DhButtonLabelTestingModule } from '@dh/components/buttons/button-label/
 import { dhGetFakeTranslation } from '@dh/features/translation/functions/fakes/dh-get-fake-translation';
 import {
   createComponentFactory,
-  Spectator
+  Spectator,
+  SpectatorFactory
 } from '@ngneat/spectator';
 import { cleanStylesFromDom } from '@test/test';
 
-describe('DhButtonLabelComponent', () => {
+describe('DhButtonLabelComponent', (): void => {
   const componentRootClass = '.dh-button-label';
-  const createComponent = createComponentFactory({
+  const componentFactory: SpectatorFactory<DhButtonLabelComponent> = createComponentFactory({
     component: DhButtonLabelComponent,
     imports: [
       DhButtonLabelTestingModule
@@ -17,56 +18,56 @@ describe('DhButtonLabelComponent', () => {
   });
   let spectator: Spectator<DhButtonLabelComponent>;
 
-  beforeEach(() => {
-    spectator = createComponent();
+  beforeEach((): void => {
+    spectator = componentFactory();
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(spectator.component).toBeDefined();
   });
 
-  it('should hide the label by default', () => {
+  it('should hide the label by default', (): void => {
     expect(spectator.query(componentRootClass)).toBeNull();
   });
 
-  describe('when the labelTranslation input change', () => {
-    beforeEach(() => {
+  describe('when the labelTranslation input change', (): void => {
+    beforeEach((): void => {
       spectator.setInput('labelTranslation', undefined);
     });
 
-    describe('when the labelTranslation new value is undefined', () => {
-      beforeEach(() => {
+    describe('when the labelTranslation new value is undefined', (): void => {
+      beforeEach((): void => {
         spectator.setInput('labelTranslation', undefined);
       });
 
-      it('should hide the label', () => {
+      it('should hide the label', (): void => {
         expect(spectator.query(componentRootClass)).toBeNull();
       });
     });
 
-    describe('when the labelTranslation new value is null', () => {
-      beforeEach(() => {
+    describe('when the labelTranslation new value is null', (): void => {
+      beforeEach((): void => {
         spectator.setInput('labelTranslation', null);
       });
 
-      it('should hide the label', () => {
+      it('should hide the label', (): void => {
         expect(spectator.query(componentRootClass)).toBeNull();
       });
     });
 
-    describe('when the labelTranslation new value is a translation', () => {
-      beforeEach(() => {
+    describe('when the labelTranslation new value is a translation', (): void => {
+      beforeEach((): void => {
         spectator.setInput('labelTranslation', dhGetFakeTranslation());
       });
 
-      it('should show the label', () => {
+      it('should show the label', (): void => {
         expect(spectator.query(componentRootClass)).toBeDefined();
         expect(spectator.query(`${componentRootClass} .dh-button-label--label`)).toBeDefined();
       });
     });
   });
 
-  afterAll(() => {
+  afterAll((): void => {
     cleanStylesFromDom();
   });
 });

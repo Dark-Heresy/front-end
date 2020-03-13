@@ -1,8 +1,8 @@
 import { ValueProvider } from '@angular/core';
 import { DH_ENVIRONMENT } from '@dh/environments/dh-environment';
 import {
-  TRANSLOCO_CONFIG,
-  TranslocoConfig
+  TranslocoConfig,
+  TRANSLOCO_CONFIG
 } from '@ngneat/transloco';
 
 export const DH_TRANSLOCO_CONFIG_PROVIDER: ValueProvider = {

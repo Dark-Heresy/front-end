@@ -7,8 +7,8 @@ import { TranslocoModule } from '@ngneat/transloco';
 import { TranslocoMessageFormatModule } from '@ngneat/transloco-messageformat';
 import {
   cookiesStorage,
-  TRANSLOCO_PERSIST_LANG_STORAGE,
-  TranslocoPersistLangModule
+  TranslocoPersistLangModule,
+  TRANSLOCO_PERSIST_LANG_STORAGE
 } from '@ngneat/transloco-persist-lang';
 import {
   PERSIST_TRANSLATIONS_STORAGE,
