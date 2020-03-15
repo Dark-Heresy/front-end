@@ -1,0 +1,10 @@
+<a (click)="onButtonClick($event)"
+   [dhDisabled]="_isDisabled"
+   [ngClass]="[size, type]"
+   [queryParams]="_isDisabled ? {} : queryParams"
+   [routerLink]="_isDisabled ? '' : routerLink"
+   class="dh-button"
+   dhDisabledClass="dh-button-disabled"
+   queryParamsHandling="merge">
+  <ng-content select="dh-button-label"></ng-content>
+</a>
