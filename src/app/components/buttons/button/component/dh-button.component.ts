@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   Input,
@@ -24,6 +25,7 @@ import { DhOptional } from '@dh/types/dh-optional';
  * ```
  */
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   selector: 'dh-button',
   styleUrls: [
