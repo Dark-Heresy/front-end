@@ -1,0 +1,268 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "npm",
+    "analytics": "b099f279-11e9-4c66-b929-305424c2e05d"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "dark-heresy": {
+      "projectType": "application",
+      "schematics": {
+        "@ngneat/spectator:spectator-component": {
+          "styleext": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "customWebpackConfig": {
+              "path": "./scripts/webpack/custom-webpack-build.config.js",
+              "replaceDuplicatePlugins": false
+            },
+            "outputPath": "dist/browser",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "src/assets",
+              "src/manifest.json",
+              "src/robots.txt",
+              "src/favicon.ico",
+              {
+                "glob": "**/*",
+                "input": "./sitemaps/",
+                "output": "./"
+              }
+            ],
+            "styles": [
+              "src/assets/styles/styles.scss",
+              {
+                "input": "node_modules/animate.css/animate.min.css",
+                "lazy": true,
+                "bundleName": "lazy-styles"
+              },
+              {
+                "input": "node_modules/reset-css/reset.css",
+                "lazy": true,
+                "bundleName": "lazy-styles"
+              }
+            ],
+            "es5BrowserSupport": true,
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/assets/styles/"
+              ]
+            }
+          },
+          "configurations": {
+            "development": {
+              "progress": false,
+              "verbose": false,
+              "optimization": false
+            },
+            "stats": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/dh-environment.ts",
+                  "with": "src/environments/browser/dh-environment-browser.production.ts"
+                },
+                {
+                  "replace": "src/manifest.json",
+                  "with": "src/manifests/manifest.production.json"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/seo/robots/robots.production.txt"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "buildOptimizer": true,
+              "vendorChunk": true,
+              "statsJson": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "progress": true,
+              "extractLicenses": true,
+              "verbose": false,
+              "index": "src/index-pages/production/index.html"
+            },
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/dh-environment.ts",
+                  "with": "src/environments/browser/dh-environment-browser.production.ts"
+                },
+                {
+                  "replace": "src/manifest.json",
+                  "with": "src/manifests/manifest.production.json"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/seo/robots/robots.production.txt"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "buildOptimizer": true,
+              "vendorChunk": true,
+              "statsJson": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "progress": true,
+              "extractLicenses": true,
+              "verbose": false,
+              "index": "src/index-pages/production/index.html"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-builders/custom-webpack:dev-server",
+          "options": {
+            "customWebpackConfig": {
+              "path": "./scripts/webpack/custom-webpack-server.config.js",
+              "replaceDuplicatePlugins": false
+            },
+            "browserTarget": "dark-heresy:build",
+            "port": 3100,
+            "ssl": true,
+            "sslKey": "ssl/dark-heresy.key",
+            "sslCert": "ssl/dark-heresy.crt",
+            "host": "dark-heresy"
+          },
+          "configurations": {
+            "development": {
+              "hmr": true,
+              "browserTarget": "dark-heresy:build:development",
+              "hmrWarning": false
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-builders/custom-webpack:karma",
+          "options": {
+            "customWebpackConfig": {
+              "path": "./scripts/webpack/custom-webpack-test.config.js",
+              "replaceDuplicatePlugins": false
+            },
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
+            "codeCoverage": true,
+            "watch": true,
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/assets/styles/"
+              ]
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ],
+            "typeCheck": true,
+            "format": "codeFrame"
+          },
+          "configurations": {
+            "dev": {
+              "fix": true,
+              "force": true
+            },
+            "ci": {
+              "fix": false,
+              "force": false
+            }
+          }
+        },
+        "server": {
+          "builder": "@angular-builders/custom-webpack:server",
+          "options": {
+            "customWebpackConfig": {
+              "path": "./scripts/webpack/custom-webpack-server.config.js",
+              "replaceDuplicatePlugins": false
+            },
+            "outputPath": "dist/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "src/tsconfig.server.json",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/assets/styles/"
+              ]
+            }
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/dh-environment.ts",
+                  "with": "src/environments/server/dh-environment-server.production.ts"
+                },
+                {
+                  "replace": "src/manifest.json",
+                  "with": "src/manifests/manifest.production.json"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/seo/robots/robots.production.txt"
+                }
+              ],
+              "bundleDependencies": true,
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "dark-heresy"
+}

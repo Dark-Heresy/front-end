@@ -1,0 +1,104 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictNullChecks": true,
+    "downlevelIteration": true,
+    "baseUrl": "./",
+    "importHelpers": true,
+    "module": "esnext",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/@types/",
+      "types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "types": [
+      "jasmine",
+      "jasminewd2",
+      "node"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "plugins": [
+      {
+        "name": "@angular/language-service"
+      }
+    ],
+    "paths": {
+      "@test/test": [
+        "src/test.ts"
+      ],
+      "@dh/component": [
+        "src/app/dh-root.component.ts"
+      ],
+      "@dh/module": [
+        "src/app/dh-root.module.ts"
+      ],
+      "@dh/server-module": [
+        "src/app/dh-root.server.module.ts"
+      ],
+      "@dh/testing-module": [
+        "src/app/dh-root.testing.module.ts"
+      ],
+      "@dh/routing-module": [
+        "src/app/dh-root-routing.module.ts"
+      ],
+      "@dh/components/*": [
+        "src/app/components/*"
+      ],
+      "@dh/directives/*": [
+        "src/app/directives/*"
+      ],
+      "@dh/features/*": [
+        "src/app/features/*"
+      ],
+      "@dh/functions/*": [
+        "src/app/functions/*"
+      ],
+      "@dh/mocks/*": [
+        "src/app/mocks/*"
+      ],
+      "@dh/types/*": [
+        "src/app/types/*"
+      ],
+      "@dh/loaders/*": [
+        "src/app/loaders/*"
+      ],
+      "@dh/environments/*": [
+        "src/environments/*"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "enableResourceInlining": false,
+    "skipMetadataEmit": false,
+    "strictMetadataEmit": true,
+    "skipTemplateCodegen": false,
+    "strictInjectionParameters": true,
+    "generateCodeForLibraries": true,
+    "fullTemplateTypeCheck": true,
+    "trace": true,
+    "enableIvy": true,
+    "strictTemplates": true,
+    "strictInputTypes": true
+  }
+}

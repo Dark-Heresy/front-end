@@ -1,0 +1,39 @@
+// This file should contains only pure colors
+// This is not the place to create shortcuts like "color-primary"
+//
+// Note that all variables should have an _ as prefix
+// They should not be used directly during the development
+// Read more about it inside the CONTRIBUTING.md#Styles#Variables naming convention#Internal variables
+
+// Standard colors
+$_dh-color-white: #FFFFFF;
+$_dh-color-black: #000000;
+
+// Custom colors extracted from the Inquisition logo
+$_dh-color-red-blood: #830101;
+$_dh-color-black-night: #130F0C;
+$_dh-color-gold: #F8BC4C;
+$_dh-color-skull: #F5DBA2;
+
+// Russian colors
+// Source: https://flatuicolors.com/palette/ru
+$_dh-color-russian-creamy-peach: #F3A683;
+$_dh-color-russian-sawtooth-aak: #F19066;
+$_dh-color-russian-purple-mountain-majesty: #786FA6;
+$_dh-color-russian-purple-corallite: #574B90;
+$_dh-color-russian-rosy-highlight: #F7D794;
+$_dh-color-russian-summertime: #F5CD79;
+$_dh-color-russian-rogue-pink: #F8A5C2;
+$_dh-color-russian-flamingo-pink: #F78FB3;
+$_dh-color-russian-soft-blue: #778BEB;
+$_dh-color-russian-cornflower: #546DE5;
+$_dh-color-russian-squeaky: #63CDDA;
+$_dh-color-russian-blue-curacao: #3DC1D3;
+$_dh-color-russian-brewed-mustard: #E77F67;
+$_dh-color-russian-tigerlily: #E15F41;
+$_dh-color-russian-apple-valley: #EA8685;
+$_dh-color-russian-porcelain-rose: #E66767;
+$_dh-color-russian-old-geranium: #CF6A87;
+$_dh-color-russian-deep-rose: #C44569;
+$_dh-color-russian-pencil-lead: #596275;
+$_dh-color-russian-biscay: #303952;

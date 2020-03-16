@@ -1,0 +1,17 @@
+<div *ngIf="labelTranslation"
+     class="dh-button-label">
+
+  <!-- Translated label -->
+  <ng-container *transloco="let translation; scope: labelTranslation.scope; loadingTpl: labelLoadingTemplate">
+    <span class="dh-button-label--label">
+      {{ translation(labelTranslation.key, labelTranslation.params) }}
+    </span>
+  </ng-container>
+
+  <!-- Label translation loader -->
+  <ng-template #labelLoadingTemplate>
+    <span class="dh-button-label--label dh-button-label--label-fake">
+      Loading...
+    </span>
+  </ng-template>
+</div>

@@ -1,0 +1,23 @@
+User-agent: *
+# Block everything by default
+Disallow: /
+# Assets
+Allow: /assets/
+# Files
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.html$
+Allow: /*.json$
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.eot$
+Allow: /*.ttf$
+Allow: /*.woff$
+Allow: /*.woff2$
+Allow: /*.mp4$
+Allow: /*.ogv$
+Allow: /*.vtt$
+Allow: /*.pdf$
+Allow: /*.xml$

@@ -1,0 +1,44 @@
+<div class="dh-home">
+  <dh-button>
+    <dh-button-label [dhButtonLabelTranslation]="{key: 'label', scope: 'home'}"></dh-button-label>
+  </dh-button>
+  <dh-button dhButtonIsDisabled>
+    <dh-button-label [dhButtonLabelTranslation]="{key: 'label disabled', scope: 'home'}"></dh-button-label>
+  </dh-button>
+  <dh-button-container>
+    <dh-button>
+      <dh-button-label [dhButtonLabelTranslation]="{key: 'label', scope: 'home'}"></dh-button-label>
+    </dh-button>
+    <dh-button>
+      <dh-button-label [dhButtonLabelTranslation]="{key: 'label', scope: 'home'}"></dh-button-label>
+    </dh-button>
+  </dh-button-container>
+  <dh-button-container>
+    <dh-button [dhButtonSize]="buttonSizeSmall">
+      <dh-button-label [dhButtonLabelTranslation]="{key: 'label', scope: 'home'}"></dh-button-label>
+    </dh-button>
+    <dh-button [dhButtonSize]="buttonSizeSmall">
+      <dh-button-label [dhButtonLabelTranslation]="{key: 'label', scope: 'home'}"></dh-button-label>
+    </dh-button>
+  </dh-button-container>
+  <form [formGroup]="formGroup">
+    <dh-control-text formControlName="name"></dh-control-text>
+    <dh-button (dhButtonOnClick)="setName()">
+      <dh-button-label [dhButtonLabelTranslation]="{key: 'Set same', scope: 'home'}"></dh-button-label>
+    </dh-button>
+    <dh-control-text dhControlTextIsDisabled
+                     formControlName="name1">
+    </dh-control-text>
+  </form>
+  <p>{{ formGroup.valid }}</p>
+  <p>{{ formGroup.controls.name.value }}</p>
+  <dh-button-router [dhButtonQueryParams]="{param: 'value'}"
+                    dhButtonRouterLink="introduction">
+    <dh-button-label [dhButtonLabelTranslation]="{key: 'Button router to test preloading strategy', scope: 'home'}"></dh-button-label>
+  </dh-button-router>
+  <dh-button-router [dhButtonQueryParams]="{param: 'value'}"
+                    dhButtonIsDisabled
+                    dhButtonRouterLink="introduction">
+    <dh-button-label [dhButtonLabelTranslation]="{key: 'Disabled router button', scope: 'home'}"></dh-button-label>
+  </dh-button-router>
+</div>

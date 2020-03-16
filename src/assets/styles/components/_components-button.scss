@@ -1,0 +1,48 @@
+%dh-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  outline: none;
+}
+
+%dh-button-disabled {
+  cursor: not-allowed;
+}
+
+%dh-button-not-disabled {
+  cursor: pointer;
+}
+
+%dh-button-size-small {
+  height: dh-pixels-to-em($dh-button-small-height);
+  min-width: dh-pixels-to-em($dh-button-small-min-width);
+  padding: 0 dh-pixels-to-em($dh-button-small-padding);
+  border-radius: 2px;
+}
+
+%dh-button-size-medium {
+  height: dh-pixels-to-em($dh-button-medium-height);
+  min-width: dh-pixels-to-em($dh-button-medium-min-width);
+  padding: 0 dh-pixels-to-em($dh-button-medium-padding);
+  border-radius: 2px;
+}
+
+%dh-button-size-large {
+  height: dh-pixels-to-em($dh-button-large-height);
+  min-width: dh-pixels-to-em($dh-button-large-min-width);
+  padding: 0 dh-pixels-to-em($dh-button-large-padding);
+  border-radius: 2px;
+}
+
+%dh-button-type-primary {
+}
+
+%dh-button-type-primary-disabled {
+  background-color: $dh-disabled-background-color;
+}
+
+%dh-button-type-primary-not-disabled {
+  background-color: $dh-color-primary;
+}

@@ -1,0 +1,80 @@
+dist: trusty
+os: linux
+
+language: node_js
+node_js:
+  - '12'
+
+env:
+  global:
+    - CC_TEST_REPORTER_ID=f7f19f40c8917368645d7fd0455145def3299b425d7977939a85a5139c1e6c04
+
+addons:
+  chrome: stable
+
+git:
+  depth: 30
+  quiet: false
+
+cache:
+  npm: true
+  directories:
+    - ./node_modules
+
+install:
+  - npm install
+
+before_script:
+  - git lfs pull
+
+jobs:
+  include:
+    - stage: "Lint"
+      name: "Style lint"
+      script: npm run stylelint:ci
+    - stage: "Lint"
+      name: "TypeScript lint"
+      script: npm run tslint:ci
+    - stage: "Test"
+      name: "App test"
+      script: npm run test:ci -- --watch=false
+      before_script:
+        - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+        - chmod +x ./cc-test-reporter
+        - ./cc-test-reporter before-build
+      after_script:
+        - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+    - stage: "Build"
+      name: "Browser build"
+      script:
+        - npm run build:i18n
+        - npm run build:browser:production
+    - stage: "Build"
+      name: "Server build"
+      script:
+        - npm run build:i18n
+        - npm run build:server:production
+    - stage: "Build"
+      name: "Server compile"
+      script:
+        - npm run build:i18n
+        - npm run compile:server
+    - stage: "Versioning"
+      name: "Semantic versioning"
+      script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: npm run semver
+      if: branch = develop
+    - stage: "Release"
+      name: "NPM release"
+      script: skip
+      deploy:
+        provider: npm
+        skip_cleanup: true
+        email: "darkheresy.contact@gmail.com"
+        api_key: $NPM_TOKEN
+        on:
+          tags: true
+      if: branch = develop
