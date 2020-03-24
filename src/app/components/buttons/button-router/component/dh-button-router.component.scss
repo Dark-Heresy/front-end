@@ -1,40 +1,42 @@
 @import 'imports';
 
-dh-button-router {
-  display: flex;
+.dark-heresy {
+  dh-button-router {
+    display: flex;
 
-  .dh-button {
-    @extend %dh-button;
-
-    &.dh-button-disabled {
-      @extend %dh-button-disabled;
-    }
-
-    &:not(.dh-button-disabled) {
-      @extend %dh-button-not-disabled;
-    }
-
-    &.dh-button-size-small {
-      @extend %dh-button-size-small;
-    }
-
-    &.dh-button-size-medium {
-      @extend %dh-button-size-medium;
-    }
-
-    &.dh-button-size-large {
-      @extend %dh-button-size-large;
-    }
-
-    &.dh-button-type-primary {
-      @extend %dh-button-type-primary;
+    .dh-button {
+      @extend %dh-button;
 
       &.dh-button-disabled {
-        @extend %dh-button-type-primary-disabled;
+        @extend %dh-button-disabled;
       }
 
       &:not(.dh-button-disabled) {
-        @extend %dh-button-type-primary-not-disabled;
+        @extend %dh-button-not-disabled;
+      }
+
+      &.dh-button-size-small {
+        @extend %dh-button-size-small;
+      }
+
+      &.dh-button-size-medium {
+        @extend %dh-button-size-medium;
+      }
+
+      &.dh-button-size-large {
+        @extend %dh-button-size-large;
+      }
+
+      &.dh-button-type-primary {
+        @extend %dh-button-type-primary;
+
+        &.dh-button-disabled {
+          @extend %dh-button-type-primary-disabled;
+        }
+
+        &:not(.dh-button-disabled) {
+          @extend %dh-button-type-primary-not-disabled;
+        }
       }
     }
   }

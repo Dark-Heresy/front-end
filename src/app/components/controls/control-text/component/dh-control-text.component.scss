@@ -1,9 +1,11 @@
 @import 'imports';
 
-dh-control-text {
-  display: flex;
-
-  .dh-control-text {
+.dark-heresy {
+  dh-control-text {
     display: flex;
+
+    .dh-control-text {
+      display: flex;
+    }
   }
 }
