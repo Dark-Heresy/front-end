@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { TranslocoModule } from '@ngneat/transloco';
 import { DhIntroductionComponent } from './component/dh-introduction.component';
 import { DhIntroductionRoutingModule } from './dh-introduction-routing.module';
 
@@ -7,7 +8,8 @@ import { DhIntroductionRoutingModule } from './dh-introduction-routing.module';
     DhIntroductionComponent
   ],
   imports: [
-    DhIntroductionRoutingModule
+    DhIntroductionRoutingModule,
+    TranslocoModule
   ]
 })
 export class DhIntroductionModule {

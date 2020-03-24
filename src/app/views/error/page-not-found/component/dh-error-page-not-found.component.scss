@@ -1,7 +1,11 @@
-dh-error-page-not-found {
-  display: flex;
+@import 'imports';
 
-  .dh-error-page-not-found {
+.dark-heresy {
+  dh-error-page-not-found {
     display: flex;
+
+    .dh-error-page-not-found {
+      display: flex;
+    }
   }
 }
