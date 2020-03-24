@@ -1,9 +1,13 @@
+@import 'imports';
+
 .dark-heresy {
   dh-introduction {
     display: flex;
 
     .dh-introduction {
       display: flex;
+      flex-direction: column;
+      max-width: 800px;
     }
   }
 }
