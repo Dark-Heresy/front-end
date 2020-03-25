@@ -101,7 +101,7 @@
     "@datorama/akita": "4.19.2",
     "@ngneat/transloco": "2.13.3",
     "@ngneat/transloco-messageformat": "1.2.0",
-    "@ngneat/transloco-persist-lang": "1.0.1",
+    "@ngneat/transloco-persist-lang": "1.0.2",
     "@ngneat/transloco-persist-translations": "1.0.0",
     "@nguniversal/common": "9.0.2",
     "@nguniversal/express-engine": "9.0.1",
