@@ -104,7 +104,7 @@
     "@ngneat/transloco-persist-lang": "1.0.1",
     "@ngneat/transloco-persist-translations": "1.0.0",
     "@nguniversal/common": "9.0.2",
-    "@nguniversal/express-engine": "9.0.1",
+    "@nguniversal/express-engine": "9.0.2",
     "@nguniversal/module-map-ngfactory-loader": "8.2.6",
     "@ngx-pwa/local-storage": "9.0.2",
     "animate.css": "3.7.2",
