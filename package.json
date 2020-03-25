@@ -114,7 +114,7 @@
     "localforage": "1.7.3",
     "lodash": "4.17.15",
     "messageformat": "2.3.0",
-    "ngx-quicklink": "0.2.0",
+    "ngx-quicklink": "0.2.1",
     "reset-css": "5.0.1",
     "rxjs": "6.5.4",
     "tslib": "1.10.0",
