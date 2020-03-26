@@ -1,0 +1,18 @@
+@import 'src/assets/styles/imports';
+
+.dark-heresy {
+  dh-navbar {
+    position: sticky;
+    display: flex;
+    width: 100%;
+    top: 0;
+
+    .dh-navbar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  }
+}
