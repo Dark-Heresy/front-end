@@ -150,7 +150,7 @@
     "cz-customizable": "6.2.0",
     "cz-customizable-ghooks": "1.5.0",
     "fibers": "4.0.2",
-    "fs-extra": "8.1.0",
+    "fs-extra": "9.0.0",
     "glob": "7.1.6",
     "graphviz": "0.0.9",
     "http-server": "0.12.1",
