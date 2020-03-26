@@ -99,7 +99,7 @@
     "@angular/router": "9.1.0",
     "@angular/service-worker": "9.1.0",
     "@datorama/akita": "4.19.2",
-    "@ngneat/transloco": "2.13.3",
+    "@ngneat/transloco": "2.14.0",
     "@ngneat/transloco-messageformat": "1.2.0",
     "@ngneat/transloco-persist-lang": "1.0.2",
     "@ngneat/transloco-persist-translations": "1.0.0",
