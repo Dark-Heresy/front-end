@@ -69,7 +69,8 @@
       "em",
       "rem",
       "px",
-      "%"
+      "%",
+      "vh"
     ],
     "scss/at-else-empty-line-before": "never",
     "scss/at-function-named-arguments": null,
