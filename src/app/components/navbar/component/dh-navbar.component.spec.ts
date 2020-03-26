@@ -8,7 +8,6 @@ import {
 import { cleanStylesFromDom } from '@test/test';
 
 describe('DhNavbarComponent', (): void => {
-  const componentRootClass = '.dh-navbar';
   const componentFactory: SpectatorFactory<DhNavbarComponent> = createComponentFactory({
     component: DhNavbarComponent,
     imports: [
