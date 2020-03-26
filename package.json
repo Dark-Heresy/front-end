@@ -98,7 +98,7 @@
     "@angular/pwa": "0.900.7",
     "@angular/router": "9.1.0",
     "@angular/service-worker": "9.1.0",
-    "@datorama/akita": "4.19.2",
+    "@datorama/akita": "4.21.0",
     "@ngneat/transloco": "2.13.3",
     "@ngneat/transloco-messageformat": "1.2.0",
     "@ngneat/transloco-persist-lang": "1.0.2",
