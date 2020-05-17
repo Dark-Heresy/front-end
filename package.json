@@ -169,7 +169,7 @@
     "rimraf": "3.0.2",
     "rxjs-tslint-rules": "4.29.2",
     "semantic-release": "17.0.4",
-    "stylelint": "13.2.1",
+    "stylelint": "13.4.0",
     "stylelint-config-recommended": "3.0.0",
     "stylelint-config-recommended-scss": "4.2.0",
     "stylelint-config-standard": "20.0.0",
