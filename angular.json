@@ -53,6 +53,11 @@
                 "input": "node_modules/reset-css/reset.css",
                 "lazy": true,
                 "bundleName": "lazy-styles"
+              },
+              {
+                "input": "src/assets/fonts/almendra/almendra.css",
+                "lazy": true,
+                "bundleName": "lazy-styles"
               }
             ],
             "es5BrowserSupport": true,

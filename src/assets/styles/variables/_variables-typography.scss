@@ -1,3 +1,5 @@
 $dh-body-font-size: 16;
 
-$dh-font-family-primary: 'Nunito Sans, Roboto, sans-serif';
+$_dh-font-family-almendra: 'Almendra, serif';
+
+$dh-font-family-primary: $_dh-font-family-almendra;

@@ -1,2 +1,22 @@
 <div class="dh-introduction">
+
+  <!-- Title -->
+  <ng-container *transloco="let translation; scope: 'introduction'; loadingTpl: titleLoadingTemplate">
+    <h1>
+      {{ translation('introduction.title') }}
+    </h1>
+  </ng-container>
+  <ng-template #titleLoadingTemplate>
+    <h1></h1>
+  </ng-template>
+
+  <!-- First paragraph -->
+  <ng-container *transloco="let translation; scope: 'introduction'; loadingTpl: firstParagraphLoadingTemplate">
+    <p>
+      {{ translation('introduction.first-paragraph') }}
+    </p>
+  </ng-container>
+  <ng-template #firstParagraphLoadingTemplate>
+    <p></p>
+  </ng-template>
 </div>

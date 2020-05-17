@@ -1,0 +1,15 @@
+.dark-heresy {
+  h1 {
+    font-family: unquote($dh-font-family-primary);
+    font-weight: 700;
+    font-size: dh-pixels-to-em(40);
+    line-height: dh-pixels-to-em(48);
+  }
+
+  p {
+    font-family: unquote($dh-font-family-primary);
+    font-weight: 400;
+    font-size: dh-pixels-to-em(21);
+    line-height: dh-pixels-to-em(33);
+  }
+}
